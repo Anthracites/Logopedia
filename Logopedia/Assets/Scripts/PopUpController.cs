@@ -102,6 +102,7 @@ public class PopUpController : MonoBehaviour
         {
             GameEventMessage.SendEvent(EventsLibrary.GoToEditStory);
         }
+
         void LoadStories()
         {
             var _jsons = Resources.LoadAll("Stories");
@@ -141,7 +142,10 @@ public class PopUpController : MonoBehaviour
                 else
                 {
                     File.WriteAllText(path, jsonString);
-                    _storyManager.StoryName = _inpupField.text + "(" + i.ToString() + ")";
+                    var _storyName = _inpupField.text + "(" + i.ToString() + ")";
+                    var _story = new Story();
+                    _story.StoryName = _storyName;
+                    _storyManager.CurrentStory = _story;
                 }
 
                 GameEventMessage.SendEvent(EventsLibrary.GoToNewStoryCreation);

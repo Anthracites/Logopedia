@@ -282,7 +282,7 @@
     <Compile Include="Assets/Doozy/Engine/Themes/Targets/ColorTargetTextMeshPro.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIPopup/UIPopupManager.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Base/UIAction.cs" />
-    <Compile Include="Assets/Scripts/Story/StorySaver.cs" />
+    <Compile Include="Assets/Scripts/Story/StorySaverUploader.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/Enums/SingleClickMode.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/CMY.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/GameEventNode.cs" />
@@ -395,11 +395,8 @@
     <None Include="Assets/Doozy/Examples/Shaders/DRimLightSelective.shader" />
     <None Include="Assets/Resources/Prefabs/Starts/skeleton.atlas.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets/JsonDotNet/link.xml" />
-    <None Include="Assets/JsonDotNet/Assemblies/Windows/Newtonsoft.Json.XML" />
     <None Include="Assets/Doozy/Examples/Shaders/DRimLightSolid.shader" />
     <None Include="Assets/Doozy/Examples/Fonts/Unica_One/OFL.txt" />
-    <None Include="Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.XML" />
     <None Include="Assets/Doozy/Examples/Fonts/Monoton/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Crafty_Girls/LICENSE.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
@@ -415,7 +412,6 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/Doozy/readme.txt" />
-    <None Include="Assets/JsonDotNet/Assemblies/Windows/Newtonsoft.Json.dll" />
     <None Include="Assets/Doozy/Examples/Shaders/DRimLightTransparent.shader" />
     <None Include="Assets/Doozy/Examples/Shaders/DLitSurface.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />

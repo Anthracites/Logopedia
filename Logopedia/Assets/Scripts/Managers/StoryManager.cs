@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Logopedia.GamePlay;
+using Spine;
 
 namespace Logopedia.UIConnection
 {
@@ -11,11 +12,10 @@ namespace Logopedia.UIConnection
     public class StoryManager : IInitializable
     {
         public Story CurrentStory;
-        public string StoryName;
-        public StoryScene CurrentStoryScene;
+        public int CurrentStorySceneIndex;
         public List<StoryScene> CurrentStoryScenes;
-        public Sprite Chacter, BackGround;
-        public List<Sprite> GarmentsSprites;
+        public GameObject Chacter, BackGround;
+
 
         public void Initialize()
         {

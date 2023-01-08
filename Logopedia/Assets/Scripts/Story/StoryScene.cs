@@ -2,25 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Logopedia.GamePlay;
 
 namespace Logopedia.GamePlay
 {
     [Serializable]
-    public class StoryScene : MonoBehaviour
+    public class StoryScene
     {
         public int SceneNumberInStory;
         public Sprite Character, BG;
+        public PositionForSave CharacterPosition, CharacterRotation, CharacterScale;
 
-        public struct Item
+        public struct PositionForSave
+        {
+            public float x, y, z;
+
+            public PositionForSave(Vector3 _vector3)
+        {
+            x = _vector3.x;
+            y = _vector3.y;
+            z = _vector3.z;
+        }
+    }
+
+
+    public struct SceneItem
         {
             public Sprite ItemSprite;
-            public Vector3 ItemPosition;
-            public Vector3 ItemShadowPosition;
-            public Vector3 ItemRotation;
-            public Vector3 ItemScale;
+            public PositionForSave ItemPosition;
+            public PositionForSave ItemShadowPosition;
+            public PositionForSave ItemRotation;
+            public PositionForSave ItemScale;
+            public bool ShadowVisible, ShadowEnabled;
         }
-        public Item[] Items;
 
+        public List<SceneItem> Items;
     }
 }

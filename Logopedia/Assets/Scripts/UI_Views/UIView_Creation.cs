@@ -12,6 +12,7 @@ using System.IO;
 using UnityEngine.TextCore.Text;
 using Unity.VisualScripting;
 using Doozy.Engine;
+using UnityEngine.SceneManagement;
 
 namespace Logopedia.UserInterface
 {
@@ -51,8 +52,6 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private TMP_Text _storyName, _sceneNumber;
         [SerializeField]
-        private Story _newStory;
-        [SerializeField]
         private StoryScene _storyScene;
         private Color _transparent = new Color(255, 255, 255, 0), _opaque = new Color(0, 0, 0, 0.5f);
         [SerializeField]
@@ -60,21 +59,21 @@ namespace Logopedia.UserInterface
 
         private void Start()
         {
-            float x = Screen.currentResolution.width;
-            float y = Screen.currentResolution.height;
-            _screenCenter = new Vector2(x / 2, y / 2);
             _instCount = 0;
             _itemsManager.MiddleScenePanel = _middlePanel;
             _isPreview = false;
             CreateSamples();
             _currentSceneNumber = 0;
+            _storyManager.Chacter = _character.gameObject;
+            _storyManager.BackGround = _bg.gameObject;
+
         }
 
         private void OnEnable()
         {
-            if (_storyManager.StoryName != null)
+            if (_storyManager.CurrentStory.StoryName != null)
             {
-                _storyName.text = _storyManager.StoryName;
+                _storyName.text = _storyManager.CurrentStory.StoryName;
             }
         }
         public void PreviewScene()
@@ -107,7 +106,6 @@ namespace Logopedia.UserInterface
         public void SwichShadow()
         {
             GetCurrentGarment();
-            GetCurrentGarment();
             if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
             {
                 bool _isActive = !_itemShadow.activeSelf;
@@ -121,8 +119,8 @@ namespace Logopedia.UserInterface
         public void ScaleItem()
         {
             GetCurrentGarment();
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
+            if ((_item != _character.gameObject) && (_itemShadow != null))
+                {
                 _item.transform.localScale = new Vector3(_scaleSlider.value, _scaleSlider.value, _scaleSlider.value);
                 _itemShadow.transform.localScale = new Vector3(_scaleSlider.value, _scaleSlider.value, _scaleSlider.value);
             }
@@ -135,14 +133,14 @@ namespace Logopedia.UserInterface
         public void RotateItem()
         {
             GetCurrentGarment();
-            if ((_item != _character) && (_itemShadow != null))
+            if ((_item != _character.gameObject) && (_itemShadow != null))
             {
-                _item.transform.localRotation = Quaternion.Euler(0, 0, _rotationSlider.value);
-                _itemShadow.transform.localRotation = Quaternion.Euler(0, 0, _rotationSlider.value);
+                _item.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
+                _itemShadow.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
             }
             else
             {
-                _character.transform.localEulerAngles = new Vector3(0,0, _rotationSlider.value);
+                _character.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
             }
         }
 
@@ -224,19 +222,38 @@ namespace Logopedia.UserInterface
             if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
             {
                 var _currentItem = _itemsManager.CurrentGarment;
+                ShowInLog();
                 Destroy(_currentItem);
+                _itemsManager.Garments.Remove(_currentItem);
+                ShowInLog();
+                _itemsManager.Garments.RemoveAll(x => x == null);
+                ShowInLog();
+                //_itemsManager.Garments.RemoveAll(s => GameObject.);
             }
+            
+        }
+
+        public void ShowInLog()
+        {
+            var Garments = _itemsManager.Garments;
+            string _log = "";
+            foreach (GameObject _go in Garments)
+            {
+                _log += _go.gameObject.ToString();
+                _log += '\n';
+            }
+            Debug.Log(_log);
         }
 
         public void ChangeCharacter()
         {
-            var _currentCharacter = _storyManager.Chacter;
+            var _currentCharacter = _storyManager.Chacter.GetComponent<Image>().sprite;
             ChangeSprite(_currentCharacter, _character);
         }
 
         public void ChangeBG()
         {
-            var _currentBG = _storyManager.BackGround;
+            var _currentBG = _storyManager.BackGround.GetComponent<Image>().sprite;
             ChangeSprite(_currentBG, _bg);
         }
 
@@ -246,9 +263,18 @@ namespace Logopedia.UserInterface
             if (_item != null)
             {
                 _scaleSlider.value = _item.transform.localScale.x;
-                var y = _item.transform.localRotation.z;
-                _rotationSlider.value = y;
-                Debug.Log("Angle: " + y.ToString());
+
+                float angle; Vector3 localRoll;
+                //_item.transform.localRotation.ToAngleAxis(out angle, out localRoll);
+                //_item.transform.localRotation.ToAxisAngle(out localRoll, out angle);
+                //_item.transform.rotation.ToAngleAxis(out angle, out localRoll);
+                var a = _item.transform.eulerAngles.z;
+                a = Mathf.Repeat(a + 180, 360) - 180;
+
+
+
+                Debug.Log("Angle: " + a.ToString());
+                _rotationSlider.value = a;
             }
         }
 
@@ -270,6 +296,11 @@ namespace Logopedia.UserInterface
         {
             _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.СonfirmRemove;
             GameEventMessage.SendEvent(EventsLibrary.ShowPopUp);
+        }
+
+        public void SaveStory()
+        {
+            GameEventMessage.SendEvent(EventsLibrary.SaveStory);
         }
     }
 }

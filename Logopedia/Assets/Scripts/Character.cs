@@ -29,7 +29,7 @@ namespace Logopedia.GamePlay
             _itemsManager.CurrentItem = gameObject;
             _itemsManager.CurrentItemShadow = null;
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
-            Debug.Log("Chacter selected!!!");
+//            Debug.Log("Chacter selected!!!");
         }
 
         public void OnBeginDrag(PointerEventData eventData)

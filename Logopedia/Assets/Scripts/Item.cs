@@ -15,18 +15,12 @@ namespace Logopedia.GamePlay
         [Inject]
         ItemsManager _itemsManager;
 
+        [SerializeField]
         private CanvasGroup _canvasGroup;
         [SerializeField]
         private GameObject _slot, _garment;
         [SerializeField]
         private Outline _outline;
-
-
-
-        private void Start()
-        {
-            _canvasGroup = GetComponent<CanvasGroup>();
-        }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
@@ -37,6 +31,7 @@ namespace Logopedia.GamePlay
         {
             StartMove();
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+            _canvasGroup.blocksRaycasts = true;
         }
 
         void StartMove()

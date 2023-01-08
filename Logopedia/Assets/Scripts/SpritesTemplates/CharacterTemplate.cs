@@ -28,7 +28,7 @@ namespace Logopedia.UserInterface
 
         public void SendSpriteToManager()
         {
-            _storyManager.Chacter = _sprite;
+            _storyManager.Chacter.GetComponent<Image>().sprite = _sprite;
             GameEventMessage.SendEvent(EventsLibrary.CharacterSpriteChanged);
         }
 

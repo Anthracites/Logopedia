@@ -6,10 +6,9 @@ using UnityEngine;
 namespace Logopedia.GamePlay
 {
     [Serializable]
-    public class Story : MonoBehaviour
+    public class Story
     {
         public string StoryName;
         public List<StoryScene> Scenes;
-        //public StoryScene[] Scenes;
     }
 }

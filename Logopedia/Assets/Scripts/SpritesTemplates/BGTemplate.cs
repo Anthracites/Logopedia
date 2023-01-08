@@ -28,7 +28,7 @@ namespace Logopedia.UserInterface
 
         public void SendSpriteToManager()
         {
-            _storyManager.BackGround = _sprite;
+            _storyManager.BackGround.GetComponent<Image>().sprite = _sprite;
             GameEventMessage.SendEvent(EventsLibrary.BGSpriteChanged);
         }
 

@@ -19,6 +19,7 @@ namespace Logopedia.UserInterface
         [Inject]
         ItemsManager _itemsManager;
 
+
         [SerializeField]
         private Sprite _sprite;
 
@@ -53,6 +54,8 @@ namespace Logopedia.UserInterface
             _item.transform.position = new Vector3(pos1.x, pos1.y, 0);
             _item.transform.GetChild(0).GetComponent<Image>().sprite = _sprite;
             _item.transform.GetChild(1).GetComponent<Image>().sprite = _sprite;
+
+            _itemsManager.Garments.Add(_item);
         }
 
         public class Factory : PlaceholderFactory<string, ItemTemplate>

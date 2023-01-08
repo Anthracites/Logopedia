@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e751851817b45c9991d7054ea26ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvasGroup: {fileID: 4751630077956887163}
   _slot: {fileID: 5464380390744983181}
   _garment: {fileID: 8764531919979952961}
   _outline: {fileID: 2866241276224924763}
