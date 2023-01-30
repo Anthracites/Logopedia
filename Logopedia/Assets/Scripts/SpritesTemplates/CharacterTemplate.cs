@@ -11,7 +11,7 @@ namespace Logopedia.UserInterface
     public class CharacterTemplate : MonoBehaviour
     {
         [Inject]
-        StoryManager _storyManager;
+        ItemsManager _itemsManager;
 
 
         [SerializeField]
@@ -28,7 +28,9 @@ namespace Logopedia.UserInterface
 
         public void SendSpriteToManager()
         {
-            _storyManager.Chacter.GetComponent<Image>().sprite = _sprite;
+            _itemsManager.Character.GetComponent<Image>().sprite = _sprite;
+            _itemsManager.Character.GetComponent<Image>().sprite.name = gameObject.name;
+
             GameEventMessage.SendEvent(EventsLibrary.CharacterSpriteChanged);
         }
 

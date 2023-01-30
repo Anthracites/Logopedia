@@ -16,5 +16,5 @@ MonoBehaviour:
   DatabaseType: 2
   Names:
   - UIView_Menu
-  - "UIView_\_Creation"
-  - "UIView_\_Play"
+  - UIView_Creation
+  - UIView_Play

@@ -25,6 +25,9 @@ public class ProjectContextInstaller : MonoInstaller
         Container.BindFactory<string, ItemTemplate, ItemTemplate.Factory>().FromFactory<PrefabResourceFactory<ItemTemplate>>();
         Container.BindFactory<string, BGTemplate, BGTemplate.Factory>().FromFactory<PrefabResourceFactory<BGTemplate>>();
         Container.BindFactory<string, CharacterTemplate, CharacterTemplate.Factory>().FromFactory<PrefabResourceFactory<CharacterTemplate>>();
+        Container.BindFactory<string, StoryCreationPanel, StoryCreationPanel.Factory>().FromFactory<PrefabResourceFactory<StoryCreationPanel>>();
+        Container.BindFactory<string, StoryPlayPanel, StoryPlayPanel.Factory>().FromFactory<PrefabResourceFactory<StoryPlayPanel>>();
+        Container.BindFactory<string, GarmentForPlay, GarmentForPlay.Factory>().FromFactory<PrefabResourceFactory<GarmentForPlay>>();
     }
 
 }

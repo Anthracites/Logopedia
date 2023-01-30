@@ -11,6 +11,9 @@ using System.IO;
 using Logopedia.GamePlay;
 using Logopedia.UIConnection;
 using Spine;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace Logopedia.UserInterface
 { 
@@ -63,11 +66,11 @@ public class PopUpController : MonoBehaviour
         ConfigPopUp(_currentPopUpConfug);
 
         ButtonOk.onClick.RemoveAllListeners();
-        switch (_popUpName)
-        {
+            switch (_popUpName)
+            {
                 case ("NewStory"):
                     ButtonOk.onClick.AddListener(GoToCreateNewStory);
-                break;
+                    break;
 
                 case ("PlayNewGame"):
                     LoadStories();
@@ -78,8 +81,14 @@ public class PopUpController : MonoBehaviour
                     LoadStories();
                     ButtonOk.onClick.AddListener(GoToEditStory);
                     break;
-                case ("СonfirmRemove"):
+                case ("СonfirmClearScene"):
                     ButtonOk.onClick.AddListener(CleanScene);
+                    break;
+                case ("СonfirmRemoveScene"):
+                    ButtonOk.onClick.AddListener(RemoveScene);
+                    break;
+                case ("StorySaved"):
+                    ButtonOk.onClick.AddListener(ClosePopUp);
                     break;
                 default:
                 ButtonOk.onClick.AddListener(ClosePopUp);
@@ -97,6 +106,11 @@ public class PopUpController : MonoBehaviour
             ClosePopUp();
         }
 
+        void RemoveScene()
+        {
+            GameEventMessage.SendEvent(EventsLibrary.RemoveCurrentScene);
+            ClosePopUp();
+        }
 
         void GoToEditStory()
         {
@@ -105,19 +119,22 @@ public class PopUpController : MonoBehaviour
 
         void LoadStories()
         {
-            var _jsons = Resources.LoadAll("Stories");
-            string[] _storiesName = new string[_jsons.Length];
+            _dropdown.options.Clear();
 
-            int i = 0;
-            foreach (string _name in _storiesName)
+            DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + "/Resources/Stories");
+            FileInfo[] _storiesName = new string[] { "*.json" }.SelectMany(ext => _contentDirectory.GetFiles(ext, SearchOption.TopDirectoryOnly)).ToArray();
+
+            foreach (FileInfo _name in _storiesName)
             {
-                _storiesName[i] = _jsons[i].name;
-                _dropdown.options.Add(new TMP_Dropdown.OptionData() { text = _jsons[i].name});
-                i++;
+                _dropdown.options.Add(new TMP_Dropdown.OptionData() { text = _name.Name});
             }
         }
         public void GoToPlayNewGame()
         {
+            string _storyJsonName = _dropdown.options[_dropdown.value].text;
+            var _storyJson = File.ReadAllText(Application.dataPath + "/Resources/Stories/" + _storyJsonName);
+            var _choosenStory = JsonConvert.DeserializeObject<Story>(_storyJson);
+            _storyManager.CurrentStory = _choosenStory;
             GameEventMessage.SendEvent(EventsLibrary.GoToNewGame);
             ClosePopUp();
         }
@@ -127,25 +144,31 @@ public class PopUpController : MonoBehaviour
             if(_inpupField.text != "")
             {
                 int i = 0;
+
                 string _newStoryName = _inpupField.text;
-            m1:
-                string jsonString = _newStoryName;
+                m1:
                 var path = Path.Combine(Application.dataPath + "/Resources/Stories", _newStoryName + ".json");
                 bool _fileExist = File.Exists(path);
 
                 if (_fileExist)
                 {
-                    _newStoryName += i.ToString();
                     i++;
+                    _newStoryName = _inpupField.text + "(" + i.ToString() + ")";
                     goto m1;
                 }
+
                 else
                 {
-                    File.WriteAllText(path, jsonString);
                     var _storyName = _inpupField.text + "(" + i.ToString() + ")";
+                    if (i == 0)
+                    {
+                        _storyName = _inpupField.text;
+                    }
+
                     var _story = new Story();
                     _story.StoryName = _storyName;
                     _storyManager.CurrentStory = _story;
+                    _storyManager.IsStoryCreartionStart = true;
                 }
 
                 GameEventMessage.SendEvent(EventsLibrary.GoToNewStoryCreation);

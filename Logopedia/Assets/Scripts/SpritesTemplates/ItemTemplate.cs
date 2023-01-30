@@ -33,21 +33,11 @@ namespace Logopedia.UserInterface
             _sprite = transform.GetChild(0).GetComponent<Image>().sprite;
         }
 
-        private void CreatMirroredSprite()
-        {
-            var r = _sprite.texture.GetPixels();
-           // int i = r[9];
-            var x = (int)_sprite.rect.x;
-            var y = (int)_sprite.rect.y;
-            Texture2D t = new Texture2D(x, y);
-
-           // foreach (pixel p in r)
-        }
-
         public void CreateNewGerment()
         {
             var _item = _garmentFactory.Create(PrefabsPathLibrary.Item).gameObject;
             _item.transform.SetParent(_itemsManager.MiddleScenePanel.transform);
+            _item.name = gameObject.name;
             _item.transform.localScale = new Vector3(1, 1, 1);
             var pos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 pos1 = Camera.main.ScreenToWorldPoint(pos);

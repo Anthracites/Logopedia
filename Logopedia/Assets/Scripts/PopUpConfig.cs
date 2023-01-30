@@ -55,14 +55,39 @@ namespace Logopedia.UserInterface
             CloseAnywareClick = false
         };
 
-        public static PopUpConfig СonfirmRemove = new PopUpConfig()
+        public static PopUpConfig СonfirmCleanScene = new PopUpConfig()
         {
-            PopUpName = "СonfirmRemove",
+            PopUpName = "СonfirmClearScene",
             IconWay = "Sprites/UI/broom",
             Title = "Очистить текущую сцену?",
             IsActiveCloseButton = true,
             IsActiveInputField = false,
             IsActiveCancelButton = true,
+            IsActiveDropDown = false,
+            CloseAnywareClick = true
+        };
+
+        public static PopUpConfig СonfirmRemoveScene = new PopUpConfig()
+        {
+            PopUpName = "СonfirmRemoveScene",
+            IconWay = "Sprites/UI/delete",
+            Title = "Удалить текущую сцену?",
+            IsActiveCloseButton = true,
+            IsActiveInputField = false,
+            IsActiveCancelButton = true,
+            IsActiveDropDown = false,
+            CloseAnywareClick = true
+        };
+
+
+        public static PopUpConfig StorySaved = new PopUpConfig()
+        {
+            PopUpName = "StorySaved",
+            IconWay = "Sprites/UI/Save",
+            Title = "Сюжет сохранён",
+            IsActiveCloseButton = true,
+            IsActiveInputField = false,
+            IsActiveCancelButton = false,
             IsActiveDropDown = false,
             CloseAnywareClick = true
         };

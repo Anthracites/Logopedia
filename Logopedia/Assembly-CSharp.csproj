@@ -61,7 +61,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/UIToggle/UIToggle.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Models/Enums/NodeType.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Animation/UIAnimationsDatabase.cs" />
-    <Compile Include="Assets/Scripts/Item.cs" />
+    <Compile Include="Assets/Scripts/Creation/Item.cs" />
     <Compile Include="Assets/Scripts/UI_Views/UIView_Menu.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Controllers/GraphController.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIView/Internal/UIViewCategoryName.cs" />
@@ -104,6 +104,7 @@
     <Compile Include="Assets/Doozy/Engine/Nody/Connections/PassthroughConnection.cs" />
     <Compile Include="Assets/Doozy/Engine/Soundy/SoundyPooler.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/Structs/FontAssetId.cs" />
+    <Compile Include="Assets/Scripts/SpritesPathLibrary.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/UIDrawerNode.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/UIButtonMessage.cs" />
     <Compile Include="Assets/Doozy/Engine/Soundy/ScriptableObjects/SoundGroupData.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/CMYK.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
+    <Compile Include="Assets/Scripts/Play/StoryPlayPanel.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/Enums/TargetProgress.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Input/KeyToAction.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/ApplicationQuit.cs" />
@@ -140,8 +142,9 @@
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/LoadSceneNode.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/Targets/ColorTargetSelectable.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets/Scripts/Garment.cs" />
+    <Compile Include="Assets/Scripts/Creation/Garment.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/Targets/ColorTargetText.cs" />
+    <Compile Include="Assets/Scripts/TMProForFooter.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/Enums/ProgressorVariable.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/TimeScaleNode.cs" />
     <Compile Include="Assets/Doozy/Engine/Extensions/RectTransformExtensions.cs" />
@@ -204,6 +207,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" />
     <Compile Include="Assets/Doozy/Examples/Scripts/ExampleProgressTargetAudioMixer.cs" />
     <Compile Include="Assets/Scripts/Story/Story.cs" />
+    <Compile Include="Assets/Scripts/Play/GarmentForPlay.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Animation/Enums/AnimationAction.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/Targets/TextureTargetRawImage.cs" />
     <Compile Include="Assets/Doozy/Engine/Scripts/MessageExtensions.cs" />
@@ -239,7 +243,7 @@
     <Compile Include="Assets/Doozy/Engine/Progress/Events/ProgressEvent.cs" />
     <Compile Include="Assets/Doozy/Engine/Extensions/RectExtensions.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Animation/AnimationClasses.cs" />
-    <Compile Include="Assets/Scripts/ScrollPanel.cs" />
+    <Compile Include="Assets/Scripts/Creation/ScrollPanel.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIToggle/UIToggleEvent.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/Targets/ColorTargetRawImage.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Animation/UIAnimator.cs" />
@@ -249,6 +253,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/UIPopup/UIPopupContentData.cs" />
     <Compile Include="Assets/Scripts/EventsLibrary.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/Structs/FontId.cs" />
+    <Compile Include="Assets/Scripts/Play/ItemSlotForPlay.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Models/Graph.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Enums/VisibilityState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" />
@@ -260,6 +265,7 @@
     <Compile Include="Assets/Doozy/Engine/Soundy/AudioData.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressorGroup.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ChatController.cs" />
+    <Compile Include="Assets/Scripts/Play/ItemForPlay.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/LoadScene.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/Enums/CompareType.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/ScriptUtils.cs" />
@@ -292,7 +298,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/Animation/Enums/AnimationType.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/Enums/SimpleSwipe.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
-    <Compile Include="Assets/Scripts/Character.cs" />
+    <Compile Include="Assets/Scripts/Creation/Character.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/UIButtonBehavior.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/PlaySound.cs" />
@@ -315,6 +321,7 @@
     <Compile Include="Assets/Doozy/Engine/Events/SpriteEvent.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIDrawer/UIDrawerSettings.cs" />
+    <Compile Include="Assets/Scripts/Creation/StoryCreationPanel.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/UIButtonLoopAnimation.cs" />
     <Compile Include="Assets/Scripts/ProjectContextInstaller.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/StopAllSounds.cs" />
@@ -372,7 +379,7 @@
     <Compile Include="Assets/Scripts/Managers/StoryManager.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/ShowUIView.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/XYZ.cs" />
-    <Compile Include="Assets/Scripts/ItemSlot.cs" />
+    <Compile Include="Assets/Scripts/Creation/ItemSlot.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetImage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -391,6 +398,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
     <None Include="Assets/Doozy/Examples/Fonts/Baloo_Chettan/OFL.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_4/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Examples/Shaders/DIntense.Shader" />
     <None Include="Assets/Doozy/Examples/Shaders/DRimLightSelective.shader" />
     <None Include="Assets/Resources/Prefabs/Starts/skeleton.atlas.txt" />
@@ -412,6 +420,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/Doozy/readme.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Examples/Shaders/DRimLightTransparent.shader" />
     <None Include="Assets/Doozy/Examples/Shaders/DLitSurface.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
@@ -419,6 +428,7 @@
     <None Include="Assets/Doozy/Examples/Fonts/Flavors/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Pacifico/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Bangers/OFL.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_2/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Engine/Debug/DDebug.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
@@ -426,6 +436,7 @@
     <None Include="Assets/Doozy/Examples/Fonts/Secular_One/OFL.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_3/skeleton.atlas.txt" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Bangers - OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Oswald/OFL.txt" />
   </ItemGroup>

@@ -11,11 +11,10 @@ namespace Logopedia.UIConnection
     [Serializable]
     public class StoryManager : IInitializable
     {
+        public bool IsStoryCreartionStart = false;
         public Story CurrentStory;
         public int CurrentStorySceneIndex;
-        public List<StoryScene> CurrentStoryScenes;
-        public GameObject Chacter, BackGround;
-
+        public bool IsStorySave;
 
         public void Initialize()
         {

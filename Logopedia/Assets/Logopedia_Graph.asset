@@ -134,8 +134,8 @@ MonoBehaviour:
   m_useUpdate: 0
   m_height: 152
   m_width: 216
-  m_x: 420
-  m_y: -144
+  m_x: 432
+  m_y: -168
   m_minimumInputSocketsCount: 1
   m_minimumOutputSocketsCount: 1
   m_graphId: 0a655d1c-630a-46ea-9de9-c9b54b3abca1
@@ -145,13 +145,13 @@ MonoBehaviour:
   m_onEnterShowViews:
   - Category: Logopedia
     InstantAction: 0
-    Name: "UIView_\_Play"
+    Name: UIView_Play
   m_onEnterHideViews: []
   m_onExitShowViews: []
   m_onExitHideViews:
   - Category: Logopedia
     InstantAction: 0
-    Name: "UIView_\_Play"
+    Name: UIView_Play
 --- !u!114 &3307777832166095929
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +177,7 @@ MonoBehaviour:
       m_outputNodeId: eab23a51-7d99-40d0-98ed-40b4706e93c3
       m_outputSocketId: 4ca7a819-0740-40fa-be9d-8f32bb90f78e
     - m_inputConnectionPoint: {x: 202, y: 4}
-      m_outputConnectionPoint: {x: 202, y: 4}
+      m_outputConnectionPoint: {x: -2, y: 4}
       m_id: 7898172b-4954-455c-a034-5fee88a01b59
       m_inputNodeId: 17d3493d-d453-4ce1-b3a9-67d91ccc3394
       m_inputSocketId: 248e67d3-5c86-4880-9dc3-e9f10e1ed3cd
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_outputSockets:
   - m_connectionMode: 0
     m_connections:
-    - m_inputConnectionPoint: {x: 202, y: 4}
+    - m_inputConnectionPoint: {x: -2, y: 4}
       m_outputConnectionPoint: {x: 202, y: 4}
       m_id: 85bfadee-25ae-4ab7-b13a-17c4d1393320
       m_inputNodeId: 75dc81e4-9359-4c1e-8e4b-ee1190febf34
@@ -303,8 +303,8 @@ MonoBehaviour:
   m_useUpdate: 0
   m_height: 176
   m_width: 216
-  m_x: 12
-  m_y: -168
+  m_x: -48
+  m_y: -228
   m_minimumInputSocketsCount: 1
   m_minimumOutputSocketsCount: 1
   m_graphId: 0a655d1c-630a-46ea-9de9-c9b54b3abca1
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_inputSockets:
   - m_connectionMode: 1
     m_connections:
-    - m_inputConnectionPoint: {x: 202, y: 4}
+    - m_inputConnectionPoint: {x: -2, y: 4}
       m_outputConnectionPoint: {x: 202, y: 4}
       m_id: 85bfadee-25ae-4ab7-b13a-17c4d1393320
       m_inputNodeId: 75dc81e4-9359-4c1e-8e4b-ee1190febf34
@@ -427,7 +427,7 @@ MonoBehaviour:
   - m_connectionMode: 0
     m_connections:
     - m_inputConnectionPoint: {x: 202, y: 4}
-      m_outputConnectionPoint: {x: 202, y: 4}
+      m_outputConnectionPoint: {x: -2, y: 4}
       m_id: 7898172b-4954-455c-a034-5fee88a01b59
       m_inputNodeId: 17d3493d-d453-4ce1-b3a9-67d91ccc3394
       m_inputSocketId: 248e67d3-5c86-4880-9dc3-e9f10e1ed3cd
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_useUpdate: 0
   m_height: 128
   m_width: 216
-  m_x: 72
+  m_x: 228
   m_y: 24
   m_minimumInputSocketsCount: 1
   m_minimumOutputSocketsCount: 1
@@ -471,10 +471,10 @@ MonoBehaviour:
   m_onEnterShowViews:
   - Category: Logopedia
     InstantAction: 0
-    Name: "UIView_\_Creation"
+    Name: UIView_Creation
   m_onEnterHideViews: []
   m_onExitShowViews: []
   m_onExitHideViews:
   - Category: Logopedia
     InstantAction: 0
-    Name: "UIView_\_Creation"
+    Name: UIView_Creation

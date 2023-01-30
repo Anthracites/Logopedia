@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using Zenject;
 using UnityEngine.UI;
 using Doozy.Engine;
 using Logopedia.UIConnection;
+using Logopedia.GamePlay;
 
 namespace Logopedia.UserInterface
 {
     public class BGTemplate : MonoBehaviour
     {
         [Inject]
-        StoryManager _storyManager;
+        ItemsManager _itemsManager;
+
 
 
         [SerializeField]
@@ -28,7 +31,9 @@ namespace Logopedia.UserInterface
 
         public void SendSpriteToManager()
         {
-            _storyManager.BackGround.GetComponent<Image>().sprite = _sprite;
+            _itemsManager.Background.GetComponent<Image>().sprite = _sprite;
+            _itemsManager.Background.GetComponent<Image>().sprite.name = gameObject.name;
+
             GameEventMessage.SendEvent(EventsLibrary.BGSpriteChanged);
         }
 
