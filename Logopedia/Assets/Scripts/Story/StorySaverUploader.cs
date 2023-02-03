@@ -21,6 +21,7 @@ namespace Logopedia.GamePlay
         [Inject]
         PopUpManager _popUpManager;
 
+
         private int _currentStorySceneIndex;
         private Sprite _character, _backGround;
         private Story _currentStory;
@@ -33,17 +34,20 @@ namespace Logopedia.GamePlay
 
         void ChechContentFolder()
         {
-#if !UNITY_EDITOR
-            var path = Application.dataPath + "/Resources/Stories";
+            var path = Application.dataPath + SpritesPathLibrary.ContentFolderPath;
 
             if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(Application.dataPath + "/Resources/Sprites/GamePlaySprites/Garments");
-                Directory.CreateDirectory(Application.dataPath + "/Resources/Sprites/GamePlaySprites/BackGrounds");
-                Directory.CreateDirectory(Application.dataPath + "/Resources/Sprites/GamePlaySprites/Characters");
-                Directory.CreateDirectory(Application.dataPath + "/Resources/Stories");
+                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.GarmentSprites);
+                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.BGSprites);
+                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.CharacterSprites);
+                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.CharacterAnimations);
+                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.Sounds);
+
+                _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.NoSpritesNotification;
+                GameEventMessage.SendEvent(EventsLibrary.ShowPopUp);
+
             }
-#endif
         }
 
         public void ResetSaverUploader()
@@ -63,9 +67,16 @@ namespace Logopedia.GamePlay
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             });
             File.WriteAllText(path, _storyString);
-            Debug.Log(_storyString.ToString());
+            //Debug.Log(_storyString.ToString());
+            if (_popUpManager.ExitToMenu == true)
+            {
+                GameEventMessage.SendEvent(EventsLibrary.GoToMenu);
+                _popUpManager.ExitToMenu = false;
+            }
+
             _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.StorySaved;
             GameEventMessage.SendEvent(EventsLibrary.ShowPopUp);
+
         }
         }
     }

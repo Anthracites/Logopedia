@@ -26,6 +26,7 @@ namespace Logopedia.UserInterface
         {
             _scrolls[1].SetActive(true);
             _scrolls[2].SetActive(true);
+            _scrolls[3].SetActive(true);
             _controlButtonImage.sprite = _up;
             _controlButton.onClick.RemoveAllListeners();
             _controlButton.onClick.AddListener(MinimazePanel);
@@ -35,6 +36,7 @@ namespace Logopedia.UserInterface
         {
             _scrolls[1].SetActive(false);
             _scrolls[2].SetActive(false);
+            _scrolls[3].SetActive(false);
             _controlButtonImage.sprite = _down;
             _controlButton.onClick.RemoveAllListeners();
             _controlButton.onClick.AddListener(MaximazePanel);

@@ -33,7 +33,7 @@ public class PopUpController : MonoBehaviour
     [SerializeField]
     private Image _icon;
     [SerializeField]
-    private Button ButtonOk, ButtonPaste, _cancelButton, _closeButton;
+    private Button ButtonOk, ButtonPaste, _cancelButton, _closeButton, ButtonNo;
     [SerializeField]
     private UIPopup _thisPopUp;
     [SerializeField]
@@ -65,7 +65,9 @@ public class PopUpController : MonoBehaviour
         _currentPopUpConfug = _popUpManager.CurrentPopUpConfig;
         ConfigPopUp(_currentPopUpConfug);
 
-        ButtonOk.onClick.RemoveAllListeners();
+            ButtonOk.onClick.RemoveAllListeners();
+            ButtonNo.onClick.RemoveAllListeners();
+
             switch (_popUpName)
             {
                 case ("NewStory"):
@@ -75,6 +77,10 @@ public class PopUpController : MonoBehaviour
                 case ("PlayNewGame"):
                     LoadStories();
                     ButtonOk.onClick.AddListener(GoToPlayNewGame);
+                    break;
+
+                case ("ConfirmExitToMenuFromGame"):
+                    ButtonOk.onClick.AddListener(ExitWhithoutSave);
                     break;
 
                 case ("EditStory"):
@@ -90,11 +96,36 @@ public class PopUpController : MonoBehaviour
                 case ("StorySaved"):
                     ButtonOk.onClick.AddListener(ClosePopUp);
                     break;
+                case ("СonfirmSaveStory"):
+                    ButtonOk.onClick.AddListener(SaveStory);
+                    ButtonNo.onClick.AddListener(ExitWhithoutSave);
+                    break;
+                case ("NoSpritesNotification"):
+                    ButtonOk.onClick.AddListener(GoToUploadSprites);
+                    break;
                 default:
                 ButtonOk.onClick.AddListener(ClosePopUp);
                 break;
         }
     }
+
+        void GoToUploadSprites()
+        {
+            GameEventMessage.SendEvent(EventsLibrary.GoToSettings);
+            ClosePopUp();
+        }
+
+        void ExitWhithoutSave()
+        {
+            GameEventMessage.SendEvent(EventsLibrary.GoToMenu);
+            ClosePopUp();
+        }
+
+        void SaveStory()
+        {
+            _storyManager.IsStorySave = true;
+            GameEventMessage.SendEvent(EventsLibrary.SaveStory);
+        }
 
         void CleanScene()
         {
@@ -115,6 +146,14 @@ public class PopUpController : MonoBehaviour
         void GoToEditStory()
         {
             GameEventMessage.SendEvent(EventsLibrary.GoToEditStory);
+            string _storyJsonName = _dropdown.options[_dropdown.value].text;
+            var _storyJson = File.ReadAllText(Application.dataPath + "/Resources/Stories/" + _storyJsonName);
+            var _choosenStory = JsonConvert.DeserializeObject<Story>(_storyJson);
+            _storyManager.CurrentStory = _choosenStory;
+            _storyManager.IsStoryCreartionStart = true;
+            _storyManager.IsStoryEdit = true;
+            GameEventMessage.SendEvent(EventsLibrary.GoToNewGame);
+            ClosePopUp();
         }
 
         void LoadStories()
@@ -181,6 +220,7 @@ public class PopUpController : MonoBehaviour
         _popUpName = _config.PopUpName;
         _title.text = _config.Title;
         _icon.sprite = Resources.Load<Sprite>(_config.IconWay);
+            ButtonNo.gameObject.SetActive(_config.IsActiveNoButton);
         _closeButton.gameObject.SetActive(_config.IsActiveCloseButton);
         _dropdown.gameObject.SetActive(_config.IsActiveDropDown);
             _inpupPanel.SetActive(_config.IsActiveInputField);
@@ -198,7 +238,8 @@ public class PopUpController : MonoBehaviour
 
     public void ClosePopUp()
     {
-        _thisPopUp.Hide();
+
+            _thisPopUp.Hide();
     }
 }
 }

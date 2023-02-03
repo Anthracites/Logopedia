@@ -8,6 +8,8 @@ using Doozy.Engine;
 using Spine.Unity;
 using Zenject;
 using Logopedia.UIConnection;
+using Doozy.Engine.Soundy;
+
 
 namespace Logopedia.GamePlay
 {
@@ -15,20 +17,26 @@ namespace Logopedia.GamePlay
     {
         [Inject]
         ItemsManager _itemsManager;
+        [Inject]
+        SettingsManager _settingsManager;
 
         [SerializeField]
         private GameObject _item, _starsObj, _garment;
         [SerializeField]
         private SkeletonGraphic _stars;
+        [SerializeField]
+        private SoundyData _putItem, _takeItem;
 
         void Start()
         {
             _stars = _starsObj.GetComponent<SkeletonGraphic>();
+            GetSound();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             SendItem();
+            SoundyManager.Play(_takeItem);
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
         }
 
@@ -52,6 +60,7 @@ namespace Logopedia.GamePlay
                 {
                     //other.SetParent(transform);
                     other.transform.position = transform.position;
+                    SoundyManager.Play(_putItem);
                     ShowAnimation();
                 }
                 else
@@ -72,6 +81,13 @@ namespace Logopedia.GamePlay
         {
             _stars.enabled = true;
             _stars.AnimationState.SetAnimation(0, "correct_answer", false);
+        }
+        public void GetSound()
+        {
+            _putItem.DatabaseName = _settingsManager.DataBaseName;
+            _putItem.SoundName = _settingsManager.CorrectAnswer;
+            _takeItem.DatabaseName = _settingsManager.DataBaseName;
+            _takeItem.SoundName = _settingsManager.TakeItem;
         }
     }
 }

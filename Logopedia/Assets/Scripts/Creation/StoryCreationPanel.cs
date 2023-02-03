@@ -16,7 +16,7 @@ namespace Logopedia.UserInterface
         StoryManager _storyManager;
 
         [SerializeField]
-        private GameObject _character, _bg, _garmentPanel;
+        private GameObject _character, _bg, _garmentPanel, _previewSwichButton, _splashScreenPanel;
         [SerializeField]
         private List<GameObject> _garments;
         [SerializeField]
@@ -24,23 +24,34 @@ namespace Logopedia.UserInterface
         [SerializeField]
         int _sceneNumber;
 
+        private void Awake()
+        {
+            if (_storyManager.IsStoryEdit == false)
+            {
+                _itemsManager.MiddleScenePanel = _garmentPanel;
+
+            }
+        }
 
         private void Start()
         {
-            _sceneNumber = Int32.Parse(gameObject.name);
-            _scene = new StoryScene();
-            _scene.SceneNumberInStory = _sceneNumber;
-            _scene.Items = new List<StoryScene.SceneItem>();
-            _garments = new List<GameObject>();
-            _itemsManager.MiddleScenePanel = _garmentPanel;
-            _storyManager.CurrentStory.Scenes.Add(_scene);
-            Debug.Log("Scene number in story: " + _storyManager.CurrentStorySceneIndex.ToString());
+            if (_storyManager.IsStoryEdit == false)
+            {
+                _sceneNumber = Int32.Parse(gameObject.name);
+                _scene = new StoryScene();
+                _scene.SceneNumberInStory = _sceneNumber;
+                _scene.Items = new List<StoryScene.SceneItem>();
+                _garments = new List<GameObject>();
+                _storyManager.CurrentStory.Scenes.Add(_scene);
+            }
         }
 
         private void OnEnable()
         {
             _itemsManager.Character = _character;
             _itemsManager.Background = _bg;
+            _itemsManager.SplashScreenPanel = _splashScreenPanel;
+            _itemsManager.PreviewButton = _previewSwichButton;
         }
 
         private void OnDisable()
@@ -48,6 +59,10 @@ namespace Logopedia.UserInterface
             ConvertToScene();
         }
 
+        public void PreviewButtonActivate()
+        {
+            GameEventMessage.SendEvent(EventsLibrary.PreviewScene);
+        }
 
         public void ConvertToScene()
 
@@ -55,6 +70,7 @@ namespace Logopedia.UserInterface
             _sceneNumber = Int32.Parse(gameObject.name);
             _scene.SceneNumberInStory = _sceneNumber;
             _scene.ActiveItemCount = 0;
+            _scene.IsSceneSplashScreen = _splashScreenPanel.activeSelf;
             _scene.Items.Clear();
             var _garmentsArray = _garmentPanel.GetComponentsInChildren<Garment>();
 

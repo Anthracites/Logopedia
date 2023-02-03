@@ -20,7 +20,8 @@ namespace Logopedia.UserInterface
     {
         [Inject]
         StoryManager _storyManager;
-
+        [Inject]
+        PopUpManager _popUpManager;
         [Inject]
         StoryPlayPanel.Factory _storyPlayPanel;
         [Inject]
@@ -63,40 +64,38 @@ namespace Logopedia.UserInterface
                 _scenePanel.transform.SetParent(transform);
                 _scenePanel.transform.position = Vector3.zero;
                 _scenePanel.GetComponent<StoryPlayPanel>().ItemCount = _scene.ActiveItemCount;
+                _scenePanel.GetComponent<StoryPlayPanel>().ItemCount = _scene.ActiveItemCount;
+                _scenePanel.GetComponent<StoryPlayPanel>().IsSplashScreen = _scene.IsSceneSplashScreen;
+
+
                 _scenePanel.name = _scene.SceneNumberInStory.ToString();
                 _scenePanels.Add(_scenePanel);
 
 
                 var _bg = _scenePanel.transform.GetChild(0).gameObject;
 
-
-                //string _bgPath = _scene.CurrentBGForSave;
-
-                //Sprite _bgSprite = Resources.Load<Sprite>(_bgPath);
-
-                // public string url = "https://unity3d.com/files/images/ogimg.jpg";
-
-                //DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + "/Resources/");
-
                 WWW _BGwww = new WWW("file://" + _scene.CurrentBGForSave);
-                Debug.Log("BGWWW: " + _BGwww);
 
                 Rect _BGrect = new Rect(0, 0, _BGwww.texture.width, _BGwww.texture.height);
                 Sprite _bgSprite = Sprite.Create(_BGwww.texture, _BGrect, new Vector2(0.5f, 0.5f));
 
                 _bg.GetComponent<Image>().sprite = _bgSprite;
 
-                var _character = _scenePanel.transform.GetChild(1).gameObject;
-                string _characterPath = _scene.SceneCharacter.CharacterSprite;
+                if (_scene.SceneCharacter.IsChacterActive == true)
+                {
+                    var _character = _scenePanel.transform.GetChild(1).gameObject;
+                    _character.SetActive(true);
+                    string _characterPath = _scene.SceneCharacter.CharacterSprite;
 
-                WWW _Characterwww = new WWW("file://" + _characterPath);
-                Rect _Characterrect = new Rect(0, 0, _Characterwww.texture.width, _Characterwww.texture.height);
-                Sprite _characterSprite = Sprite.Create(_Characterwww.texture, _Characterrect, new Vector2(0.5f, 0.5f));
+                    WWW _Characterwww = new WWW("file://" + _characterPath);
+                    Rect _Characterrect = new Rect(0, 0, _Characterwww.texture.width, _Characterwww.texture.height);
+                    Sprite _characterSprite = Sprite.Create(_Characterwww.texture, _Characterrect, new Vector2(0.5f, 0.5f));
 
-                _character.GetComponent<Image>().sprite = _characterSprite;
-                _character.transform.localPosition = new Vector3(_scene.SceneCharacter.CharacterPosition.x, _scene.SceneCharacter.CharacterPosition.y, _scene.SceneCharacter.CharacterPosition.z);
-                _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
-                _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);
+                    _character.GetComponent<Image>().sprite = _characterSprite;
+                    _character.transform.localPosition = new Vector3(_scene.SceneCharacter.CharacterPosition.x, _scene.SceneCharacter.CharacterPosition.y, _scene.SceneCharacter.CharacterPosition.z);
+                    _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
+                    _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);
+                }
 
                 foreach (StoryScene.SceneItem _sceneItem in _scene.Items)
                 {
@@ -168,6 +167,8 @@ namespace Logopedia.UserInterface
             yield return new WaitForSeconds(2);
 
             _scenePanels[_currentScene].GetComponent<UIView>().Hide();
+            Debug.Log("Level" + _currentScene.ToString() + "complite");
+
             _currentScene += 1;
             if (_currentScene < _scenePanels.Count)
             {
@@ -184,7 +185,8 @@ namespace Logopedia.UserInterface
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                GameEventMessage.SendEvent(EventsLibrary.GoToMenu);
+                _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.ConfirmExitToMenuFromGame;
+                GameEventMessage.SendEvent(EventsLibrary.ShowPopUp);
             }
         }
     }

@@ -11,6 +11,7 @@ namespace Logopedia
         public static string GoToNewGame = "GoToNewGame"; //Переход к новой игре
         public static string GoToContinueGame = "GoToContinueGame"; // Переход к продолжению игры
         public static string GoToMenu = "GoToMenu"; // Переход/возвращение в меню
+        public static string GoToSettings = "GoToSettings"; // Переход в настройки
 
         public static string StoryConvertedForSave = "StoryConvertedForSave"; // Конвертация объектов в сцену
         public static string SaveStory = "SaveStory"; // Сохранить сюжет
@@ -23,5 +24,13 @@ namespace Logopedia
         public static string BGSpriteChanged = "BGSpriteChanged"; // Изменен фон сцены
         public static string CharacterSpriteChanged = "CharacterSpriteChanged"; // Изменен персонаж
         public static string ItemSelected = "ItemSelected"; //Предмет выбран
+        public static string PreviewScene = "PreviewScene"; // Скрывает footer и headr на cretion view
+        public static string BackFromPreviewScene = "BackFromPreviewScene"; // Отображает footer и headr на cretion view
+
+        public static string CorrectAnswerSoundChanged = "CorrectAnswerSoundChanged";
+        public static string BGMusicSoundChanged = "BGMusicSoundChanged";
+        public static string GoNextSceneSoundChanged = "GoNextSceneSoundChanged";
+        public static string TakeItemSoundChanged = "TakeItemSoundChanged";
+
     }
 }

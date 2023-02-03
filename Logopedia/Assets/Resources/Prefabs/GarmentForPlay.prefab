@@ -367,6 +367,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 4751630077956887163}
   _garment: {fileID: 8764531919979952961}
+  _takeItem:
+    SoundSource: 0
+    DatabaseName: Logopedia
+    SoundName: pick
+    AudioClip: {fileID: 0}
+    OutputAudioMixerGroup: {fileID: 0}
 --- !u!1 &8764531919979952961
 GameObject:
   m_ObjectHideFlags: 0

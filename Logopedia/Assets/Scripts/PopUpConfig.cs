@@ -9,6 +9,7 @@ namespace Logopedia.UserInterface
         public string PopUpName;
         public string IconWay;
         public string Title;
+        public bool IsActiveNoButton;
         public bool IsActiveCloseButton;
         public bool IsActiveInputField;
         public bool IsActiveCancelButton;
@@ -24,6 +25,7 @@ namespace Logopedia.UserInterface
             PopUpName = "NewStory",
             IconWay = "Sprites/UI/AddNew",
             Title = "Создать новый сюжет. Введите имя нового сюжета...",
+            IsActiveNoButton = false,
             IsActiveCloseButton = true,
             IsActiveInputField = true,
             IsActiveCancelButton = true,
@@ -36,6 +38,7 @@ namespace Logopedia.UserInterface
             PopUpName = "PlayNewGame",
             IconWay = "Sprites/UI/play",
             Title = "Выберите сюжет:",
+            IsActiveNoButton = false,
             IsActiveCloseButton = true,
             IsActiveInputField = false,
             IsActiveCancelButton = true,
@@ -48,6 +51,7 @@ namespace Logopedia.UserInterface
             PopUpName = "EditStory",
             IconWay = "Sprites/UI/edit",
             Title = "Выберите сюжет:",
+            IsActiveNoButton = false,
             IsActiveCloseButton = true,
             IsActiveInputField = false,
             IsActiveCancelButton = true,
@@ -60,6 +64,7 @@ namespace Logopedia.UserInterface
             PopUpName = "СonfirmClearScene",
             IconWay = "Sprites/UI/broom",
             Title = "Очистить текущую сцену?",
+            IsActiveNoButton = false,
             IsActiveCloseButton = true,
             IsActiveInputField = false,
             IsActiveCancelButton = true,
@@ -72,6 +77,7 @@ namespace Logopedia.UserInterface
             PopUpName = "СonfirmRemoveScene",
             IconWay = "Sprites/UI/delete",
             Title = "Удалить текущую сцену?",
+            IsActiveNoButton = false,
             IsActiveCloseButton = true,
             IsActiveInputField = false,
             IsActiveCancelButton = true,
@@ -85,9 +91,49 @@ namespace Logopedia.UserInterface
             PopUpName = "StorySaved",
             IconWay = "Sprites/UI/Save",
             Title = "Сюжет сохранён",
+            IsActiveNoButton = false,
             IsActiveCloseButton = true,
             IsActiveInputField = false,
             IsActiveCancelButton = false,
+            IsActiveDropDown = false,
+            CloseAnywareClick = true
+        };
+
+        public static PopUpConfig СonfirmSaveStory = new PopUpConfig()
+        {
+            PopUpName = "СonfirmSaveStory",
+            IconWay = "Sprites/UI/Save",
+            Title = "Сохранить сюжет?",
+            IsActiveNoButton = true,
+            IsActiveCloseButton = true,
+            IsActiveInputField = false,
+            IsActiveCancelButton = true,
+            IsActiveDropDown = false,
+            CloseAnywareClick = false
+        };
+
+        public static PopUpConfig NoSpritesNotification = new PopUpConfig()
+        {
+            PopUpName = "NoSpritesNotification",
+            IconWay = "Sprites/UI/Delete",
+            Title = "Нужно загрузить изоюражения",
+            IsActiveNoButton = false,
+            IsActiveCloseButton = true,
+            IsActiveInputField = false,
+            IsActiveCancelButton = true,
+            IsActiveDropDown = false,
+            CloseAnywareClick = false
+        };
+
+        public static PopUpConfig ConfirmExitToMenuFromGame = new PopUpConfig()
+        {
+            PopUpName = "ConfirmExitToMenuFromGame",
+            IconWay = "Sprites/UI/Home",
+            Title = "Выйти в меню?",
+            IsActiveNoButton = false,
+            IsActiveCloseButton = true,
+            IsActiveInputField = false,
+            IsActiveCancelButton = true,
             IsActiveDropDown = false,
             CloseAnywareClick = true
         };

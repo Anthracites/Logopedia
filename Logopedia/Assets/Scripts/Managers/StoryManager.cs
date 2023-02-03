@@ -12,6 +12,7 @@ namespace Logopedia.UIConnection
     public class StoryManager : IInitializable
     {
         public bool IsStoryCreartionStart = false;
+        public bool IsStoryEdit;
         public Story CurrentStory;
         public int CurrentStorySceneIndex;
         public bool IsStorySave;

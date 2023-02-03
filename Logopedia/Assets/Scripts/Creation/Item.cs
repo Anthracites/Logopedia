@@ -7,6 +7,8 @@ using UnityEngine.UI;
 using Zenject;
 using Doozy.Engine;
 using Logopedia.UIConnection;
+using Doozy.Engine.Soundy;
+
 
 namespace Logopedia.GamePlay
 {
@@ -14,6 +16,8 @@ namespace Logopedia.GamePlay
     {
         [Inject]
         ItemsManager _itemsManager;
+        [Inject]
+        SettingsManager _settingsManager;
 
         [SerializeField]
         private CanvasGroup _canvasGroup;
@@ -21,6 +25,13 @@ namespace Logopedia.GamePlay
         private GameObject _slot, _garment;
         [SerializeField]
         private Outline _outline;
+        [SerializeField]
+        private SoundyData _takeItem;
+
+        void Start()
+        {
+            GetTakeSound();
+        }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
@@ -41,6 +52,7 @@ namespace Logopedia.GamePlay
 
         void StartMove()
         {
+            SoundyManager.Play(_takeItem);
             _outline.enabled = true;
             _itemsManager.CurrentGarment = _garment;
             _itemsManager.CurrentItem = gameObject;
@@ -84,6 +96,12 @@ namespace Logopedia.GamePlay
                 _canvasGroup.blocksRaycasts = true;
                 _outline.enabled = false;
             }
+        }
+
+        public void GetTakeSound()
+        {
+            _takeItem.DatabaseName = _settingsManager.DataBaseName;
+            _takeItem.SoundName = _settingsManager.TakeItem;
         }
 
     }

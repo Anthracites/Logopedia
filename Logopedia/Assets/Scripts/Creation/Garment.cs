@@ -15,6 +15,8 @@ namespace Logopedia.GamePlay
     {
         [Inject]
         ItemsManager _itemsManager;
+        [Inject]
+        StoryManager _storyManager;
 
         [SerializeField]
         private GameObject _item, _itemShadow;
@@ -22,7 +24,7 @@ namespace Logopedia.GamePlay
         private IEnumerator _moveWithMouse;
 
 
-        private void Start()
+        private void Awake()
         {
             _itemsManager.CurrentGarment = gameObject;
             _itemsManager.CurrentItem = _item;
@@ -30,7 +32,10 @@ namespace Logopedia.GamePlay
             _itemsManager.Garments.Add(gameObject);
             GameEventMessage.SendEvent(EventsLibrary.ItemCreated);
             _moveWithMouse = MoveWhithMouse();
-            StartCoroutine(_moveWithMouse);
+            if (_storyManager.IsStoryEdit == false)
+            {
+                StartCoroutine(_moveWithMouse);
+            }
         }
 
         private IEnumerator MoveWhithMouse()

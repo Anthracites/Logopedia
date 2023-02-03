@@ -4,6 +4,7 @@ using Zenject;
 using Doozy.Engine;
 using Logopedia;
 using System.Collections.Generic;
+using System;
 
 
 public class StoryPlayPanel : MonoBehaviour
@@ -12,14 +13,29 @@ public class StoryPlayPanel : MonoBehaviour
     ItemsManager _itemsManager;
 
     public int ItemCount;
-    private int _putItemCount;
+    private int _putItemCount, _sceneNumber;
+    public bool IsSplashScreen;
 
     private void Start()
     {
-        _itemsManager.ItemCount = ItemCount;
-        Debug.Log("Items count in panel: " + _itemsManager.Garments.Count);
+        _sceneNumber = Int32.Parse(gameObject.name);
+
+        if ((IsSplashScreen == true) & (_sceneNumber == 0))
+            {
+                GameEventMessage.SendEvent(EventsLibrary.LevelComplete);
+            }
     }
-    public void SwichItemCount() // Подписать на событие "ItemInSlot"
+
+    private void OnEnable()
+    {
+       if (IsSplashScreen == true)
+        {
+            GameEventMessage.SendEvent(EventsLibrary.LevelComplete);
+        }
+        _itemsManager.ItemCount = ItemCount;
+    }
+
+    public void SwichItemCount()
     {
         if (_putItemCount < ItemCount)
         {
@@ -28,8 +44,6 @@ public class StoryPlayPanel : MonoBehaviour
             if (_putItemCount == ItemCount)
             {
                 GameEventMessage.SendEvent(EventsLibrary.LevelComplete);
-                Debug.Log("Level complete");
-
             }
         }
 

@@ -12,6 +12,9 @@ namespace Logopedia.UserInterface
     {
         [Inject]
         PopUpManager _popUpManager;
+        [Inject]
+        StoryManager _storyManager;
+
         [SerializeField]
         private Button _create;
 
@@ -22,6 +25,7 @@ namespace Logopedia.UserInterface
 
        public void PlayNewGame()
         {
+            _storyManager.IsStoryEdit = false;
             _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.PlayGame;
             GameEventMessage.SendEvent(EventsLibrary.ShowPopUp);
         }

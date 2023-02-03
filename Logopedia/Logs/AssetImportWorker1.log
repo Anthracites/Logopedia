@@ -22,7 +22,7 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-53359
+49230
 Successfully changed project path to: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia
 /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -54,7 +54,7 @@ Successfully changed project path to: /Users/natalagusarova/Documents/MyDocument
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 197.70 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 226.23 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.9f1 (07e076b6d414)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.1.9f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -70,7 +70,7 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2022.1.9f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2022.1.9f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2022.1.9f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56015
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2022.1.9f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
@@ -80,7 +80,7 @@ Register platform support module: /Applications/Unity/Hub/Editor/2022.1.9f1/Play
 Register platform support module: /Applications/Unity/Hub/Editor/2022.1.9f1/PlaybackEngines/AppleTVSupport/UnityEditor.AppleTV.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2022.1.9f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2022.1.9f1/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.002662 seconds.
+Registered in 0.003647 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
@@ -91,42 +91,42 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 184.13 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 224.04 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.031 seconds
+- Completed reload, in  1.193 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1032ms)
-		BeginReloadAssembly (71ms)
+	ReloadAssembly (1193ms)
+		BeginReloadAssembly (80ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (826ms)
-			LoadAssemblies (70ms)
+		EndReloadAssembly (958ms)
+			LoadAssemblies (81ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (159ms)
-				TypeCache.Initialize (158ms)
-					TypeCache.ScanAssembly (157ms)
+			SetupTypeCache (180ms)
+				TypeCache.Initialize (179ms)
+					TypeCache.ScanAssembly (178ms)
 				ResolveRequiredComponents (1ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (558ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (639ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (175ms)
-				SetLoadedEditorAssemblies (9ms)
-				RefreshPlugins (184ms)
+				InitializePlatformSupportModulesInManaged (186ms)
+				SetLoadedEditorAssemblies (15ms)
+				RefreshPlugins (224ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (135ms)
-				ProcessInitializeOnLoadMethodAttributes (52ms)
+				ProcessInitializeOnLoadAttributes (150ms)
+				ProcessInitializeOnLoadMethodAttributes (62ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005728 seconds.
+Registered in 0.006413 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -137,35 +137,35 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 181.95 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 205.11 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.063 seconds
+- Completed reload, in  2.334 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2064ms)
-		BeginReloadAssembly (255ms)
+	ReloadAssembly (2335ms)
+		BeginReloadAssembly (280ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (144ms)
-		EndReloadAssembly (1681ms)
-			LoadAssemblies (110ms)
+			CreateAndSetChildDomain (153ms)
+		EndReloadAssembly (1912ms)
+			LoadAssemblies (178ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (425ms)
-				TypeCache.Initialize (411ms)
-					TypeCache.ScanAssembly (407ms)
+			SetupTypeCache (502ms)
+				TypeCache.Initialize (487ms)
+					TypeCache.ScanAssembly (482ms)
 				ResolveRequiredComponents (14ms)
-			ReleaseScriptCaches (7ms)
-			RebuildScriptCaches (117ms)
-			SetupLoadedEditorAssemblies (941ms)
+			ReleaseScriptCaches (10ms)
+			RebuildScriptCaches (128ms)
+			SetupLoadedEditorAssemblies (1002ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (40ms)
-				SetLoadedEditorAssemblies (12ms)
-				RefreshPlugins (182ms)
-				BeforeProcessingInitializeOnLoad (134ms)
+				InitializePlatformSupportModulesInManaged (57ms)
+				SetLoadedEditorAssemblies (13ms)
+				RefreshPlugins (205ms)
+				BeforeProcessingInitializeOnLoad (146ms)
 				ProcessInitializeOnLoadAttributes (453ms)
-				ProcessInitializeOnLoadMethodAttributes (117ms)
+				ProcessInitializeOnLoadMethodAttributes (124ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -174,13 +174,13 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launching external process: /Applications/Unity/Hub/Editor/2022.1.9f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.14 seconds
-Refreshing native plugins compatible for Editor in 1.09 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.19 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5727 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 151 unused Assets / (1.4 MB). Loaded Objects now: 6173.
+Unloading 5731 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 151 unused Assets / (1.4 MB). Loaded Objects now: 6178.
 Memory consumption went from 0.83 GB to 0.83 GB.
-Total: 6.407489 ms (FindLiveObjects: 0.601930 ms CreateObjectMapping: 0.734837 ms MarkObjects: 3.696846 ms  DeleteObjects: 1.373045 ms)
+Total: 5.915188 ms (FindLiveObjects: 0.571329 ms CreateObjectMapping: 0.805930 ms MarkObjects: 3.535133 ms  DeleteObjects: 1.001528 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -193,16 +193,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 13143.240026 seconds.
-  path: Assets/Resources/Stories/789.json
-  artifactKey: Guid(c83472386b6154ece824da89c6f71109) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Stories/789.json using Guid(c83472386b6154ece824da89c6f71109) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.241241 seconds  code(4) message(Build asset version error: assets/resources/stories/789.json in SourceAssetDB has modification time of '2023-01-29T18:06:57Z' while content on disk has modification time of '0001-01-01T00:00:00Z')
-  ERROR: Build asset version error: assets/resources/stories/789.json in SourceAssetDB has modification time of '2023-01-29T18:06:57Z' while content on disk has modification time of '0001-01-01T00:00:00Z'
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005997 seconds.
+Registered in 0.009219 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -213,7 +206,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.53 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
   at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
@@ -256,43 +249,265 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.594 seconds
+- Completed reload, in  1.724 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1595ms)
-		BeginReloadAssembly (170ms)
+	ReloadAssembly (1725ms)
+		BeginReloadAssembly (200ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (79ms)
-		EndReloadAssembly (1300ms)
-			LoadAssemblies (94ms)
+			CreateAndSetChildDomain (92ms)
+		EndReloadAssembly (1396ms)
+			LoadAssemblies (110ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (401ms)
-				TypeCache.Initialize (383ms)
-					TypeCache.ScanAssembly (376ms)
-				ResolveRequiredComponents (18ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (79ms)
-			SetupLoadedEditorAssemblies (636ms)
+			SetupTypeCache (443ms)
+				TypeCache.Initialize (428ms)
+					TypeCache.ScanAssembly (422ms)
+				ResolveRequiredComponents (15ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (671ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (45ms)
+				InitializePlatformSupportModulesInManaged (83ms)
 				SetLoadedEditorAssemblies (13ms)
 				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (98ms)
-				ProcessInitializeOnLoadAttributes (346ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (338ms)
+				ProcessInitializeOnLoadMethodAttributes (136ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6180.
+Memory consumption went from 0.83 GB to 0.83 GB.
+Total: 5.427278 ms (FindLiveObjects: 0.404627 ms CreateObjectMapping: 0.419310 ms MarkObjects: 3.715150 ms  DeleteObjects: 0.886806 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 671.657358 seconds.
+  path: Assets/Resources/Prefabs/Garment.prefab
+  artifactKey: Guid(fcce07fdeaaef44fdaa7cdb43b9f03ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Garment.prefab using Guid(fcce07fdeaaef44fdaa7cdb43b9f03ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cffb27df46ee88c83e55159c77fc999d') in 0.259242 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005788 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.577 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1578ms)
+		BeginReloadAssembly (174ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (80ms)
+		EndReloadAssembly (1279ms)
+			LoadAssemblies (101ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (407ms)
+				TypeCache.Initialize (394ms)
+					TypeCache.ScanAssembly (388ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (609ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (43ms)
+				SetLoadedEditorAssemblies (12ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (328ms)
+				ProcessInitializeOnLoadMethodAttributes (125ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5673 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6186.
+Memory consumption went from 0.91 GB to 0.91 GB.
+Total: 5.687859 ms (FindLiveObjects: 0.492168 ms CreateObjectMapping: 0.442029 ms MarkObjects: 3.733154 ms  DeleteObjects: 1.019667 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 85.954380 seconds.
+  path: Assets/Resources/Prefabs/Garment.prefab
+  artifactKey: Guid(fcce07fdeaaef44fdaa7cdb43b9f03ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Garment.prefab using Guid(fcce07fdeaaef44fdaa7cdb43b9f03ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feb95a33d3feb4d3103b87ec7c665a0e') in 0.143157 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006058 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.571 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1572ms)
+		BeginReloadAssembly (204ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (96ms)
+		EndReloadAssembly (1246ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (384ms)
+				TypeCache.Initialize (368ms)
+					TypeCache.ScanAssembly (362ms)
+				ResolveRequiredComponents (16ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (600ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (41ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (94ms)
+				ProcessInitializeOnLoadAttributes (320ms)
 				ProcessInitializeOnLoadMethodAttributes (129ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.29 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5670 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 49 unused Assets / (1.4 MB). Loaded Objects now: 6176.
-Memory consumption went from 0.91 GB to 0.90 GB.
-Total: 5.511114 ms (FindLiveObjects: 0.439129 ms CreateObjectMapping: 0.445089 ms MarkObjects: 3.625101 ms  DeleteObjects: 1.000941 ms)
+Unloading 5673 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6191.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 13.074541 ms (FindLiveObjects: 0.587384 ms CreateObjectMapping: 0.543191 ms MarkObjects: 10.419078 ms  DeleteObjects: 1.523626 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -307,7 +522,7 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005821 seconds.
+Registered in 0.006012 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -318,7 +533,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.36 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
   at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
@@ -361,148 +576,43 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.684 seconds
+- Completed reload, in  1.499 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1685ms)
-		BeginReloadAssembly (173ms)
+	ReloadAssembly (1500ms)
+		BeginReloadAssembly (168ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (78ms)
-		EndReloadAssembly (1390ms)
-			LoadAssemblies (103ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (1214ms)
+			LoadAssemblies (95ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (469ms)
-				TypeCache.Initialize (453ms)
-					TypeCache.ScanAssembly (447ms)
-				ResolveRequiredComponents (16ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (81ms)
-			SetupLoadedEditorAssemblies (642ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (46ms)
-				SetLoadedEditorAssemblies (12ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (101ms)
-				ProcessInitializeOnLoadAttributes (355ms)
-				ProcessInitializeOnLoadMethodAttributes (123ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.92 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5671 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6179.
-Memory consumption went from 0.91 GB to 0.91 GB.
-Total: 6.382768 ms (FindLiveObjects: 0.523637 ms CreateObjectMapping: 0.489696 ms MarkObjects: 4.094606 ms  DeleteObjects: 1.265957 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005491 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for AppleTV target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
-  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
-  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
-  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
-  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
-  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
-  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
-   --- End of inner exception stack trace ---
-  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
-  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
-  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
-
-(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
-
-System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
-  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
-  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
-  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
-  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
-  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
-  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
-   --- End of inner exception stack trace ---
-  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
-  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
-  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
-
-(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.637 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1638ms)
-		BeginReloadAssembly (175ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (76ms)
-		EndReloadAssembly (1329ms)
-			LoadAssemblies (103ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (416ms)
-				TypeCache.Initialize (402ms)
-					TypeCache.ScanAssembly (396ms)
+			SetupTypeCache (386ms)
+				TypeCache.Initialize (372ms)
+					TypeCache.ScanAssembly (367ms)
 				ResolveRequiredComponents (14ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (77ms)
-			SetupLoadedEditorAssemblies (645ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (590ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (44ms)
+				InitializePlatformSupportModulesInManaged (42ms)
 				SetLoadedEditorAssemblies (11ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (94ms)
-				ProcessInitializeOnLoadAttributes (367ms)
-				ProcessInitializeOnLoadMethodAttributes (124ms)
+				ProcessInitializeOnLoadAttributes (325ms)
+				ProcessInitializeOnLoadMethodAttributes (114ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.22 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.83 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5671 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6182.
-Memory consumption went from 0.91 GB to 0.91 GB.
-Total: 5.957829 ms (FindLiveObjects: 0.410476 ms CreateObjectMapping: 0.462757 ms MarkObjects: 4.004058 ms  DeleteObjects: 1.079693 ms)
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6194.
+Memory consumption went from 0.92 GB to 0.92 GB.
+Total: 5.296315 ms (FindLiveObjects: 0.425276 ms CreateObjectMapping: 0.454392 ms MarkObjects: 3.428661 ms  DeleteObjects: 0.987265 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -517,7 +627,7 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006717 seconds.
+Registered in 0.005907 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -528,7 +638,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.29 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
   at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
@@ -571,43 +681,43 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.758 seconds
+- Completed reload, in  1.532 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1768ms)
+	ReloadAssembly (1533ms)
 		BeginReloadAssembly (166ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (76ms)
-		EndReloadAssembly (1487ms)
-			LoadAssemblies (98ms)
+		EndReloadAssembly (1255ms)
+			LoadAssemblies (86ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (435ms)
-				TypeCache.Initialize (419ms)
-					TypeCache.ScanAssembly (414ms)
-				ResolveRequiredComponents (15ms)
+			SetupTypeCache (446ms)
+				TypeCache.Initialize (432ms)
+					TypeCache.ScanAssembly (427ms)
+				ResolveRequiredComponents (14ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (83ms)
-			SetupLoadedEditorAssemblies (729ms)
+			RebuildScriptCaches (75ms)
+			SetupLoadedEditorAssemblies (568ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (76ms)
-				SetLoadedEditorAssemblies (14ms)
+				InitializePlatformSupportModulesInManaged (40ms)
+				SetLoadedEditorAssemblies (12ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (118ms)
-				ProcessInitializeOnLoadAttributes (389ms)
-				ProcessInitializeOnLoadMethodAttributes (128ms)
+				BeforeProcessingInitializeOnLoad (95ms)
+				ProcessInitializeOnLoadAttributes (313ms)
+				ProcessInitializeOnLoadMethodAttributes (104ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5671 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6185.
-Memory consumption went from 0.92 GB to 0.92 GB.
-Total: 5.939088 ms (FindLiveObjects: 0.443180 ms CreateObjectMapping: 0.448195 ms MarkObjects: 4.019258 ms  DeleteObjects: 1.027323 ms)
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6197.
+Memory consumption went from 0.93 GB to 0.92 GB.
+Total: 5.451388 ms (FindLiveObjects: 0.410997 ms CreateObjectMapping: 0.405984 ms MarkObjects: 3.573391 ms  DeleteObjects: 1.060141 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -622,7 +732,7 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005499 seconds.
+Registered in 0.006671 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -633,7 +743,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.43 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
   at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
@@ -676,43 +786,148 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.647 seconds
+- Completed reload, in  1.535 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1648ms)
-		BeginReloadAssembly (188ms)
+	ReloadAssembly (1535ms)
+		BeginReloadAssembly (163ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (71ms)
+		EndReloadAssembly (1246ms)
+			LoadAssemblies (99ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (400ms)
+				TypeCache.Initialize (385ms)
+					TypeCache.ScanAssembly (379ms)
+				ResolveRequiredComponents (16ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (578ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (42ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (321ms)
+				ProcessInitializeOnLoadMethodAttributes (107ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.11 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6200.
+Memory consumption went from 0.93 GB to 0.93 GB.
+Total: 5.620754 ms (FindLiveObjects: 0.430713 ms CreateObjectMapping: 0.447769 ms MarkObjects: 3.694957 ms  DeleteObjects: 1.046520 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006301 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.520 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1521ms)
+		BeginReloadAssembly (193ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (84ms)
-		EndReloadAssembly (1327ms)
-			LoadAssemblies (106ms)
+			CreateAndSetChildDomain (95ms)
+		EndReloadAssembly (1212ms)
+			LoadAssemblies (95ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (440ms)
-				TypeCache.Initialize (425ms)
-					TypeCache.ScanAssembly (419ms)
-				ResolveRequiredComponents (15ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (80ms)
-			SetupLoadedEditorAssemblies (627ms)
+			SetupTypeCache (387ms)
+				TypeCache.Initialize (375ms)
+					TypeCache.ScanAssembly (370ms)
+				ResolveRequiredComponents (12ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (72ms)
+			SetupLoadedEditorAssemblies (576ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (44ms)
-				SetLoadedEditorAssemblies (12ms)
+				InitializePlatformSupportModulesInManaged (41ms)
+				SetLoadedEditorAssemblies (10ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (97ms)
-				ProcessInitializeOnLoadAttributes (342ms)
-				ProcessInitializeOnLoadMethodAttributes (128ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (317ms)
+				ProcessInitializeOnLoadMethodAttributes (117ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.64 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.29 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5671 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6188.
-Memory consumption went from 0.92 GB to 0.92 GB.
-Total: 5.985832 ms (FindLiveObjects: 0.495908 ms CreateObjectMapping: 0.517849 ms MarkObjects: 3.880529 ms  DeleteObjects: 1.090382 ms)
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6203.
+Memory consumption went from 0.93 GB to 0.93 GB.
+Total: 5.672954 ms (FindLiveObjects: 0.380104 ms CreateObjectMapping: 0.513515 ms MarkObjects: 3.759230 ms  DeleteObjects: 1.019265 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -725,67 +940,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 795.174225 seconds.
-  path: Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton_Atlas.asset
-  artifactKey: Guid(6d316a006951b6d4abe20352ab135462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton_Atlas.asset using Guid(6d316a006951b6d4abe20352ab135462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd14d043e30829211e762ec6f1f5fdf73') in 0.125935 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton_Material.mat
-  artifactKey: Guid(3e7b309aa2e4fbd46b65b1dbc7c21052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton_Material.mat using Guid(3e7b309aa2e4fbd46b65b1dbc7c21052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2643d9024bdf452cf67cfbc5d7efe8d4') in 0.225727 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000071 seconds.
-  path: Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton_SkeletonData.asset
-  artifactKey: Guid(9680d5804bc172a4285e213c1569097f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton_SkeletonData.asset using Guid(9680d5804bc172a4285e213c1569097f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) `Assets/Resources/Prefabs/Starts/skeleton.png` and material `skeleton_Material.mat` : IncorrectTexture / Material Settings found: It is strongly recommended to enable `Alpha Is Transparency` on `Straight alpha` textures.
-Assuming `Straight alpha` texture because `Straight Alpha Texture` is enabled at material). (You can disable this warning in `Edit - Preferences - Spine`)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
-UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
-Spine.Unity.Editor.SpineEditorUtilities:IssueWarningsForUnrecommendedTextureSettings (string) (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:270)
-Spine.Unity.Editor.SpineEditorUtilities:IssueWarningsForUnrecommendedTextureSettings () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:185)
-Spine.Unity.Editor.SpineEditorUtilities:Initialize () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:164)
-Spine.Unity.Editor.SpineEditorUtilities:ConfirmInitialization () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:172)
-Spine.Unity.Editor.SkeletonDataAssetInspector:InitializeEditor () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Asset Types/SkeletonDataAssetInspector.cs:105)
-Spine.Unity.Editor.SkeletonDataAssetInspector:OnEnable () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Asset Types/SkeletonDataAssetInspector.cs:84)
-UnityEditor.Editor:CreateEditorWithContext (UnityEngine.Object[],UnityEngine.Object,System.Type) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:518)
-UnityEditor.Editor:CreateEditor (UnityEngine.Object,System.Type) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:562)
-UnityEditor.Editor:CreateEditor (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:557)
-UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:33)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
-
-(Filename: Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs Line: 270)
-
-`Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton.png` : Problematic Texture Settings found: When enabling `Generate Mip Maps` in Gamma color space, it is recommended to disable `sRGB (Color Texture)` on `Premultiply alpha` textures. Otherwise you will receive white border artifacts on an atlas exported with default `Premultiply alpha` settings.
-(You can disable this warning in `Edit - Preferences - Spine`)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
-UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
-Spine.Unity.Editor.SpineEditorUtilities:IssueWarningsForUnrecommendedTextureSettings (string) (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:270)
-Spine.Unity.Editor.SpineEditorUtilities:IssueWarningsForUnrecommendedTextureSettings () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:185)
-Spine.Unity.Editor.SpineEditorUtilities:Initialize () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:164)
-Spine.Unity.Editor.SpineEditorUtilities:ConfirmInitialization () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs:172)
-Spine.Unity.Editor.SkeletonDataAssetInspector:InitializeEditor () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Asset Types/SkeletonDataAssetInspector.cs:105)
-Spine.Unity.Editor.SkeletonDataAssetInspector:OnEnable () (at Assets/Plugins/Spine/Editor/spine-unity/Editor/Asset Types/SkeletonDataAssetInspector.cs:84)
-UnityEditor.Editor:CreateEditorWithContext (UnityEngine.Object[],UnityEngine.Object,System.Type) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:518)
-UnityEditor.Editor:CreateEditor (UnityEngine.Object,System.Type) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:562)
-UnityEditor.Editor:CreateEditor (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:557)
-UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:33)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
-
-(Filename: Assets/Plugins/Spine/Editor/spine-unity/Editor/Utility/SpineEditorUtilities.cs Line: 270)
-
- -> (artifact id: '83bff57dea077af1e49236ddab01af00') in 0.224390 seconds 
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005694 seconds.
+Registered in 0.007240 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -796,7 +953,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.24 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.13 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
   at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
@@ -839,43 +996,43 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.701 seconds
+- Completed reload, in  1.412 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1702ms)
-		BeginReloadAssembly (191ms)
+	ReloadAssembly (1413ms)
+		BeginReloadAssembly (180ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (95ms)
-		EndReloadAssembly (1379ms)
-			LoadAssemblies (100ms)
+			CreateAndSetChildDomain (81ms)
+		EndReloadAssembly (1124ms)
+			LoadAssemblies (92ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (437ms)
-				TypeCache.Initialize (422ms)
-					TypeCache.ScanAssembly (416ms)
-				ResolveRequiredComponents (16ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (85ms)
-			SetupLoadedEditorAssemblies (658ms)
+			SetupTypeCache (371ms)
+				TypeCache.Initialize (357ms)
+					TypeCache.ScanAssembly (352ms)
+				ResolveRequiredComponents (14ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (525ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (42ms)
-				SetLoadedEditorAssemblies (13ms)
+				InitializePlatformSupportModulesInManaged (38ms)
+				SetLoadedEditorAssemblies (9ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (101ms)
-				ProcessInitializeOnLoadAttributes (365ms)
-				ProcessInitializeOnLoadMethodAttributes (134ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (289ms)
+				ProcessInitializeOnLoadMethodAttributes (108ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.69 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5670 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6231.
-Memory consumption went from 1.08 GB to 1.08 GB.
-Total: 7.027820 ms (FindLiveObjects: 0.551858 ms CreateObjectMapping: 0.652949 ms MarkObjects: 4.559410 ms  DeleteObjects: 1.262539 ms)
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6206.
+Memory consumption went from 0.94 GB to 0.94 GB.
+Total: 5.300696 ms (FindLiveObjects: 0.367093 ms CreateObjectMapping: 0.347068 ms MarkObjects: 3.602484 ms  DeleteObjects: 0.983310 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -890,7 +1047,427 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006718 seconds.
+Registered in 0.006716 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.528 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1528ms)
+		BeginReloadAssembly (165ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (1243ms)
+			LoadAssemblies (94ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (405ms)
+				TypeCache.Initialize (390ms)
+					TypeCache.ScanAssembly (385ms)
+				ResolveRequiredComponents (15ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (587ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (41ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (326ms)
+				ProcessInitializeOnLoadMethodAttributes (116ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6209.
+Memory consumption went from 0.94 GB to 0.94 GB.
+Total: 5.444165 ms (FindLiveObjects: 0.418229 ms CreateObjectMapping: 0.428583 ms MarkObjects: 3.527031 ms  DeleteObjects: 1.069422 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006023 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.601 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1602ms)
+		BeginReloadAssembly (189ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (83ms)
+		EndReloadAssembly (1294ms)
+			LoadAssemblies (183ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (398ms)
+				TypeCache.Initialize (384ms)
+					TypeCache.ScanAssembly (379ms)
+				ResolveRequiredComponents (14ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (567ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (43ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (310ms)
+				ProcessInitializeOnLoadMethodAttributes (107ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6212.
+Memory consumption went from 0.95 GB to 0.95 GB.
+Total: 5.944852 ms (FindLiveObjects: 0.430289 ms CreateObjectMapping: 0.399133 ms MarkObjects: 3.899382 ms  DeleteObjects: 1.215111 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005862 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.531 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1532ms)
+		BeginReloadAssembly (195ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (91ms)
+		EndReloadAssembly (1216ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (386ms)
+				TypeCache.Initialize (373ms)
+					TypeCache.ScanAssembly (367ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (574ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (42ms)
+				SetLoadedEditorAssemblies (12ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (91ms)
+				ProcessInitializeOnLoadAttributes (308ms)
+				ProcessInitializeOnLoadMethodAttributes (117ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.30 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6215.
+Memory consumption went from 0.95 GB to 0.95 GB.
+Total: 5.423363 ms (FindLiveObjects: 0.360883 ms CreateObjectMapping: 0.346827 ms MarkObjects: 3.839650 ms  DeleteObjects: 0.875186 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005372 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.433 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1434ms)
+		BeginReloadAssembly (167ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (74ms)
+		EndReloadAssembly (1161ms)
+			LoadAssemblies (94ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (378ms)
+				TypeCache.Initialize (365ms)
+					TypeCache.ScanAssembly (359ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (72ms)
+			SetupLoadedEditorAssemblies (546ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (40ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (298ms)
+				ProcessInitializeOnLoadMethodAttributes (104ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6218.
+Memory consumption went from 0.96 GB to 0.95 GB.
+Total: 5.485584 ms (FindLiveObjects: 0.422721 ms CreateObjectMapping: 0.405221 ms MarkObjects: 3.584633 ms  DeleteObjects: 1.072233 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005659 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -944,43 +1521,43 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.547 seconds
+- Completed reload, in  1.556 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1547ms)
-		BeginReloadAssembly (174ms)
+	ReloadAssembly (1557ms)
+		BeginReloadAssembly (177ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (80ms)
-		EndReloadAssembly (1261ms)
+			CreateAndSetChildDomain (81ms)
+		EndReloadAssembly (1257ms)
 			LoadAssemblies (95ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (420ms)
-				TypeCache.Initialize (405ms)
-					TypeCache.ScanAssembly (399ms)
-				ResolveRequiredComponents (15ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (76ms)
-			SetupLoadedEditorAssemblies (588ms)
+			SetupTypeCache (405ms)
+				TypeCache.Initialize (391ms)
+					TypeCache.ScanAssembly (386ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (600ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (44ms)
-				SetLoadedEditorAssemblies (11ms)
+				InitializePlatformSupportModulesInManaged (40ms)
+				SetLoadedEditorAssemblies (10ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (90ms)
-				ProcessInitializeOnLoadAttributes (322ms)
-				ProcessInitializeOnLoadMethodAttributes (117ms)
+				ProcessInitializeOnLoadAttributes (335ms)
+				ProcessInitializeOnLoadMethodAttributes (121ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.91 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.23 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5671 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6234.
-Memory consumption went from 1.09 GB to 1.09 GB.
-Total: 6.025096 ms (FindLiveObjects: 0.424376 ms CreateObjectMapping: 0.471516 ms MarkObjects: 3.993813 ms  DeleteObjects: 1.134378 ms)
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.3 MB). Loaded Objects now: 6221.
+Memory consumption went from 0.96 GB to 0.96 GB.
+Total: 11.342696 ms (FindLiveObjects: 0.635716 ms CreateObjectMapping: 0.512649 ms MarkObjects: 8.376292 ms  DeleteObjects: 1.816990 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -995,7 +1572,7 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005377 seconds.
+Registered in 0.005947 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -1006,7 +1583,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.65 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.42 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
   at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
@@ -1049,43 +1626,43 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.592 seconds
+- Completed reload, in  1.555 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1593ms)
-		BeginReloadAssembly (181ms)
+	ReloadAssembly (1556ms)
+		BeginReloadAssembly (214ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (87ms)
-		EndReloadAssembly (1295ms)
-			LoadAssemblies (94ms)
+			CreateAndSetChildDomain (105ms)
+		EndReloadAssembly (1228ms)
+			LoadAssemblies (114ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (386ms)
-				TypeCache.Initialize (371ms)
-					TypeCache.ScanAssembly (365ms)
-				ResolveRequiredComponents (14ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (82ms)
-			SetupLoadedEditorAssemblies (638ms)
+			SetupTypeCache (402ms)
+				TypeCache.Initialize (389ms)
+					TypeCache.ScanAssembly (382ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (575ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (45ms)
-				SetLoadedEditorAssemblies (12ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (93ms)
-				ProcessInitializeOnLoadAttributes (345ms)
-				ProcessInitializeOnLoadMethodAttributes (139ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				InitializePlatformSupportModulesInManaged (43ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (313ms)
+				ProcessInitializeOnLoadMethodAttributes (112ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.91 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5671 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.4 MB). Loaded Objects now: 6237.
-Memory consumption went from 1.09 GB to 1.09 GB.
-Total: 7.300709 ms (FindLiveObjects: 0.601273 ms CreateObjectMapping: 0.526062 ms MarkObjects: 4.922510 ms  DeleteObjects: 1.249475 ms)
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6224.
+Memory consumption went from 0.96 GB to 0.96 GB.
+Total: 6.369755 ms (FindLiveObjects: 0.559524 ms CreateObjectMapping: 0.586868 ms MarkObjects: 4.092639 ms  DeleteObjects: 1.129801 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -1098,17 +1675,527 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 1001.375872 seconds.
-  path: Assets/Doozy/Examples/Animations/E6/E6 - Animated Bar 3.overrideController
-  artifactKey: Guid(cdeaf29ed2e7e1444aa6a48701558540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Doozy/Examples/Animations/E6/E6 - Animated Bar 3.overrideController using Guid(cdeaf29ed2e7e1444aa6a48701558540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffcfd89fb788dadcf36d912c9c934d91') in 0.121747 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006435 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.620 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1621ms)
+		BeginReloadAssembly (170ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (74ms)
+		EndReloadAssembly (1338ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (411ms)
+				TypeCache.Initialize (397ms)
+					TypeCache.ScanAssembly (392ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (684ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (47ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (405ms)
+				ProcessInitializeOnLoadMethodAttributes (120ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.34 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6227.
+Memory consumption went from 0.97 GB to 0.97 GB.
+Total: 5.801180 ms (FindLiveObjects: 0.423442 ms CreateObjectMapping: 0.473253 ms MarkObjects: 3.768405 ms  DeleteObjects: 1.135213 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Assets/Doozy/Examples/Animations/E8/E8 - Navigation Bar Color Changer.overrideController
-  artifactKey: Guid(3cb646dd0d85c5142bc05bd9cf312dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Doozy/Examples/Animations/E8/E8 - Navigation Bar Color Changer.overrideController using Guid(3cb646dd0d85c5142bc05bd9cf312dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a079a3e0fb704958e661922fb1232c7') in 0.004703 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005604 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.628 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1628ms)
+		BeginReloadAssembly (195ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (92ms)
+		EndReloadAssembly (1302ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (432ms)
+				TypeCache.Initialize (418ms)
+					TypeCache.ScanAssembly (411ms)
+				ResolveRequiredComponents (14ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (610ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (42ms)
+				SetLoadedEditorAssemblies (12ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (335ms)
+				ProcessInitializeOnLoadMethodAttributes (120ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.41 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6230.
+Memory consumption went from 0.97 GB to 0.97 GB.
+Total: 5.985491 ms (FindLiveObjects: 0.476260 ms CreateObjectMapping: 0.448771 ms MarkObjects: 3.894255 ms  DeleteObjects: 1.165203 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007036 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.459 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1460ms)
+		BeginReloadAssembly (167ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (74ms)
+		EndReloadAssembly (1180ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (386ms)
+				TypeCache.Initialize (372ms)
+					TypeCache.ScanAssembly (367ms)
+				ResolveRequiredComponents (14ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (72ms)
+			SetupLoadedEditorAssemblies (552ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (40ms)
+				SetLoadedEditorAssemblies (10ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (300ms)
+				ProcessInitializeOnLoadMethodAttributes (109ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.28 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6233.
+Memory consumption went from 0.98 GB to 0.97 GB.
+Total: 5.133657 ms (FindLiveObjects: 0.375110 ms CreateObjectMapping: 0.385518 ms MarkObjects: 3.281566 ms  DeleteObjects: 1.090692 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006728 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.542 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1542ms)
+		BeginReloadAssembly (163ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (75ms)
+		EndReloadAssembly (1263ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (387ms)
+				TypeCache.Initialize (374ms)
+					TypeCache.ScanAssembly (369ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (625ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (42ms)
+				SetLoadedEditorAssemblies (14ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (108ms)
+				ProcessInitializeOnLoadAttributes (340ms)
+				ProcessInitializeOnLoadMethodAttributes (118ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6236.
+Memory consumption went from 0.98 GB to 0.98 GB.
+Total: 5.049313 ms (FindLiveObjects: 0.400555 ms CreateObjectMapping: 0.357361 ms MarkObjects: 3.333352 ms  DeleteObjects: 0.957191 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005723 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor.ExecuteProcessor () [0x0003f] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:44 
+  at Doozy.Editor.Internal.DoozyAssetsProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/DoozyAssetsProcessor.cs:25 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+System.TypeInitializationException: The type initializer for 'Doozy.Engine.Utils.DoozyPath' threw an exception. ---> System.ArgumentException: The specified path is not of a legal form (empty).
+  at System.IO.Path.InsecureGetFullPath (System.String path) [0x00025] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.Path.GetFullPath (System.String path) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String originalPath, System.String fullPath, System.String fileName, System.Boolean isNormalized) [0x00024] in <381999f96ea944d79e461a81dcbea654>:0 
+  at System.IO.FileInfo..ctor (System.String fileName) [0x00000] in <381999f96ea944d79e461a81dcbea654>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo..ctor(string)
+  at Doozy.Engine.Utils.DoozyPath.get_BasePath () [0x0003b] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:158 
+  at Doozy.Engine.Utils.DoozyPath..cctor () [0x00000] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Engine/Utils/DoozyPath.cs:62 
+   --- End of inner exception stack trace ---
+  at Doozy.Editor.Internal.ProcessorsSettings.get_Instance () [0x00018] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/ProcessorsSettings.cs:23 
+  at Doozy.Editor.Internal.FoldersProcessor.ExecuteProcessor () [0x0000c] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:20 
+  at Doozy.Editor.Internal.FoldersProcessor..cctor () [0x00001] in /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Doozy/Editor/Internal/FoldersProcessor.cs:15 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:149)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 149)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.482 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1483ms)
+		BeginReloadAssembly (170ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (75ms)
+		EndReloadAssembly (1202ms)
+			LoadAssemblies (96ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (383ms)
+				TypeCache.Initialize (370ms)
+					TypeCache.ScanAssembly (365ms)
+				ResolveRequiredComponents (13ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (570ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (42ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (311ms)
+				ProcessInitializeOnLoadMethodAttributes (112ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5674 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.4 MB). Loaded Objects now: 6239.
+Memory consumption went from 0.98 GB to 0.98 GB.
+Total: 5.636656 ms (FindLiveObjects: 0.441307 ms CreateObjectMapping: 0.401350 ms MarkObjects: 3.689564 ms  DeleteObjects: 1.103463 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

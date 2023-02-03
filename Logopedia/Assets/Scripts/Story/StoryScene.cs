@@ -11,6 +11,7 @@ namespace Logopedia.GamePlay
     [Serializable]
     public class StoryScene
     {
+        public bool IsSceneSplashScreen;
         public int SceneNumberInStory, ActiveItemCount;
         public CharacterForSave SceneCharacter;
         public string CurrentBGForSave;
@@ -23,6 +24,7 @@ namespace Logopedia.GamePlay
 
         public struct CharacterForSave
         {
+            public bool IsChacterActive;
             public string CharacterSprite;
             public PositionForSave CharacterPosition;
             public PositionForSave CharacterRotation;
@@ -30,6 +32,7 @@ namespace Logopedia.GamePlay
 
             public CharacterForSave(GameObject _character)
             {
+                IsChacterActive = _character.gameObject.activeSelf;
                 CharacterSprite = _character.name;
                 CharacterPosition = new PositionForSave(_character.gameObject.transform.localPosition);
                 CharacterRotation = new PositionForSave(_character.gameObject.transform.eulerAngles);

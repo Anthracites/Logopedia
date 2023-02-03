@@ -193,6 +193,7 @@
     <Compile Include="Assets/Doozy/Engine/Scripts/GameEventManager.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Enums/TargetOrientation.cs" />
     <Compile Include="Assets/Scripts/PrefabsPathLibrary.cs" />
+    <Compile Include="Assets/Scripts/Managers/SettingsManager.cs" />
     <Compile Include="Assets/Scripts/Story/StoryScene.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIDrawer/UIDrawerBehavior.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/ThemesDatabase.cs" />
@@ -299,6 +300,7 @@
     <Compile Include="Assets/Doozy/Engine/Touchy/Enums/SimpleSwipe.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
     <Compile Include="Assets/Scripts/Creation/Character.cs" />
+    <Compile Include="Assets/Scripts/SliderWithButton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/UIButtonBehavior.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/PlaySound.cs" />
@@ -338,6 +340,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/Input/KeyToGameEvent.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIToggle/UIToggleSettings.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
+    <Compile Include="Assets/Scripts/SoundManager.cs" />
     <Compile Include="Assets/Doozy/Engine/Events/GameObjectEvent.cs" />
     <Compile Include="Assets/Scripts/SpritesTemplates/ItemTemplate.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Scripts/PlaymakerEventDispatcher.cs" />
@@ -358,6 +361,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/SoundNode.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/RandomNode.cs" />
     <Compile Include="Assets/Doozy/Engine/Scripts/GameEventMessage.cs" />
+    <Compile Include="Assets/Scripts/UI_Views/UIView_Settings.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Enums/UIEffectBehavior.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/Enums/Swipe.cs" />
