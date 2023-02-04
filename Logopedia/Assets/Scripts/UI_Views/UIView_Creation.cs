@@ -226,7 +226,7 @@ namespace Logopedia.UserInterface
             if (_storyManager.IsStoryEdit == true)
             {
                 _character = _storyScenes[0].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Image>();
-                _middlePanel = _storyScenes[0].transform.GetChild(2).gameObject;
+                _itemsManager.GarmenScenePanel = _storyScenes[0].transform.GetChild(2).gameObject;
                 _splashScreenPanel = _storyScenes[0].transform.GetChild(3).gameObject;
                 _backFromPreviewButton = _storyScenes[0].transform.GetChild(4).gameObject;
             }
@@ -234,7 +234,6 @@ namespace Logopedia.UserInterface
             ConfigSwichButton();
              _storyManager.IsStoryEdit = false;
             _isPreview = false;
-            _itemsManager.MiddleScenePanel = _middlePanel;
         }
 
         public void ShowCurrentSceneNumber()
@@ -605,21 +604,22 @@ namespace Logopedia.UserInterface
             {
                 _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
                 _storyScenes[_currentSceneNumber].Hide();
-                _storyScenes[_currentSceneNumber + 1].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
-                _storyScenes[_currentSceneNumber + 1].Show();
+                _currentSceneNumber++;
+                _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
+                _storyScenes[_currentSceneNumber].Show();
             }
             else
             {
                 CreateSceneBlank();
                 _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
                 _storyScenes[_currentSceneNumber].Hide();
-                _storyScenes[_currentSceneNumber + 1].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
-                _storyScenes[_currentSceneNumber + 1].Show();
+                _currentSceneNumber++;
+                _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
+                _storyScenes[_currentSceneNumber].Show();
             }
-            _storyManager.CurrentStorySceneIndex = _currentSceneNumber + 1;
+            _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
             ConfigSwichButton();
-            _middlePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject;
-            _itemsManager.MiddleScenePanel = _middlePanel;
+            _itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject;
             SwichScene();
             ShowCurrentSceneNumber();
         }
@@ -642,11 +642,11 @@ namespace Logopedia.UserInterface
             _currentSceneNumber = _storyManager.CurrentStorySceneIndex;
             _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
             _storyScenes[_currentSceneNumber].Hide();
-            _storyScenes[_currentSceneNumber - 1].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
-            _storyScenes[_currentSceneNumber - 1].Show();
-            _storyManager.CurrentStorySceneIndex = _currentSceneNumber - 1;
-            _middlePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject; ;
-            _itemsManager.MiddleScenePanel = _middlePanel.transform.GetChild(2).gameObject; ;
+            _currentSceneNumber--;
+            _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
+            _storyScenes[_currentSceneNumber].Show();
+            _itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject;
+            _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
             SwichScene();
             ShowCurrentSceneNumber();
             ConfigSwichButton();
@@ -680,6 +680,8 @@ namespace Logopedia.UserInterface
                 {
                     _currentSceneNumber--;
                     _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
+                    _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.From.x = -(Screen.currentResolution.width / 2);
+
                     _storyScenes[_currentSceneNumber].Show();
                     _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
                     ShowCurrentSceneNumber();
@@ -713,7 +715,7 @@ namespace Logopedia.UserInterface
 
 
                 var _garment = _garmentFactory.Create(PrefabsPathLibrary.Item).gameObject;
-                _garment.transform.SetParent(_itemsManager.MiddleScenePanel.transform);
+                _garment.transform.SetParent(_itemsManager.GarmenScenePanel.transform);
                 Debug.Log(_name);
                 _garment.name = _name;
                 var _copyItem = _garment.transform.GetChild(1).gameObject;

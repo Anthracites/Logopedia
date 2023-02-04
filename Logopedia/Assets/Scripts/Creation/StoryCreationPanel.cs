@@ -28,7 +28,7 @@ namespace Logopedia.UserInterface
         {
             if (_storyManager.IsStoryEdit == false)
             {
-                _itemsManager.MiddleScenePanel = _garmentPanel;
+                _itemsManager.GarmenScenePanel = _garmentPanel;
 
             }
         }
@@ -48,10 +48,12 @@ namespace Logopedia.UserInterface
 
         private void OnEnable()
         {
+            _itemsManager.GarmenScenePanel = _garmentPanel;
             _itemsManager.Character = _character;
             _itemsManager.Background = _bg;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;
             _itemsManager.PreviewButton = _previewSwichButton;
+            Debug.Log("Panel!!!" + gameObject.name);
         }
 
         private void OnDisable()

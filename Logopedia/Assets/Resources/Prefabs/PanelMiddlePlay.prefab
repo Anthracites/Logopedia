@@ -741,6 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemCount: 0
+  IsSplashScreen: 0
 --- !u!114 &793990154940765727
 MonoBehaviour:
   m_ObjectHideFlags: 0
