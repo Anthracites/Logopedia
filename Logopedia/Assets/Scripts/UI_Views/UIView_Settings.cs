@@ -41,25 +41,40 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private AudioMixerGroup _audioMixerGroup;
         [SerializeField]
-        private AudioClip _correctAnswer, _bgMusic, _goNextSceneSound, _takeGarmentSound;
-        [SerializeField]
-        private float _lastGeneralVolume;
+        private float _lastGeneralVolume, _generalVolume;
         [SerializeField]
         private AudioMixerGroup _general;
         [SerializeField]
         public enum SoundKind {general, BG, take, GoNext};
         public SoundKind _mykind;
 
+        private void Awake()
+        {
+            DownloadSettings();
+            UnityEngine.Debug.Log("General volume: " + _generalVolume);
+
+            PlayBGMusic();
+        }
+
         private void Start()
         {
             _lastGeneralVolume = _generalVolumeSlider.value;
+        }
 
+        private void PlayBGMusic()
+        {
+            _soundyData.DatabaseName = _settingsManager.DataBaseName;
+            _soundyData.SoundName = _settingsManager.BGMusic;
+            var source = SoundyManager.Play(_soundyData).AudioSource;
+            source.volume = _generalVolume;
+            source.loop = true;
         }
 
         private void OnEnable()
         {
             GetSoundsFromManager();
             AddToDropDown();
+            ApplyStartSettings();
         }
 
         public void GetSoundsFromManager()
@@ -71,7 +86,6 @@ namespace Logopedia.UserInterface
         public void SwichMute()
         {
             _isMute = !_isMute;
-            float _generalVolume;
             string _buttonLabel;
             if (_isMute == true)
             {
@@ -93,7 +107,7 @@ namespace Logopedia.UserInterface
 
         public void ChangeGeneralVolume()
         {
-            float _generalVolume = _generalVolumeSlider.value;
+            _generalVolume = _generalVolumeSlider.value;
             _general.audioMixer.SetFloat("GeneralVolume", _generalVolume);
 
             if (_generalVolume > -80)
@@ -159,6 +173,102 @@ namespace Logopedia.UserInterface
         }
 
 
+        public void SaveSettings()
+        {
+            #region PlayerPrefs.Set***
+            PlayerPrefs.SetString("CorrectAnswer", _settingsManager.CorrectAnswer);
+            PlayerPrefs.SetString("BGMusic", _settingsManager.BGMusic);
+            PlayerPrefs.SetString("GoNextScene", _settingsManager.GoNextScene);
+            PlayerPrefs.SetString("TakeItem", _settingsManager.TakeItem);
+
+            PlayerPrefs.SetFloat("_generalVolume", _generalVolume);
+            #endregion
+            UnityEngine.Debug.Log("Settings uploaded to Windows Registry");
+        }
+
+        void DownloadSettings()
+        {
+            #region PlayerPrefs.Get***
+            _settingsManager.CorrectAnswer = PlayerPrefs.GetString("CorrectAnswer");
+            _settingsManager.BGMusic = PlayerPrefs.GetString("BGMusic");
+            _settingsManager.GoNextScene = PlayerPrefs.GetString("GoNextScene");
+            _settingsManager.TakeItem = PlayerPrefs.GetString("TakeItem");
+
+            _generalVolume = PlayerPrefs.GetFloat("_generalVolume");
+
+            //применение настроек на страрте
+            #endregion
+        }
+
+        void ApplyStartSettings()
+        {
+            foreach (TMP_Dropdown _setting in _soundsDropDown)
+            {
+
+                string _name = _setting.gameObject.name;
+
+                int i = 0;
+                switch (_name)
+                {
+                    case ("CorrectAnswer"):
+                        i = 0;
+                        foreach (TMP_Dropdown.OptionData _text in _setting.options)
+                        {
+                            if(_text.text == _settingsManager.CorrectAnswer)
+                            {
+                                _setting.value = i;
+                            }
+                            i++;
+                        }
+                        break;
+                    case ("BGMusic"):
+                         i = 0;
+                        foreach (TMP_Dropdown.OptionData _text in _setting.options)
+                        {
+                            if (_text.text == _settingsManager.BGMusic)
+                            {
+                                _setting.value = i;
+
+                            }
+                            i++;
+                        }
+                        break;
+                    case ("GoNextScene"):
+                        i = 0;
+                        foreach (TMP_Dropdown.OptionData _text in _setting.options)
+                        {
+                            if (_text.text == _settingsManager.GoNextScene)
+                            {
+                                _setting.value = i;
+                            }
+                            i++;
+                        }
+                        break;
+                    case ("TakeItem"):
+                        i = 0;
+                        foreach (TMP_Dropdown.OptionData _text in _setting.options)
+                        {
+                            if (_text.text == _settingsManager.TakeItem)
+                            {
+                                _setting.value = i;
+                            }
+                            i++;
+                        }
+                        break;
+                }
+            }
+            _generalVolumeSlider.value = _generalVolume;
+
+            if (_generalVolume > -80)
+            {
+                _isMute = true;
+            }
+            else
+            {
+                _isMute = false;
+            }
+            SwichMute();
+        }
 
         #region UploadingFiles
         public void UploadGarments()
