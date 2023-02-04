@@ -26,23 +26,37 @@ namespace Logopedia.UserInterface
 
         private void Awake()
         {
-            if (_storyManager.IsStoryEdit == false)
-            {
-                _itemsManager.GarmenScenePanel = _garmentPanel;
-
-            }
+            //if (_storyManager.IsStoryEdit == false)
+            //{
+            //    _itemsManager.GarmenScenePanel = _garmentPanel;
+            //    //if (_storyManager.IsStoryEdit == false)
+            //    //{
+            //        _sceneNumber = Int32.Parse(gameObject.name);
+            //        _scene = new StoryScene();
+            //        _scene.SceneNumberInStory = _sceneNumber;
+            //        _scene.Items = new List<StoryScene.SceneItem>();
+            //        _garments = new List<GameObject>();
+            //        _storyManager.CurrentStory.Scenes.Add(_scene);
+            //        Debug.Log("Send scene" + gameObject.name);
+            //    //}
+            //}
         }
 
         private void Start()
         {
-            if (_storyManager.IsStoryEdit == false)
+            if ((_storyManager.IsStoryEdit == false)&(_storyManager.IsStoryCreartionStart == true))
             {
+                _itemsManager.GarmenScenePanel = _garmentPanel;
+                //if (_storyManager.IsStoryEdit == false)
+                //{
                 _sceneNumber = Int32.Parse(gameObject.name);
                 _scene = new StoryScene();
                 _scene.SceneNumberInStory = _sceneNumber;
                 _scene.Items = new List<StoryScene.SceneItem>();
                 _garments = new List<GameObject>();
                 _storyManager.CurrentStory.Scenes.Add(_scene);
+                Debug.Log("Send scene" + gameObject.name);
+                //}
             }
         }
 

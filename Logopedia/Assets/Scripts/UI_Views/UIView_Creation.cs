@@ -92,6 +92,7 @@ namespace Logopedia.UserInterface
                 Sprite _bgSprite = Sprite.Create(_BGwww.texture, _BGrect, new Vector2(0.5f, 0.5f));
 
                 _bg.GetComponent<UnityEngine.UI.Image>().sprite = _bgSprite;
+                _bg.name = _scene.CurrentBGForSave;
 
                     var _character = _scenePanel.transform.GetChild(1).gameObject;
                     _character.SetActive(_scene.SceneCharacter.IsChacterActive);
@@ -102,6 +103,7 @@ namespace Logopedia.UserInterface
                     Sprite _characterSprite = Sprite.Create(_Characterwww.texture, _Characterrect, new Vector2(0.5f, 0.5f));
 
                     _character.GetComponent<UnityEngine.UI.Image>().sprite = _characterSprite;
+                _character.name = _characterPath;
                     _character.transform.localPosition = new Vector3(_scene.SceneCharacter.CharacterPosition.x, _scene.SceneCharacter.CharacterPosition.y, _scene.SceneCharacter.CharacterPosition.z);
                     _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
                     _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);
@@ -225,10 +227,12 @@ namespace Logopedia.UserInterface
 
             if (_storyManager.IsStoryEdit == true)
             {
+                _bg = _storyScenes[0].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Image>();
                 _character = _storyScenes[0].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Image>();
                 _itemsManager.GarmenScenePanel = _storyScenes[0].transform.GetChild(2).gameObject;
                 _splashScreenPanel = _storyScenes[0].transform.GetChild(3).gameObject;
                 _backFromPreviewButton = _storyScenes[0].transform.GetChild(4).gameObject;
+                Debug.Log("First scene !!!");
             }
             SwichScene();
             ConfigSwichButton();
@@ -686,7 +690,13 @@ namespace Logopedia.UserInterface
                     _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
                     ShowCurrentSceneNumber();
                 }
-                ConfigSwichButton();
+
+                //_bg = _storyScenes[_currentSceneNumber].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Image>();
+                //_character = _storyScenes[_currentSceneNumber].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Image>();
+                //_itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].transform.GetChild(2).gameObject;
+                //_splashScreenPanel = _storyScenes[_currentSceneNumber].transform.GetChild(3).gameObject;
+                //_backFromPreviewButton = _storyScenes[_currentSceneNumber].transform.GetChild(4).gameObject;
+                //ConfigSwichButton();
             }
 
             int i = 0;

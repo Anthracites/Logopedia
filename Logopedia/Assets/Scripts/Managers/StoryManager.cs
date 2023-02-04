@@ -13,6 +13,7 @@ namespace Logopedia.UIConnection
     {
         public bool IsStoryCreartionStart = false;
         public bool IsStoryEdit;
+        public bool IsNewCtory;
         public Story CurrentStory;
         public int CurrentStorySceneIndex;
         public bool IsStorySave;

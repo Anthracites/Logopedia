@@ -119,12 +119,14 @@ public class PopUpController : MonoBehaviour
         {
             GameEventMessage.SendEvent(EventsLibrary.GoToMenu);
             ClosePopUp();
+            _storyManager.IsStoryCreartionStart = false;
         }
 
         void SaveStory()
         {
             _storyManager.IsStorySave = true;
             GameEventMessage.SendEvent(EventsLibrary.SaveStory);
+            _storyManager.IsStoryCreartionStart = false;
         }
 
         void CleanScene()
@@ -150,7 +152,7 @@ public class PopUpController : MonoBehaviour
             var _storyJson = File.ReadAllText(Application.dataPath + "/Resources/Stories/" + _storyJsonName);
             var _choosenStory = JsonConvert.DeserializeObject<Story>(_storyJson);
             _storyManager.CurrentStory = _choosenStory;
-            _storyManager.IsStoryCreartionStart = true;
+            _storyManager.IsStoryCreartionStart = false;
             _storyManager.IsStoryEdit = true;
             GameEventMessage.SendEvent(EventsLibrary.GoToNewGame);
             ClosePopUp();
