@@ -425,7 +425,7 @@ MonoBehaviour:
       GameEvents: []
       SoundData:
         SoundSource: 0
-        DatabaseName: General
+        DatabaseName: Logopedia
         SoundName: No Sound
         AudioClip: {fileID: 0}
         OutputAudioMixerGroup: {fileID: 0}

@@ -65,9 +65,12 @@ namespace Logopedia.UserInterface
         {
             _soundyData.DatabaseName = _settingsManager.DataBaseName;
             _soundyData.SoundName = _settingsManager.BGMusic;
-            var source = SoundyManager.Play(_soundyData).AudioSource;
-            source.volume = _generalVolume;
-            source.loop = true;
+            if (_soundyData.SoundName != "No Sound")
+            {
+                var source = SoundyManager.Play(_soundyData).AudioSource;
+                source.volume = _generalVolume;
+                source.loop = true;
+            };
         }
 
         private void OnEnable()
@@ -146,6 +149,12 @@ namespace Logopedia.UserInterface
                     break;
                 case ("BGMusic"):
                     _settingsManager.BGMusic = soundName;
+                    if (soundName != "No Sound")
+                    {
+                        var source = SoundyManager.Play(_soundyData).AudioSource;
+                        source.volume = _generalVolume;
+                        source.loop = true;
+                    };
                     break;
                 case ("GoNextScene"):
                     _settingsManager.GoNextScene = soundName;
@@ -164,10 +173,12 @@ namespace Logopedia.UserInterface
             foreach (TMP_Dropdown _setting in _soundsDropDown)
             {
                 _setting.options.Clear();
+                _setting.options.Add(new TMP_Dropdown.OptionData() { text = "No Sound" });
                 foreach (AudioClip _clip in _sounds)
                 {
                     string _soundName = _clip.name.Replace(".mp3", "");
                     _setting.options.Add(new TMP_Dropdown.OptionData() { text = _soundName });
+
                 }
             }
         }
@@ -258,16 +269,8 @@ namespace Logopedia.UserInterface
                 }
             }
             _generalVolumeSlider.value = _generalVolume;
-
-            if (_generalVolume > -80)
-            {
-                _isMute = true;
-            }
-            else
-            {
-                _isMute = false;
-            }
-            SwichMute();
+            UnityEngine.Debug.Log(_generalVolume);
+            ChangeGeneralVolume();
         }
 
         #region UploadingFiles
