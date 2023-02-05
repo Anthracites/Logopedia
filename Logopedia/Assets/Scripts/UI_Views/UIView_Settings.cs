@@ -48,17 +48,17 @@ namespace Logopedia.UserInterface
         public enum SoundKind {general, BG, take, GoNext};
         public SoundKind _mykind;
 
+
         private void Awake()
         {
             DownloadSettings();
-            UnityEngine.Debug.Log("General volume: " + _generalVolume);
-
             PlayBGMusic();
         }
 
         private void Start()
         {
             _lastGeneralVolume = _generalVolumeSlider.value;
+            ReloadAudioFiles();
         }
 
         private void PlayBGMusic()
@@ -74,6 +74,16 @@ namespace Logopedia.UserInterface
         }
 
         private void OnEnable()
+        {
+            ReloadAudioFiles();
+        }
+
+        public void RefrashFileButtonHandler()
+        {
+            GameEventMessage.SendEvent(EventsLibrary.ClipsAddedToFolder);
+        }
+
+        public void ReloadAudioFiles()
         {
             GetSoundsFromManager();
             AddToDropDown();
@@ -163,7 +173,7 @@ namespace Logopedia.UserInterface
                     _settingsManager.TakeItem = soundName;
                     break;
             }
-            UnityEngine.Debug.Log(_settingsManager.CorrectAnswer);
+//            UnityEngine.Debug.Log(_settingsManager.CorrectAnswer);
 
         }
 
@@ -269,7 +279,6 @@ namespace Logopedia.UserInterface
                 }
             }
             _generalVolumeSlider.value = _generalVolume;
-            UnityEngine.Debug.Log(_generalVolume);
             ChangeGeneralVolume();
         }
 

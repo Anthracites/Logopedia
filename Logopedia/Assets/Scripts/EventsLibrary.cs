@@ -32,5 +32,9 @@ namespace Logopedia
         public static string GoNextSceneSoundChanged = "GoNextSceneSoundChanged";
         public static string TakeItemSoundChanged = "TakeItemSoundChanged";
 
+        public static string ClipsAddedToFolder = "ClipsAddedToFolder";
+        public static string ClipsAddedToGame = "ClipsAddedToGame";
+
+
     }
 }

@@ -1,15 +1,14 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI_Views/UIView_Play.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EventsLibrary.cs">
     <Files>
-      <File FileName="Assets/Scripts/Creation/Item.cs" Line="80" Column="1" />
-      <File FileName="Assets/Scripts/Creation/Character.cs" Line="50" Column="1" />
-      <File FileName="Assets/Scripts/Play/StoryPlayPanel.cs" Line="36" Column="5" />
-      <File FileName="Assets/Scripts/UI_Views/UIView_Play.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SoundManager.cs" Line="26" Column="46" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Settings.cs" Line="326" Column="1" />
+      <File FileName="Assets/Scripts/EventsLibrary.cs" Line="33" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ce57eb44-056d-4477-bfe8-5d9acc4af8b0" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="67df19e9-3a01-41c9-8e9c-9b58bfa30195" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
