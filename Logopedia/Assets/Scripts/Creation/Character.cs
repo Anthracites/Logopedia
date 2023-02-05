@@ -16,6 +16,8 @@ namespace Logopedia.GamePlay
 
 
         [SerializeField]
+        private float _startX, _startY;
+        [SerializeField]
         private Outline _outline;
 
         void Start()
@@ -26,6 +28,9 @@ namespace Logopedia.GamePlay
 
         void StartMove()
         {
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _startX = mousePos.x - transform.position.x;
+            _startY = mousePos.y - transform.position.y;
             _outline.enabled = true;
             _itemsManager.CurrentItem = gameObject;
             _itemsManager.CurrentItemShadow = null;
@@ -41,7 +46,7 @@ namespace Logopedia.GamePlay
         public void OnDrag(PointerEventData eventData)
         {
                 var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+            transform.position = new Vector3(mousePos.x - _startX, mousePos.y - _startY, 0);
         }
 
         public void OnEndDrag(PointerEventData eventData)

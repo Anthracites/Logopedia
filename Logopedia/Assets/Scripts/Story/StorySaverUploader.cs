@@ -43,6 +43,8 @@ namespace Logopedia.GamePlay
                 Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.CharacterSprites);
                 Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.CharacterAnimations);
                 Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.Sounds);
+                Directory.CreateDirectory(Application.dataPath + "/Resources/Stories");
+
 
                 _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.NoSpritesNotification;
                 GameEventMessage.SendEvent(EventsLibrary.ShowPopUp);

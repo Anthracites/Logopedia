@@ -27,6 +27,7 @@ public class ItemSlotForPlay : MonoBehaviour, IDropHandler
     [SerializeField]
     private SoundyData _putItem;
 
+
     void Start()
     {
         _stars = _starsObj.GetComponent<SkeletonGraphic>();

@@ -27,6 +27,8 @@ namespace Logopedia.GamePlay
         private Outline _outline;
         [SerializeField]
         private SoundyData _takeItem;
+        [SerializeField]
+        private float _startX, _startY;
 
         void Start()
         {
@@ -52,6 +54,9 @@ namespace Logopedia.GamePlay
 
         void StartMove()
         {
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _startX = mousePos.x - transform.position.x;
+            _startY = mousePos.y - transform.position.y;
             SoundyManager.Play(_takeItem);
             _outline.enabled = true;
             _itemsManager.CurrentGarment = _garment;
@@ -71,8 +76,8 @@ namespace Logopedia.GamePlay
             public void OnDrag(PointerEventData eventData)
         {
                var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                transform.position = new Vector3(mousePos.x, mousePos.y, 0);
-                //gameObject.transform.position = Input.mousePosition;
+            transform.position = new Vector3(mousePos.x - _startX, mousePos.y - _startY, 0);
+            //gameObject.transform.position = Input.mousePosition;
         }
 
         public void OnEndDrag(PointerEventData eventData)

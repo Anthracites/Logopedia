@@ -26,6 +26,8 @@ namespace Logopedia.GamePlay
         private SkeletonGraphic _stars;
         [SerializeField]
         private SoundyData _putItem, _takeItem;
+        [SerializeField]
+        private float _startX, _startY;
 
         void Start()
         {
@@ -35,6 +37,9 @@ namespace Logopedia.GamePlay
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _startX = mousePos.x - transform.position.x;
+            _startY = mousePos.y - transform.position.y;
             SendItem();
             SoundyManager.Play(_takeItem);
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
@@ -48,7 +53,7 @@ namespace Logopedia.GamePlay
         public void OnDrag(PointerEventData eventData)
         {
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+            transform.position = new Vector3(mousePos.x - _startX, mousePos.y - _startY, 0);
         }
 
         public void OnDrop( PointerEventData eventData)

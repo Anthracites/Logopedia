@@ -20,6 +20,8 @@ public class ItemForPlay : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     private GameObject _garment;
     [SerializeField]
     private SoundyData _takeItem;
+    [SerializeField]
+    private float _startX, _startY;
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class ItemForPlay : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnDrag(PointerEventData eventData)
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+        transform.position = new Vector3(mousePos.x - _startX, mousePos.y - _startY, 0);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -44,6 +46,9 @@ public class ItemForPlay : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _startX = mousePos.x - transform.position.x;
+        _startY = mousePos.y - transform.position.y;
         _canvasGroup.blocksRaycasts = false;
         int _sibIndex = _itemsManager.ItemCount + 2;
         _garment.transform.SetSiblingIndex(_sibIndex);

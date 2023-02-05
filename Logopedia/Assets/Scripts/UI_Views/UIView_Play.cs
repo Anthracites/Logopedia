@@ -26,6 +26,8 @@ namespace Logopedia.UserInterface
         StoryPlayPanel.Factory _storyPlayPanel;
         [Inject]
         GarmentForPlay.Factory _garmentForPlayFactory;
+        [Inject]
+        ItemsManager _itemsManager;
 
         [SerializeField]
         private List<GameObject> _scenePanels;
@@ -153,6 +155,7 @@ namespace Logopedia.UserInterface
             {
                 _panel.GetComponent<UIView>().Hide();
             }
+            _itemsManager.ItemCount = _scenePanels[0].GetComponent<StoryPlayPanel>().ItemCount;
             _scenePanels[0].GetComponent<UIView>().Show();
         }
 
