@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TMProForFooter : MonoBehaviour
 {
-    public TMP_Text _pathTMPro;
+    public TMP_InputField _inputfield;
 
     private void Start()
     {
-        _pathTMPro.text = Application.dataPath;
+        _inputfield.text = Application.dataPath;
     }
 }
