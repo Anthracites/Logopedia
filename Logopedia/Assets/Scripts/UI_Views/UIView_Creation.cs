@@ -634,7 +634,7 @@ namespace Logopedia.UserInterface
             var _newStoryScenePanel = _storyCreationPanelFactory.Create(PrefabsPathLibrary.StoryCreationPanel).gameObject.GetComponent<UIView>();
             _newStoryScenePanel.gameObject.transform.SetParent(_headerMiddlePanel.transform);
             _newStoryScenePanel.Hide();
-            _header.transform.SetSiblingIndex(_storyScenes.Count + 1);
+            _header.transform.SetSiblingIndex(_storyScenes.Count + 2);
             _storyScenes.Add(_newStoryScenePanel);
             _newStoryScenePanel.gameObject.name = (_storyScenes.Count - 1).ToString();
             _middlePanel = _newStoryScenePanel.gameObject.transform.GetChild(2).gameObject;

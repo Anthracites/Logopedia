@@ -98,10 +98,16 @@ namespace Logopedia.UserInterface
                     _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
                     _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);
                 }
+                else
+                {
+                    _scenePanel.transform.GetChild(1).gameObject.SetActive(false);
+                }
 
+                var _garmentPanel = _scenePanel.transform.GetChild(2);
                 foreach (StoryScene.SceneItem _sceneItem in _scene.Items)
                 {
                     var _garment = _garmentForPlayFactory.Create(PrefabsPathLibrary.ItemForPlay).gameObject;
+                    _garment.transform.SetParent(_garmentPanel);
                     _garment.transform.localScale = Vector3.one;
                     _garment.transform.localPosition = new Vector3(_sceneItem.GarmentPosition.x, _sceneItem.GarmentPosition.y, _sceneItem.GarmentPosition.z);
                     var _item = _garment.transform.GetChild(1).gameObject;
@@ -128,7 +134,6 @@ namespace Logopedia.UserInterface
                     Vector3 _rotation = new Vector3(_sceneItem.ItemRotation.x, _sceneItem.ItemRotation.y, _sceneItem.ItemRotation.z);
                     _item.transform.localEulerAngles = _rotation;
                     _itemShadow.transform.localEulerAngles = _rotation;
-                    _garment.transform.SetParent(_scenePanel.transform);
 
                     bool _isActive = _sceneItem.ShadowEnabled;
                             _itemShadow.SetActive(_isActive);

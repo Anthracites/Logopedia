@@ -44,6 +44,7 @@ public class StoryPlayPanel : MonoBehaviour
             if (_putItemCount == ItemCount)
             {
                 GameEventMessage.SendEvent(EventsLibrary.LevelComplete);
+                Debug.Log("Level complite");
             }
         }
 
