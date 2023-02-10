@@ -16,6 +16,7 @@ using UnityEngine.SceneManagement;
 using Doozy.Engine.UI;
 using System.Linq;
 using System.Drawing;
+using Spine.Unity;
 
 namespace Logopedia.UserInterface
 {
@@ -318,7 +319,7 @@ namespace Logopedia.UserInterface
             }
             else
             {
-                _character.transform.localScale = new Vector3(_scaleSlider.value, _scaleSlider.value, _scaleSlider.value);
+                _item.transform.localScale = new Vector3(_scaleSlider.value, _scaleSlider.value, _scaleSlider.value);
             }
         }
 
@@ -332,7 +333,8 @@ namespace Logopedia.UserInterface
             }
             else
             {
-                _character.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
+                _item.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
+
             }
         }
 
@@ -371,7 +373,7 @@ namespace Logopedia.UserInterface
             }
             else
             {
-                _item = _character.gameObject;
+                _item = _itemsManager.CurrentItem;
             }
         }
 
@@ -380,6 +382,52 @@ namespace Logopedia.UserInterface
             CreateSpritesSamples(SpritesPathLibrary.GarmentSprites, PrefabsPathLibrary.GarmentSample, _garmentSamplesContent, _itemTemplateFactory);
             CreateSpritesSamples(SpritesPathLibrary.BGSprites, PrefabsPathLibrary.BackGroundSample, _backgroundSamplesContent, _bgTemplateFactory);
             CreateSpritesSamples(SpritesPathLibrary.CharacterSprites, PrefabsPathLibrary.CharacterSample, _characterSamplesContent, _characterTemplateFactory);
+        }
+
+        void CreateAnimationsSamples(GameObject _samplesContent, string _animSample, dynamic _factory, string _animFolder)
+        {
+            for (int i = _samplesContent.transform.childCount; i > 0; --i)
+            {
+                DestroyImmediate(_samplesContent.transform.GetChild(0).gameObject);
+            }
+
+            DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + _animFolder);
+            FileInfo[] _files = new string[] { "*.asset" }.SelectMany(ext => _contentDirectory.GetFiles(ext, SearchOption.TopDirectoryOnly)).ToArray();
+
+            int f = 0;
+            foreach (FileInfo _file in _files)
+            {
+                var _itemSample = _factory.Create(_animSample).gameObject;
+                _itemSample.name = _file.FullName;
+                _itemSample.transform.SetParent(_samplesContent.transform);
+                _itemSample.transform.localScale = new Vector3(1, 1, 1);
+
+
+                WWW _www = new WWW("file://" + _file.FullName);
+
+
+                var _skeletonData = _www.assetBundle.name;
+                _samplesContent.transform.GetChild(0).gameObject.GetComponent<SkeletonGraphic>().SkeletonDataAsset.name = _skeletonData;
+
+                f++;
+            }
+
+            float x = _samplesContent.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.x;
+            float k = _samplesContent.transform.GetChild(0).gameObject.GetComponent<RectTransform>().localScale.x;
+            float s = _samplesContent.GetComponent<HorizontalLayoutGroup>().spacing;
+            float p = _samplesContent.GetComponent<HorizontalLayoutGroup>().padding.left;
+            float y = _samplesContent.GetComponent<RectTransform>().sizeDelta.y;
+
+            _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
+        }
+
+        public void SetTargetPosition()
+        {
+            GetCurrentGarment();
+            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
+            {
+                _itemShadow.transform.position = _item.transform.position;
+            }
         }
 
 
@@ -421,15 +469,6 @@ namespace Logopedia.UserInterface
             _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p*2)) - s, y);
         }
 
-        public void SetTargetPosition()
-        {
-            GetCurrentGarment();
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
-                _itemShadow.transform.position = _item.transform.position;
-            }
-        }
-
         public void ResetItemRotation()
         {
             GetCurrentGarment();
@@ -441,7 +480,7 @@ namespace Logopedia.UserInterface
             }
             else
             {
-                _character.transform.eulerAngles = Vector3.zero;
+                _item.transform.eulerAngles = Vector3.zero;
             }
             ResetControl();
         }
@@ -460,7 +499,7 @@ namespace Logopedia.UserInterface
             }
             else
             {
-                _character.transform.eulerAngles = new Vector3(0, 0, newRotation);
+                _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
             }
             ResetControl();
         }
@@ -479,7 +518,7 @@ namespace Logopedia.UserInterface
             }
             else
             {
-                _character.transform.localScale = new Vector3(newScale, newScale, newScale);
+                _item.transform.localScale = new Vector3(newScale, newScale, newScale);
             }
             ResetControl();
         }
@@ -690,13 +729,6 @@ namespace Logopedia.UserInterface
                     _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
                     ShowCurrentSceneNumber();
                 }
-
-                //_bg = _storyScenes[_currentSceneNumber].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Image>();
-                //_character = _storyScenes[_currentSceneNumber].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Image>();
-                //_itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].transform.GetChild(2).gameObject;
-                //_splashScreenPanel = _storyScenes[_currentSceneNumber].transform.GetChild(3).gameObject;
-                //_backFromPreviewButton = _storyScenes[_currentSceneNumber].transform.GetChild(4).gameObject;
-                //ConfigSwichButton();
             }
 
             int i = 0;

@@ -23,6 +23,7 @@ namespace Logopedia
         public static string ItemCreated = "ItemCreated"; // Предмет одежды создан
         public static string BGSpriteChanged = "BGSpriteChanged"; // Изменен фон сцены
         public static string CharacterSpriteChanged = "CharacterSpriteChanged"; // Изменен персонаж
+        public static string AnimationChanged = "AnimationChanged"; // Изменена анимация
         public static string ItemSelected = "ItemSelected"; //Предмет выбран
         public static string PreviewScene = "PreviewScene"; // Скрывает footer и headr на cretion view
         public static string BackFromPreviewScene = "BackFromPreviewScene"; // Отображает footer и headr на cretion view
@@ -32,9 +33,7 @@ namespace Logopedia
         public static string GoNextSceneSoundChanged = "GoNextSceneSoundChanged";
         public static string TakeItemSoundChanged = "TakeItemSoundChanged";
 
-        public static string ClipsAddedToFolder = "ClipsAddedToFolder";
-        public static string ClipsAddedToGame = "ClipsAddedToGame";
-
-
+        public static string ClipsAddedToFolder = "ClipsAddedToFolder"; // Звуки загружены в папку звуков
+        public static string ClipsAddedToGame = "ClipsAddedToGame"; //Звуки загружены в игру
     }
 }

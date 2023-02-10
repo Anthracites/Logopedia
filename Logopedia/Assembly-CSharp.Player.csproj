@@ -88,6 +88,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/ApplicationQuitNode.cs" />
     <Compile Include="Assets/Doozy/Engine/Layouts/RadialLayout.cs" />
+    <Compile Include="Assets/Scripts/Creation/Animation.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/Enums/GestureType.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/DisableBackButton.cs" />
     <Compile Include="Assets/Scripts/SpritesTemplates/BGTemplate.cs" />
@@ -366,6 +367,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/Enums/UIEffectBehavior.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/Enums/Swipe.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetTextMeshPro.cs" />
+    <Compile Include="Assets/Scripts/SpritesTemplates/AnimationTemplate.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/AssetUtils.cs" />
     <Compile Include="Assets/Doozy/Engine/SceneManagement/SceneLoadedEvent.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIDrawer/UIDrawerEvent.cs" />
