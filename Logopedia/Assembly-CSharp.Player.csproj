@@ -387,6 +387,8 @@
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/XYZ.cs" />
     <Compile Include="Assets/Scripts/Creation/ItemSlot.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetImage.cs" />
+    <Compile Include="Assets/Scripts/Managers/SpritesManager.cs" />
+    <Compile Include="Assets/Scripts/FileUploader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

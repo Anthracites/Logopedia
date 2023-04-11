@@ -18,6 +18,7 @@ public class ProjectContextInstaller : MonoInstaller
         Container.Bind<PopUpManager>().AsSingle().NonLazy();
         Container.Bind<StoryManager>().AsSingle().NonLazy();
         Container.Bind<SettingsManager>().AsSingle().NonLazy();
+        Container.Bind<SpritesManager>().AsSingle().NonLazy();
     }
 
     void BindFactories()

@@ -23,6 +23,8 @@ namespace Logopedia.UserInterface
     public class UIView_Creation : MonoBehaviour
     {
         [Inject]
+        SpritesManager _spritesManager;
+        [Inject]
         ItemsManager _itemsManager;
         [Inject]
         StoryManager _storyManager;
@@ -95,19 +97,19 @@ namespace Logopedia.UserInterface
                 _bg.GetComponent<UnityEngine.UI.Image>().sprite = _bgSprite;
                 _bg.name = _scene.CurrentBGForSave;
 
-                    var _character = _scenePanel.transform.GetChild(1).gameObject;
-                    _character.SetActive(_scene.SceneCharacter.IsChacterActive);
-                    string _characterPath = _scene.SceneCharacter.CharacterSprite;
+                var _character = _scenePanel.transform.GetChild(1).gameObject;
+                _character.SetActive(_scene.SceneCharacter.IsChacterActive);
+                string _characterPath = _scene.SceneCharacter.CharacterSprite;
 
-                    WWW _Characterwww = new WWW("file://" + _characterPath);
-                    Rect _Characterrect = new Rect(0, 0, _Characterwww.texture.width, _Characterwww.texture.height);
-                    Sprite _characterSprite = Sprite.Create(_Characterwww.texture, _Characterrect, new Vector2(0.5f, 0.5f));
+                WWW _Characterwww = new WWW("file://" + _characterPath);
+                Rect _Characterrect = new Rect(0, 0, _Characterwww.texture.width, _Characterwww.texture.height);
+                Sprite _characterSprite = Sprite.Create(_Characterwww.texture, _Characterrect, new Vector2(0.5f, 0.5f));
 
-                    _character.GetComponent<UnityEngine.UI.Image>().sprite = _characterSprite;
+                _character.GetComponent<UnityEngine.UI.Image>().sprite = _characterSprite;
                 _character.name = _characterPath;
-                    _character.transform.localPosition = new Vector3(_scene.SceneCharacter.CharacterPosition.x, _scene.SceneCharacter.CharacterPosition.y, _scene.SceneCharacter.CharacterPosition.z);
-                    _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
-                    _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);
+                _character.transform.localPosition = new Vector3(_scene.SceneCharacter.CharacterPosition.x, _scene.SceneCharacter.CharacterPosition.y, _scene.SceneCharacter.CharacterPosition.z);
+                _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
+                _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);
 
                 GameObject _garmentPanel = _scenePanel.transform.GetChild(2).gameObject;
                 _scenePanel.transform.GetChild(3).gameObject.SetActive(_scene.IsSceneSplashScreen);
@@ -199,7 +201,7 @@ namespace Logopedia.UserInterface
 
         private void OnEnable()
         {
-            if ((_storyManager.IsStoryCreartionStart == true)& (_storyManager.IsStoryEdit == false))
+            if ((_storyManager.IsStoryCreartionStart == true) & (_storyManager.IsStoryEdit == false))
             {
                 CreateSceneBlank();
                 CreateSamples();
@@ -237,7 +239,7 @@ namespace Logopedia.UserInterface
             }
             SwichScene();
             ConfigSwichButton();
-             _storyManager.IsStoryEdit = false;
+            _storyManager.IsStoryEdit = false;
             _isPreview = false;
         }
 
@@ -379,9 +381,9 @@ namespace Logopedia.UserInterface
 
         void CreateSamples()
         {
-            CreateSpritesSamples(SpritesPathLibrary.GarmentSprites, PrefabsPathLibrary.GarmentSample, _garmentSamplesContent, _itemTemplateFactory);
-            CreateSpritesSamples(SpritesPathLibrary.BGSprites, PrefabsPathLibrary.BackGroundSample, _backgroundSamplesContent, _bgTemplateFactory);
-            CreateSpritesSamples(SpritesPathLibrary.CharacterSprites, PrefabsPathLibrary.CharacterSample, _characterSamplesContent, _characterTemplateFactory);
+            CreateSpritesSamples(_garmentSamplesContent, _itemTemplateFactory, _spritesManager.Objects, PrefabsPathLibrary.GarmentSample);
+            CreateSpritesSamples(_backgroundSamplesContent, _bgTemplateFactory, _spritesManager.BackGrounds, PrefabsPathLibrary.BackGroundSample);
+            CreateSpritesSamples(_characterSamplesContent, _characterTemplateFactory, _spritesManager.Characters, PrefabsPathLibrary.CharacterSample);
         }
 
         void CreateAnimationsSamples(GameObject _samplesContent, string _animSample, dynamic _factory, string _animFolder)
@@ -432,30 +434,20 @@ namespace Logopedia.UserInterface
 
 
 
-        void CreateSpritesSamples(string _spriteFolder, string _spriteSample, GameObject _samplesContent, dynamic _factory)
+        void CreateSpritesSamples(GameObject _samplesContent, dynamic _factory, List<Sprite> _spritesList, string _spriteSample)
         {
             for (int i = _samplesContent.transform.childCount; i > 0; --i)
             {
                 DestroyImmediate(_samplesContent.transform.GetChild(0).gameObject);
             }
-
-            DirectoryInfo _contentDirectory =  new DirectoryInfo(Application.dataPath + _spriteFolder);
-            FileInfo[] _files = new string[] { "*.jpg", "*jpeg", "*.png" }.SelectMany(ext => _contentDirectory.GetFiles(ext, SearchOption.TopDirectoryOnly)).ToArray();
-
-            int f = 0;
-            foreach (FileInfo _file in _files)
+            float f = 0;
+            foreach (Sprite _sprite in _spritesList)
             {
+
                 var _itemSample = _factory.Create(_spriteSample).gameObject;
-                _itemSample.name = _file.FullName;
+                _itemSample.name = _sprite.name;
                 _itemSample.transform.SetParent(_samplesContent.transform);
                 _itemSample.transform.localScale = new Vector3(1, 1, 1);
-
-
-                WWW _www = new WWW("file://" + _file.FullName);
-                Rect _rect = new Rect(0, 0, _www.texture.width, _www.texture.height);
-
-                Sprite _sprite = Sprite.Create(_www.texture, _rect, new Vector2(0.5f, 0.5f));
-
                 _itemSample.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = _sprite;
                 f++;
             }
@@ -466,7 +458,7 @@ namespace Logopedia.UserInterface
             float p = _samplesContent.GetComponent<HorizontalLayoutGroup>().padding.left;
             float y = _samplesContent.GetComponent<RectTransform>().sizeDelta.y;
 
-            _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p*2)) - s, y);
+            _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
         }
 
         public void ResetItemRotation()
