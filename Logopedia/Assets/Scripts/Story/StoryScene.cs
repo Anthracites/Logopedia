@@ -80,15 +80,7 @@ namespace Logopedia.GamePlay
                 Color _transparent = new Color(255, 255, 255, 0);
                 Color _currentShadowColor = _itemShadow.GetComponent<Image>().color;
 
-                if (_currentShadowColor == _transparent)
-                {
-                    ShadowVisible = false;
-                }
-                else
-                {
-                    ShadowVisible = true;
-
-                }
+                ShadowVisible = (_currentShadowColor == _transparent);
             }
 
         }

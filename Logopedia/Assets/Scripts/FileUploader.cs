@@ -5,6 +5,7 @@ using Zenject;
 using Logopedia.UIConnection;
 using System.Linq;
 using System.IO;
+using System.Drawing;
 
 namespace Logopedia.GamePlay
 {
@@ -12,22 +13,15 @@ namespace Logopedia.GamePlay
     {
         [Inject] SpritesManager spritesManager;
 
+
         void Awake()
         {
-            GetFiles();
+            UploadTopics();
         }
 
-        public void GetFiles()
+        public void UploadSprites(string _topicPartName, List<Sprite> _spriteList)
         {
-            CreateSpritesSamples(SpritesPathLibrary.GarmentSprites, PrefabsPathLibrary.GarmentSample, spritesManager.Objects);
-            CreateSpritesSamples(SpritesPathLibrary.BGSprites, PrefabsPathLibrary.BackGroundSample, spritesManager.BackGrounds);
-            CreateSpritesSamples(SpritesPathLibrary.CharacterSprites, PrefabsPathLibrary.CharacterSample, spritesManager.Characters);
-        }
-
-
-        public void CreateSpritesSamples(string _spriteFolder, string _spriteSample, List<Sprite> _spriteList)
-        {
-            DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + _spriteFolder);
+            DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + "/" +_topicPartName);
             FileInfo[] _files = new string[] { "*.jpg", "*jpeg", "*.png" }.SelectMany(ext => _contentDirectory.GetFiles(ext, SearchOption.TopDirectoryOnly)).ToArray();
 
             int f = 0;
@@ -42,6 +36,26 @@ namespace Logopedia.GamePlay
                 f++;
             }
         }
-    }
-}
 
+
+        public void UploadTopics()
+        {
+            string _contentPath = "/Resources/Sprites/GamePlaySprites/";
+            DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + _contentPath);
+
+            DirectoryInfo[] _topicDirectories = new string[] {"*.*"}.SelectMany(ext => _contentDirectory.GetDirectories(ext, SearchOption.TopDirectoryOnly)).ToArray(); //Получение списка папок по темам
+
+            foreach (DirectoryInfo _topicDirectory in _topicDirectories)
+            {
+                Topic _topic = new Topic();
+
+                _topic.TopicName = _topicDirectory.Name;
+                UploadSprites(_contentPath + _topicDirectory.Name + "/BackGrounds", _topic.BackGrounds);
+                UploadSprites(_contentPath + _topicDirectory.Name + "/Characters", _topic.Characters);
+                UploadSprites(_contentPath + _topicDirectory.Name + "/Objects", _topic.Objects);
+
+                spritesManager.Topics.Add(_topic);
+            }
+        }
+        }
+    }

@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 2067545317712616690}
   m_Layer: 5
   m_Name: PanelMiddle
-  m_TagString: Untagged
+  m_TagString: CreationPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1145,6 +1145,7 @@ GameObject:
   - component: {fileID: 1267862202974349561}
   - component: {fileID: 4876317152659051849}
   - component: {fileID: 245359630647523389}
+  - component: {fileID: 1471667515082978669}
   m_Layer: 0
   m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/BackGrounds/BG_winter.jpg
   m_TagString: Untagged
@@ -1210,6 +1211,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1471667515082978669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713567444737112536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebf53b93f04143508c2ad92574ae228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: []
+  unitSelected: []
+  skin: {fileID: 0}
 --- !u!1 &8862390429886481297
 GameObject:
   m_ObjectHideFlags: 0

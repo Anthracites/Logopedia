@@ -6,7 +6,8 @@ namespace Logopedia.UIConnection
 {
     public class ItemsManager : IInitializable
     {
-        public GameObject CurrentGarment, Character, Background, CurrentItem, CurrentItemShadow, PreviewButton, CharacterAnimation;
+        public List<GameObject> CurrentGarment = new List<GameObject>();
+        public GameObject Character, Background, CurrentItem, CurrentItemShadow, PreviewButton, CharacterAnimation;
         public GameObject GarmenScenePanel, SplashScreenPanel;
         public List<GameObject> Garments = new List<GameObject>();
         public int ItemCount;

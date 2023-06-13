@@ -74,6 +74,7 @@
     <Compile Include="Assets/Doozy/Engine/Scripts/MColor.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Nodes/SubGraphNode.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/UnityResources.cs" />
+    <Compile Include="Assets/Scripts/FileUploader.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetAction.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Nodes/StartNode.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIToggle/UIToggleMessage.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/UIPopup/UIPopupLink.cs" />
     <Compile Include="Assets/Doozy/Engine/SceneManagement/Enums/GetSceneBy.cs" />
     <Compile Include="Assets/Doozy/Engine/Scripts/RangedFloat.cs" />
+    <Compile Include="Assets/Scripts/SelectManyObjects.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIToggle/UIToggleBehaviorType.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/EnableBackButton.cs" />
@@ -279,6 +281,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/Input/BackButton.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/UnloadSceneNode.cs" />
     <Compile Include="Assets/Doozy/Engine/SceneManagement/SceneLoader.cs" />
+    <Compile Include="Assets/Scripts/SpritesTemplates/TopicIcon.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetAudioMixer.cs" />
     <Compile Include="Assets/Doozy/Engine/Enums/SetupMode.cs" />
     <Compile Include="Assets/Doozy/Engine/Enums/Language.cs" />
@@ -329,6 +332,7 @@
     <Compile Include="Assets/Scripts/ProjectContextInstaller.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/StopAllSounds.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIView/Enums/UIViewBehaviorType.cs" />
+    <Compile Include="Assets/Scripts/Managers/SpritesManager.cs" />
     <Compile Include="Assets/Doozy/Engine/Layouts/LayoutController.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/UIButtonListener.cs" />
     <Compile Include="Assets/Doozy/Engine/Events/BoolEvent.cs" />
@@ -379,6 +383,7 @@
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/MuteAllSounds.cs" />
     <Compile Include="Assets/Doozy/Examples/Scripts/UIButtonAutomatedTextValue.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Input/InputData.cs" />
+    <Compile Include="Assets/Scripts/SpritesTemplates/Topic.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/HideUIView.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/GestureListener.cs" />
@@ -387,8 +392,6 @@
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/XYZ.cs" />
     <Compile Include="Assets/Scripts/Creation/ItemSlot.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetImage.cs" />
-    <Compile Include="Assets/Scripts/Managers/SpritesManager.cs" />
-    <Compile Include="Assets/Scripts/FileUploader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -398,6 +401,7 @@
     <None Include="Assets/Doozy/Examples/Fonts/Baloo_Bhaina/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Bubblegum_Sans/OFL.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_1/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Julius_Sans_One/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Quicksand/OFL.txt" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" />
@@ -406,7 +410,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
     <None Include="Assets/Doozy/Examples/Fonts/Baloo_Chettan/OFL.txt" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_4/skeleton.atlas.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_4/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Examples/Shaders/DIntense.Shader" />
     <None Include="Assets/Doozy/Examples/Shaders/DRimLightSelective.shader" />
     <None Include="Assets/Resources/Prefabs/Starts/skeleton.atlas.txt" />
@@ -425,10 +429,13 @@
     <None Include="Assets/Doozy/Examples/Fonts/Permanent_Marker/LICENSE.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
     <None Include="Assets/Doozy/Examples/Fonts/Megrim/OFL.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_4/skeleton.atlas.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_2/skeleton.atlas.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_3/skeleton.atlas.txt" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/Doozy/readme.txt" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_1/skeleton.atlas.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Examples/Shaders/DRimLightTransparent.shader" />
     <None Include="Assets/Doozy/Examples/Shaders/DLitSurface.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
@@ -436,7 +443,7 @@
     <None Include="Assets/Doozy/Examples/Fonts/Flavors/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Pacifico/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Bangers/OFL.txt" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_2/skeleton.atlas.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Engine/Debug/DDebug.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
@@ -444,7 +451,7 @@
     <None Include="Assets/Doozy/Examples/Fonts/Secular_One/OFL.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Animation/Robo_3/skeleton.atlas.txt" />
+    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_3/skeleton.atlas.txt" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Bangers - OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Oswald/OFL.txt" />
   </ItemGroup>

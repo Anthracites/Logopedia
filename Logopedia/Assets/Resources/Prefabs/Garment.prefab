@@ -262,6 +262,20 @@ MonoBehaviour:
   _starsObj: {fileID: 1450797177991502817}
   _garment: {fileID: 8764531919979952961}
   _stars: {fileID: 7575793102711641062}
+  _putItem:
+    SoundSource: 0
+    DatabaseName: General
+    SoundName: No Sound
+    AudioClip: {fileID: 0}
+    OutputAudioMixerGroup: {fileID: 0}
+  _takeItem:
+    SoundSource: 0
+    DatabaseName: General
+    SoundName: No Sound
+    AudioClip: {fileID: 0}
+    OutputAudioMixerGroup: {fileID: 0}
+  _startX: 0
+  _startY: 0
 --- !u!1 &6606990727942705167
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +373,14 @@ MonoBehaviour:
   _slot: {fileID: 5464380390744983181}
   _garment: {fileID: 8764531919979952961}
   _outline: {fileID: 3814512810220500978}
+  _takeItem:
+    SoundSource: 0
+    DatabaseName: General
+    SoundName: No Sound
+    AudioClip: {fileID: 0}
+    OutputAudioMixerGroup: {fileID: 0}
+  _startX: 0
+  _startY: 0
 --- !u!114 &2187458410321449299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +481,7 @@ GameObject:
   - component: {fileID: 4984602611744999953}
   m_Layer: 0
   m_Name: Garment
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

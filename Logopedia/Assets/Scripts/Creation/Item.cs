@@ -46,7 +46,8 @@ namespace Logopedia.GamePlay
             {
                 Debug.Log("Shift key is pressed.");
             }
-
+            SelectItem();
+            _outline.enabled = true;
             //StartMove();
             //GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
             //_canvasGroup.blocksRaycasts = true;
@@ -59,7 +60,8 @@ namespace Logopedia.GamePlay
             _startY = mousePos.y - transform.position.y;
             SoundyManager.Play(_takeItem);
             _outline.enabled = true;
-            _itemsManager.CurrentGarment = _garment;
+            _itemsManager.CurrentGarment.Clear();
+            _itemsManager.CurrentGarment.Add(_garment);
             _itemsManager.CurrentItem = gameObject;
             _itemsManager.CurrentItemShadow = _slot;
             _canvasGroup.blocksRaycasts = false;
@@ -96,10 +98,15 @@ namespace Logopedia.GamePlay
 
         public void OutlineItem()
         {
-            if (_itemsManager.CurrentItem != gameObject)
+            if (_itemsManager.CurrentGarment.Contains(gameObject) == false)
             {
                 _canvasGroup.blocksRaycasts = true;
                 _outline.enabled = false;
+            }
+            else
+            {
+                _canvasGroup.blocksRaycasts = false;
+                _outline.enabled = true;
             }
         }
 

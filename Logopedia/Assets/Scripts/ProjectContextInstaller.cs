@@ -30,6 +30,7 @@ public class ProjectContextInstaller : MonoInstaller
         Container.BindFactory<string, StoryCreationPanel, StoryCreationPanel.Factory>().FromFactory<PrefabResourceFactory<StoryCreationPanel>>();
         Container.BindFactory<string, StoryPlayPanel, StoryPlayPanel.Factory>().FromFactory<PrefabResourceFactory<StoryPlayPanel>>();
         Container.BindFactory<string, GarmentForPlay, GarmentForPlay.Factory>().FromFactory<PrefabResourceFactory<GarmentForPlay>>();
+        Container.BindFactory<string, TopicIcon, TopicIcon.Factory>().FromFactory<PrefabResourceFactory<TopicIcon>>();
     }
 
 }

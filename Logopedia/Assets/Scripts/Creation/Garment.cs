@@ -26,7 +26,8 @@ namespace Logopedia.GamePlay
 
         private void Awake()
         {
-            _itemsManager.CurrentGarment = gameObject;
+            _itemsManager.CurrentGarment.Clear();
+            _itemsManager.CurrentGarment.Add(gameObject);
             _itemsManager.CurrentItem = _item;
             _itemsManager.CurrentItemShadow = _itemShadow;
             _itemsManager.Garments.Add(gameObject);

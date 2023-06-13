@@ -55,7 +55,7 @@ namespace Logopedia.UserInterface
                 _scene.Items = new List<StoryScene.SceneItem>();
                 _garments = new List<GameObject>();
                 _storyManager.CurrentStory.Scenes.Add(_scene);
-                Debug.Log("Send scene" + gameObject.name);
+//                Debug.Log("Send scene" + gameObject.name);
                 //}
             }
         }
@@ -67,7 +67,7 @@ namespace Logopedia.UserInterface
             _itemsManager.Background = _bg;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;
             _itemsManager.PreviewButton = _previewSwichButton;
-            Debug.Log("Panel!!!" + gameObject.name);
+//            Debug.Log("Panel!!!" + gameObject.name);
         }
 
         private void OnDisable()
@@ -106,9 +106,10 @@ namespace Logopedia.UserInterface
 
             _scene.SceneCharacter = new StoryScene.CharacterForSave(_character.gameObject);
 
-            Debug.Log("BG: " + _scene.CurrentBGForSave + "Character: " + _scene.SceneCharacter);
+//            Debug.Log("BG: " + _scene.CurrentBGForSave + "Character: " + _scene.SceneCharacter);
 
-            _storyManager.CurrentStory.Scenes[_sceneNumber] = _scene;
+                _storyManager.CurrentStory.Scenes[_sceneNumber] = _scene;
+
             _garments.Clear();
             if (_storyManager.IsStorySave == true)
             {

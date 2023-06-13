@@ -31,6 +31,8 @@ namespace Logopedia.UserInterface
         [Inject]
         PopUpManager _popUpManager;
         [Inject]
+        TopicIcon.Factory _topicIconFactory;
+        [Inject]
         Garment.Factory _garmentFactory;
         [Inject]
         ItemTemplate.Factory _itemTemplateFactory;
@@ -49,7 +51,7 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private GameObject _middlePanel, _samplePrefab, _garment, _item, _itemShadow, _header, _footer, _backFromPreviewButton, _headerMiddlePanel, _splashScreenPanel;
         [SerializeField]
-        private GameObject _garmentSamplesContent, _backgroundSamplesContent, _characterSamplesContent, _hiddenCharacterButtonSprite, _isSplashScreenButtonSprite;
+        private GameObject _garmentSamplesContent, _backgroundSamplesContent, _characterSamplesContent, _hiddenCharacterButtonSprite, _isSplashScreenButtonSprite, _topicIconsContent;
         [SerializeField]
         private Vector2 _screenCenter;
         [SerializeField]
@@ -68,7 +70,10 @@ namespace Logopedia.UserInterface
         private List<UIView> _storyScenes = new List<UIView>();
         [SerializeField]
         private UnityEngine.UI.Image _addSwich;
+        [SerializeField]
+        private TMP_Dropdown _sceneNavigationDropdown;
         private FileInfo[] _files;
+        List<Sprite> _topicIcons = new List<Sprite>();
 
 
         void OpenStory()
@@ -204,10 +209,12 @@ namespace Logopedia.UserInterface
             if ((_storyManager.IsStoryCreartionStart == true) & (_storyManager.IsStoryEdit == false))
             {
                 CreateSceneBlank();
-                CreateSamples();
-                _storyManager.CurrentStory.Scenes = new List<StoryScene>();
+                CreateTopics();
+                _storyManager.CurrentStory.Scenes = new List<StoryScene>(0);
                 var _newScene = new StoryScene();
                 _newScene.SceneNumberInStory = 0;
+                //_storyManager.CurrentStory.Scenes.Add(_newScene);
+                //AddScenesToDropDown();
             }
 
             if (_storyManager.IsStoryEdit == true)
@@ -217,10 +224,11 @@ namespace Logopedia.UserInterface
             }
             _instCount = 0;
             _storyManager.IsStorySave = false;
-            CreateSamples();
+            CreateTopics();
             _isPreview = true;
             _currentSceneNumber = 0;
             _storyManager.CurrentStorySceneIndex = 0;
+
             if (_storyManager.CurrentStory.StoryName != null)
             {
                 _storyName.text = _storyManager.CurrentStory.StoryName;
@@ -235,12 +243,13 @@ namespace Logopedia.UserInterface
                 _itemsManager.GarmenScenePanel = _storyScenes[0].transform.GetChild(2).gameObject;
                 _splashScreenPanel = _storyScenes[0].transform.GetChild(3).gameObject;
                 _backFromPreviewButton = _storyScenes[0].transform.GetChild(4).gameObject;
-                Debug.Log("First scene !!!");
+//                Debug.Log("First scene !!!");
             }
             SwichScene();
             ConfigSwichButton();
             _storyManager.IsStoryEdit = false;
             _isPreview = false;
+            AddScenesToDropDown();
         }
 
         public void ShowCurrentSceneNumber()
@@ -379,12 +388,6 @@ namespace Logopedia.UserInterface
             }
         }
 
-        void CreateSamples()
-        {
-            CreateSpritesSamples(_garmentSamplesContent, _itemTemplateFactory, _spritesManager.Objects, PrefabsPathLibrary.GarmentSample);
-            CreateSpritesSamples(_backgroundSamplesContent, _bgTemplateFactory, _spritesManager.BackGrounds, PrefabsPathLibrary.BackGroundSample);
-            CreateSpritesSamples(_characterSamplesContent, _characterTemplateFactory, _spritesManager.Characters, PrefabsPathLibrary.CharacterSample);
-        }
 
         void CreateAnimationsSamples(GameObject _samplesContent, string _animSample, dynamic _factory, string _animFolder)
         {
@@ -432,14 +435,50 @@ namespace Logopedia.UserInterface
             }
         }
 
-
-
-        void CreateSpritesSamples(GameObject _samplesContent, dynamic _factory, List<Sprite> _spritesList, string _spriteSample)
+        void CreateTopics()
         {
-            for (int i = _samplesContent.transform.childCount; i > 0; --i)
+
+            ClearContent(_garmentSamplesContent);
+            ClearContent(_backgroundSamplesContent);
+            ClearContent(_characterSamplesContent);
+            ClearContent(_topicIconsContent);
+
+
+            List<Topic> _topics = _spritesManager.Topics;
+            List<GameObject> _topicIcons = new List<GameObject>();
+            _spritesManager.CurrentTopic = _topics[0];
+
+
+            foreach (Topic _t in _topics)
             {
-                DestroyImmediate(_samplesContent.transform.GetChild(0).gameObject);
+                List<GameObject> _topicPartIcons = new List<GameObject>();
+                CreateSmples(_garmentSamplesContent, _itemTemplateFactory, _t.Objects, PrefabsPathLibrary.GarmentSample, _topicPartIcons);
+                CreateSmples(_backgroundSamplesContent, _bgTemplateFactory, _t.BackGrounds, PrefabsPathLibrary.BackGroundSample, _topicPartIcons);
+                CreateSmples(_characterSamplesContent, _characterTemplateFactory, _t.Characters, PrefabsPathLibrary.CharacterSample, _topicPartIcons);
+
+                GameObject _topicIcon = _topicIconFactory.Create(PrefabsPathLibrary.TopicIcon).gameObject;
+                _topicIcon.GetComponent<TopicIcon>().topic = _t;
+                _topicIcon.GetComponent<TopicIcon>().topicPartIcons = _topicPartIcons;
+                _topicIcon.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = _t.Objects[0];
+                _topicIcons.Add(_topicIcon);
+                _topicIcon.transform.SetParent(_topicIconsContent.transform);
+                _topicIcon.transform.localScale = new Vector3(1, 1, 1);
             }
+            GameEventMessage.SendEvent(EventsLibrary.TopicSwiched);
+        }
+
+        void ClearContent(GameObject _content)
+        {
+            for (int i = _content.transform.childCount; i > 0; --i)
+            {
+                DestroyImmediate(_content.transform.GetChild(0).gameObject);
+            }
+        }
+
+
+        void CreateSmples(GameObject _samplesContent, dynamic _factory, List<Sprite> _spritesList, string _spriteSample, List<GameObject> _topicPartIconsList)
+        {
+
             float f = 0;
             foreach (Sprite _sprite in _spritesList)
             {
@@ -449,6 +488,7 @@ namespace Logopedia.UserInterface
                 _itemSample.transform.SetParent(_samplesContent.transform);
                 _itemSample.transform.localScale = new Vector3(1, 1, 1);
                 _itemSample.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = _sprite;
+                _topicPartIconsList.Add(_itemSample);
                 f++;
             }
 
@@ -458,7 +498,10 @@ namespace Logopedia.UserInterface
             float p = _samplesContent.GetComponent<HorizontalLayoutGroup>().padding.left;
             float y = _samplesContent.GetComponent<RectTransform>().sizeDelta.y;
 
-            _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
+            Vector2 _sampleContentSize = new Vector2((f * (x + s) + (p * 2) - s), y);
+            _samplesContent.GetComponent<RectTransform>().sizeDelta += _sampleContentSize;
+
+//            Debug.Log(_spriteSample + _sampleContentSize);
         }
 
         public void ResetItemRotation()
@@ -467,8 +510,11 @@ namespace Logopedia.UserInterface
 
             if ((_item != _character.gameObject) && (_itemShadow != null))
             {
-                _item.transform.eulerAngles = Vector3.zero;
-                _itemShadow.transform.eulerAngles = Vector3.zero;
+                foreach (GameObject obj in _itemsManager.CurrentGarment)
+                    {
+                    obj.transform.eulerAngles = Vector3.zero;
+                    _itemShadow.transform.eulerAngles = Vector3.zero;
+                }
             }
             else
             {
@@ -534,9 +580,13 @@ namespace Logopedia.UserInterface
             if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
             {
                 var _currentItem = _itemsManager.CurrentGarment;
-                Destroy(_currentItem);
-                _itemsManager.Garments.Remove(_currentItem);
-                _itemsManager.Garments.RemoveAll(x => x == null);
+                foreach (GameObject obj in _currentItem)
+                {
+                    Destroy(obj);
+                    _itemsManager.Garments.RemoveAll(x => x == null);
+                    //_itemsManager.Garments.Remove(obj);
+                    //_itemsManager.Garments.RemoveAll(x => x == null);
+                }
             }
 
         }
@@ -631,33 +681,78 @@ namespace Logopedia.UserInterface
                 _backFromPreviewButton = _itemsManager.PreviewButton;
             }
         }
-
         public void GoToNextScene()
         {
+            int i = _storyManager.CurrentStorySceneIndex;
+            GoToScene(i + 1);
+        }
+
+        public void GoToPrevioudScene()
+        {
+            int i = _storyManager.CurrentStorySceneIndex;
+            GoToScene(i - 1);
+        }
+
+        public void GoToScene(int TargetSceneNumber)
+        {
             _currentSceneNumber = _storyManager.CurrentStorySceneIndex;
-            if (_storyScenes.Count - 1 > _currentSceneNumber)
+            if (TargetSceneNumber > _currentSceneNumber)
             {
-                _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
-                _storyScenes[_currentSceneNumber].Hide();
-                _currentSceneNumber++;
-                _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
-                _storyScenes[_currentSceneNumber].Show();
+                if (_storyScenes.Count - 1 > _currentSceneNumber)
+                {
+                    _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
+                    _storyScenes[_currentSceneNumber].Hide();
+                    _currentSceneNumber = TargetSceneNumber;
+                    _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
+                    _storyScenes[_currentSceneNumber].Show();
+                }
+                else
+                {
+                    CreateSceneBlank();
+                    _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
+                    _storyScenes[_currentSceneNumber].Hide();
+                    _currentSceneNumber = TargetSceneNumber;
+                    _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
+                    _storyScenes[_currentSceneNumber].Show();
+                    _storyManager.CurrentStory.Scenes.Add(new StoryScene());
+                }
             }
             else
             {
-                CreateSceneBlank();
-                _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
+                _currentSceneNumber = _storyManager.CurrentStorySceneIndex;
+                _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
                 _storyScenes[_currentSceneNumber].Hide();
-                _currentSceneNumber++;
-                _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
+                _currentSceneNumber = TargetSceneNumber;
+                _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
                 _storyScenes[_currentSceneNumber].Show();
+                _itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject;
+                _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
             }
             _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
             ConfigSwichButton();
             _itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject;
             SwichScene();
             ShowCurrentSceneNumber();
+            AddScenesToDropDown();
         }
+
+        //public void GoToPreviousScene()
+        //{
+        //    _currentSceneNumber = _storyManager.CurrentStorySceneIndex;
+        //    _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
+        //    _storyScenes[_currentSceneNumber].Hide();
+        //    _currentSceneNumber--;
+        //    _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
+        //    _storyScenes[_currentSceneNumber].Show();
+        //    _itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject;
+        //    _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
+        //    SwichScene();
+        //    ShowCurrentSceneNumber();
+        //    ConfigSwichButton();
+        //    AddScenesToDropDown(_currentSceneNumber);
+
+        //}
+
 
         private void CreateSceneBlank()
         {
@@ -672,22 +767,7 @@ namespace Logopedia.UserInterface
             _backFromPreviewButton = _itemsManager.PreviewButton;
         }
 
-        public void GoToPreviousScene()
-        {
-            _currentSceneNumber = _storyManager.CurrentStorySceneIndex;
-            _storyScenes[_currentSceneNumber].HideBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
-            _storyScenes[_currentSceneNumber].Hide();
-            _currentSceneNumber--;
-            _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Left;
-            _storyScenes[_currentSceneNumber].Show();
-            _itemsManager.GarmenScenePanel = _storyScenes[_currentSceneNumber].gameObject.transform.GetChild(2).gameObject;
-            _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
-            SwichScene();
-            ShowCurrentSceneNumber();
-            ConfigSwichButton();
-
-        }
-
+      
         public void DeleteSceneButton()
         {
             _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.СonfirmRemoveScene;
@@ -731,50 +811,72 @@ namespace Logopedia.UserInterface
             }
         }
 
+        public void AddScenesToDropDown()
+        {
+            _sceneNavigationDropdown.options.Clear();
+
+            int i = 0;
+            foreach (UIView _scene in _storyScenes)
+            {
+                _sceneNavigationDropdown.options.Add(new TMP_Dropdown.OptionData() { text = "Лист №" + (i + 1).ToString() });
+                i++;
+            }
+
+            _sceneNavigationDropdown.value = _storyManager.CurrentStorySceneIndex;
+            Debug.Log("Item" + i + "added to DD." + " Current scene: " + _storyManager.CurrentStorySceneIndex);
+        }
+
+        public void GoToSceneFronDropDown()
+        {
+            GoToScene(_sceneNavigationDropdown.value);
+        }
 
         public void CopyItem()
         {
             if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
             {
-                GetCurrentGarment();
-                string _name = _itemsManager.CurrentGarment.name;
-                Sprite _itemSprite = _item.GetComponent<UnityEngine.UI.Image>().sprite;
-                Vector3 _garmentPosition = _itemsManager.CurrentGarment.transform.localPosition;
-                Vector3 _itemPosition = _item.transform.localPosition;
-                Vector3 _itemShadowPosition = _itemShadow.transform.localPosition;
-                Vector3 _itemScale = _item.transform.localScale;
-                Vector3 _itemRotation = _item.transform.localEulerAngles;
-                bool _isShadowEnable = _itemShadow.activeSelf;
-                UnityEngine.Color _itemShadowColor = _itemShadow.GetComponent<UnityEngine.UI.Image>().color;
+                foreach (GameObject obj in _itemsManager.CurrentGarment)
+                {
+                    GetCurrentGarment();
+                    string _name = obj.name;
+                    Sprite _itemSprite = _item.GetComponent<UnityEngine.UI.Image>().sprite;
+                    Vector3 _garmentPosition = obj.transform.localPosition;
+                    Vector3 _itemPosition = _item.transform.localPosition;
+                    Vector3 _itemShadowPosition = _itemShadow.transform.localPosition;
+                    Vector3 _itemScale = _item.transform.localScale;
+                    Vector3 _itemRotation = _item.transform.localEulerAngles;
+                    bool _isShadowEnable = _itemShadow.activeSelf;
+                    UnityEngine.Color _itemShadowColor = _itemShadow.GetComponent<UnityEngine.UI.Image>().color;
 
 
-                var _garment = _garmentFactory.Create(PrefabsPathLibrary.Item).gameObject;
-                _garment.transform.SetParent(_itemsManager.GarmenScenePanel.transform);
-                Debug.Log(_name);
-                _garment.name = _name;
-                var _copyItem = _garment.transform.GetChild(1).gameObject;
-                var _copyItemShadow = _garment.transform.GetChild(0).gameObject;
+                    var _garment = _garmentFactory.Create(PrefabsPathLibrary.Item).gameObject;
+                    _garment.transform.SetParent(_itemsManager.GarmenScenePanel.transform);
+                    Debug.Log(_name);
+                    _garment.name = _name;
+                    var _copyItem = _garment.transform.GetChild(1).gameObject;
+                    var _copyItemShadow = _garment.transform.GetChild(0).gameObject;
 
-                _garment.transform.localScale = Vector3.one;
-                _garment.transform.localPosition = _garmentPosition;
+                    _garment.transform.localScale = Vector3.one;
+                    _garment.transform.localPosition = _garmentPosition;
 
 
-                _copyItem.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
-                _copyItemShadow.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
+                    _copyItem.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
+                    _copyItemShadow.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
 
-                _copyItem.transform.localPosition = _itemPosition;
-                _copyItemShadow.transform.localPosition = _itemShadowPosition;
+                    _copyItem.transform.localPosition = _itemPosition;
+                    _copyItemShadow.transform.localPosition = _itemShadowPosition;
 
-                _copyItem.transform.localScale = _itemScale;
-                _copyItemShadow.transform.localScale = _itemScale;
+                    _copyItem.transform.localScale = _itemScale;
+                    _copyItemShadow.transform.localScale = _itemScale;
 
-                _copyItem.transform.localEulerAngles = _itemRotation;
-                _copyItemShadow.transform.localEulerAngles = _itemRotation;
+                    _copyItem.transform.localEulerAngles = _itemRotation;
+                    _copyItemShadow.transform.localEulerAngles = _itemRotation;
 
-                _copyItemShadow.GetComponent<UnityEngine.UI.Image>().color = _itemShadowColor;
-                _copyItemShadow.SetActive(_isShadowEnable);
+                    _copyItemShadow.GetComponent<UnityEngine.UI.Image>().color = _itemShadowColor;
+                    _copyItemShadow.SetActive(_isShadowEnable);
 
-                _itemsManager.Garments.Add(_item);
+                    _itemsManager.Garments.Add(_item);
+                }
             }
         }
 

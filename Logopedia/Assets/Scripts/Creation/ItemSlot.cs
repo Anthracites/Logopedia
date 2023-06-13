@@ -77,7 +77,8 @@ namespace Logopedia.GamePlay
 
         void SendItem()
         {
-            _itemsManager.CurrentGarment = _garment;
+            _itemsManager.CurrentGarment.Clear();
+            _itemsManager.CurrentGarment.Add(_garment);
             _itemsManager.CurrentItem = _item;
             _itemsManager.CurrentItemShadow = gameObject;
         }
