@@ -77,10 +77,10 @@ namespace Logopedia.GamePlay
                 ItemScale = new PositionForSave(_item.transform.localScale);
                 ShadowEnabled = _itemShadow.activeSelf;
 
-                Color _transparent = new Color(255, 255, 255, 0);
+                Color _transparent = new Color(0, 0, 0, 0);
                 Color _currentShadowColor = _itemShadow.GetComponent<Image>().color;
 
-                ShadowVisible = (_currentShadowColor == _transparent);
+                ShadowVisible = !(_currentShadowColor == _transparent);
             }
 
         }

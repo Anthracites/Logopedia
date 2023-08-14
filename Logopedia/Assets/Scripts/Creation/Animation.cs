@@ -47,12 +47,10 @@ namespace Logopedia.GamePlay
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _startX = mousePos.x - transform.position.x;
             _startY = mousePos.y - transform.position.y;
-            _itemsManager.CurrentItem = gameObject;
             SendToManager();
         }
         public void OnPointerClick(PointerEventData pointerEventData)
         {
-            _itemsManager.CurrentItem = gameObject;
             SendToManager();
         }
     }

@@ -135,6 +135,8 @@ public class PopUpController : MonoBehaviour
             foreach (GameObject garment in _garments)
             {
                 Destroy(garment);
+                _itemsManager.Garments.Clear();
+                _itemsManager.Garments.RemoveAll(x => x == null);
             }
             ClosePopUp();
         }

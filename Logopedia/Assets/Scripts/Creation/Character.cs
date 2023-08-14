@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 namespace Logopedia.GamePlay
 {
-    public class Character : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
+    public class Character : MonoBehaviour, IDragHandler, IBeginDragHandler, IPointerClickHandler
     {
         [Inject]
         ItemsManager _itemsManager;
@@ -22,10 +22,11 @@ namespace Logopedia.GamePlay
         [SerializeField]
         private GameObject _animation, _animationParent;
 
+        [SerializeField]
+        private GameEventListener[] _listeners;
+
         void Start()
         {
-            //this.gameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.5f);
-            _itemsManager.CurrentItem = gameObject;
             StartMove();
         }
 
@@ -35,11 +36,10 @@ namespace Logopedia.GamePlay
             _startX = mousePos.x - transform.position.x;
             _startY = mousePos.y - transform.position.y;
             _outline.enabled = true;
-            _itemsManager.CurrentItem = gameObject;
-            _itemsManager.CurrentItemShadow = null;
             _itemsManager.CharacterAnimation = _animation;
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
-//            Debug.Log("Chacter selected!!!" + gameObject.name);
+
+            _itemsManager.SelectedGarments.Clear();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -49,27 +49,39 @@ namespace Logopedia.GamePlay
 
         public void OnDrag(PointerEventData eventData)
         {
-                var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             float _z = transform.position.z;
             transform.position = new Vector3(mousePos.x - _startX, mousePos.y - _startY, _z);
         }
 
-        public void OnEndDrag(PointerEventData eventData)
-        {
-        }
 
         public void OnPointerClick(PointerEventData pointerEventData)
         {
             StartMove();
+            SwichSelectCharacter(true);
         }
 
-        public void DeselectItem()
+
+        public void SwichSelectCharacter(bool _isCharacterSelected)
         {
-            if(_itemsManager.CurrentItem != gameObject)
+            _outline.enabled = _isCharacterSelected;
+            foreach (GameEventListener _listener in _listeners)
             {
-                _outline.enabled = false;
+                _listener.enabled = _isCharacterSelected;
             }
         }
+
+        public void MirrorCharacter()
+        {
+            Vector3 _scale = gameObject.transform.localScale;
+            gameObject.transform.localScale = new Vector3(-_scale.x, _scale.y, _scale.z);
+        }
+
+        public void ResetCharacterRotation()
+        {
+            gameObject.transform.eulerAngles = Vector3.zero;
+        }
+
     }
 }
 

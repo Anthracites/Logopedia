@@ -37,6 +37,8 @@ namespace Logopedia.GamePlay
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            _itemsManager.SelectedGarments.Clear();
+
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _startX = mousePos.x - transform.position.x;
             _startY = mousePos.y - transform.position.y;
@@ -47,6 +49,7 @@ namespace Logopedia.GamePlay
 
         public void OnPointerClick(PointerEventData pointerEventData)
         {
+            _itemsManager.SelectedGarments.Clear();
             SendItem();
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
         }
@@ -77,10 +80,7 @@ namespace Logopedia.GamePlay
 
         void SendItem()
         {
-            _itemsManager.CurrentGarment.Clear();
-            _itemsManager.CurrentGarment.Add(_garment);
-            _itemsManager.CurrentItem = _item;
-            _itemsManager.CurrentItemShadow = gameObject;
+            _itemsManager.SelectedGarments.Add(_garment);
         }
 
         public void ShowAnimation()

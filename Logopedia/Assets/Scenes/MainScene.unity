@@ -2732,7 +2732,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 340060570}
         m_TargetAssemblyTypeName: Logopedia.UserInterface.UIView_Creation, Assembly-CSharp
-        m_MethodName: HideShadow
+        m_MethodName: SwichShadowVisible
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4752,7 +4752,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 340060570}
         m_TargetAssemblyTypeName: Logopedia.UserInterface.UIView_Creation, Assembly-CSharp
-        m_MethodName: SwichCharacter
+        m_MethodName: SwichCharacterButtonHanler
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6426,14 +6426,15 @@ MonoBehaviour:
   _rotationSlider: {fileID: 1250628513}
   _middlePanel: {fileID: 0}
   _samplePrefab: {fileID: 0}
-  _garment: {fileID: 0}
-  _item: {fileID: 0}
   _itemShadow: {fileID: 0}
   _header: {fileID: 1314374663}
   _footer: {fileID: 1451607380}
   _backFromPreviewButton: {fileID: 0}
   _headerMiddlePanel: {fileID: 1881095359}
   _splashScreenPanel: {fileID: 0}
+  currentItems: []
+  currentShadows: []
+  currentGarments: []
   _garmentSamplesContent: {fileID: 1666847121}
   _backgroundSamplesContent: {fileID: 1106326345}
   _characterSamplesContent: {fileID: 1870587449}
@@ -6606,7 +6607,7 @@ MonoBehaviour:
       - m_Target: {fileID: 340060570}
         m_TargetAssemblyTypeName: Logopedia.UserInterface.UIView_Creation, Assembly-CSharp
         m_MethodName: AddScenesToDropDown
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21524,7 +21525,7 @@ MonoBehaviour:
   m_MinValue: -180
   m_MaxValue: 180
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 180
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -33883,7 +33884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 248.115, y: -48.2805}
+  m_AnchoredPosition: {x: 248.11502, y: -48.2805}
   m_SizeDelta: {x: 165.41, y: 96.561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2036268720

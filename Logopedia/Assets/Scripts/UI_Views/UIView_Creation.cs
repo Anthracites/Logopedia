@@ -17,6 +17,7 @@ using Doozy.Engine.UI;
 using System.Linq;
 using System.Drawing;
 using Spine.Unity;
+using UniRx;
 
 namespace Logopedia.UserInterface
 {
@@ -49,7 +50,9 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private Slider _scaleSlider, _rotationSlider;
         [SerializeField]
-        private GameObject _middlePanel, _samplePrefab, _garment, _item, _itemShadow, _header, _footer, _backFromPreviewButton, _headerMiddlePanel, _splashScreenPanel;
+        private GameObject _middlePanel, _samplePrefab, _itemShadow, _header, _footer, _backFromPreviewButton, _headerMiddlePanel, _splashScreenPanel;
+        [SerializeField]
+        private List<GameObject> currentItems, currentShadows, currentGarments = new List<GameObject>();
         [SerializeField]
         private GameObject _garmentSamplesContent, _backgroundSamplesContent, _characterSamplesContent, _hiddenCharacterButtonSprite, _isSplashScreenButtonSprite, _topicIconsContent;
         [SerializeField]
@@ -60,8 +63,6 @@ namespace Logopedia.UserInterface
         private bool _isPreview, _isShadowHiden, _isCharacterHidden, _isCurrentSceneSplashScreen;
         [SerializeField]
         private TMP_Text _storyName, _sceneNumber;
-
-        private UnityEngine.Color _transparent = new UnityEngine.Color(255, 255, 255, 0), _opaque = new UnityEngine.Color(0, 0, 0, 0.5f);
         [SerializeField]
         private int _lastStoryID = 0, _currentSceneNumber;
         [SerializeField]
@@ -74,6 +75,12 @@ namespace Logopedia.UserInterface
         private TMP_Dropdown _sceneNavigationDropdown;
         private FileInfo[] _files;
         List<Sprite> _topicIcons = new List<Sprite>();
+        private UnityEngine.Color _transparent = new UnityEngine.Color(0, 0, 0, 0), _opaque = new UnityEngine.Color(0, 0, 0, 0.5f);
+
+        public static ReactiveProperty<float> ItemScale = new ReactiveProperty<float>();
+        public static ReactiveProperty<float> ItemRotation = new ReactiveProperty<float>();
+
+
 
 
         void OpenStory()
@@ -161,7 +168,7 @@ namespace Logopedia.UserInterface
 
                     var _currentColor = _opaque;
 
-                    if (_isVisible)
+                    if (_isVisible == true)
                     {
                         _currentColor = _opaque;
                     }
@@ -189,10 +196,10 @@ namespace Logopedia.UserInterface
 
         }
 
-        public void SwichCharacter()
+        public void SwichCharacterButtonHanler()
         {
             _isCharacterHidden = !_isCharacterHidden;
-            _character.gameObject.SetActive(_isCharacterHidden);
+            GameEventMessage.SendEvent(EventsLibrary.CharacterSwiched);
             _hiddenCharacterButtonSprite.SetActive(_isCharacterHidden);
         }
 
@@ -288,106 +295,47 @@ namespace Logopedia.UserInterface
             }
         }
 
-        public void HideShadow()
+        public void SwichShadowVisible()
         {
-            GetCurrentGarment();
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
-                var _currentColor = _opaque;
-                if (_isShadowHiden)
-                {
-                    _currentColor = _opaque;
-                }
-                else
-                {
-                    _currentColor = _transparent;
-                }
-                _itemShadow.GetComponent<UnityEngine.UI.Image>().color = _currentColor;
-                _isShadowHiden = !_isShadowHiden;
-            }
+            GameEventMessage.SendEvent(EventsLibrary.SwichItemShadowVisible);
         }
 
         public void SwichShadow()
         {
-            GetCurrentGarment();
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
-                bool _isActive = !_itemShadow.activeSelf;
-
-                {
-                    _itemShadow.SetActive(_isActive);
-                }
-            }
+            GameEventMessage.SendEvent(EventsLibrary.SwichItemShadow);  
         }
 
         public void ScaleItem()
         {
-            GetCurrentGarment();
-            if ((_item != _character.gameObject) && (_itemShadow != null))
-            {
-                _item.transform.localScale = new Vector3(_scaleSlider.value, _scaleSlider.value, _scaleSlider.value);
-                _itemShadow.transform.localScale = new Vector3(_scaleSlider.value, _scaleSlider.value, _scaleSlider.value);
-            }
-            else
-            {
-                _item.transform.localScale = new Vector3(_scaleSlider.value, _scaleSlider.value, _scaleSlider.value);
-            }
+           _itemsManager.UI_Parametr = 0;
+            ItemScale.Value = _scaleSlider.value;
         }
 
         public void RotateItem()
         {
-            GetCurrentGarment();
-            if ((_item != _character.gameObject) && (_itemShadow != null))
-            {
-                _item.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
-                _itemShadow.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
-            }
-            else
-            {
-                _item.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
 
-            }
+            _itemsManager.UI_Parametr = 0;
+            ItemRotation.Value = _rotationSlider.value;
+
+            ////if (_itemsManager.SelectedGarments.Count > 0)
+            ////{
+            ////    foreach (GameObject _item in currentItems)
+            ////    {
+            ////        _item.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
+            ////        _itemShadow.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
+            ////    }
+            ////}
+            ////else
+            ////{
+            ////    _character.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
+
+            ////}
         }
 
         public void MirrowItem()
         {
-            GetCurrentGarment();
-
-            if ((_item != _character.gameObject) && (_itemShadow != null))
-            {
-                Vector3 _scale = _item.transform.localScale;
-                _item.transform.localScale = new Vector3(-_scale.x, _scale.y, _scale.z);
-                _itemShadow.transform.localScale = new Vector3(-_scale.x, _scale.y, _scale.z);
-            }
-            else
-            {
-                Vector3 _scale = _character.transform.localScale;
-                _character.transform.localScale = new Vector3(-_scale.x, _scale.y, _scale.z);
-            }
-
+            GameEventMessage.SendEvent(EventsLibrary.MirrorItem);
         }
-
-        private void GetCurrentGarment()
-        {
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
-                _item = _itemsManager.CurrentItem;
-                _itemShadow = _itemsManager.CurrentItemShadow;
-                if (_itemShadow.GetComponent<UnityEngine.UI.Image>().color == _transparent)
-                {
-                    _isShadowHiden = true;
-                }
-                else
-                {
-                    _isShadowHiden = false;
-                }
-            }
-            else
-            {
-                _item = _itemsManager.CurrentItem;
-            }
-        }
-
 
         void CreateAnimationsSamples(GameObject _samplesContent, string _animSample, dynamic _factory, string _animFolder)
         {
@@ -428,11 +376,7 @@ namespace Logopedia.UserInterface
 
         public void SetTargetPosition()
         {
-            GetCurrentGarment();
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
-                _itemShadow.transform.position = _item.transform.position;
-            }
+            GameEventMessage.SendEvent(EventsLibrary.SetShadowOnItem);
         }
 
         void CreateTopics()
@@ -506,59 +450,27 @@ namespace Logopedia.UserInterface
 
         public void ResetItemRotation()
         {
-            GetCurrentGarment();
-
-            if ((_item != _character.gameObject) && (_itemShadow != null))
-            {
-                foreach (GameObject obj in _itemsManager.CurrentGarment)
-                    {
-                    obj.transform.eulerAngles = Vector3.zero;
-                    _itemShadow.transform.eulerAngles = Vector3.zero;
-                }
-            }
-            else
-            {
-                _item.transform.eulerAngles = Vector3.zero;
-            }
-            ResetControl();
+            GameEventMessage.SendEvent(EventsLibrary.ResetRotation);
         }
 
         public void SlowRotaion(int k)
         {
-            GetCurrentGarment();
-
-            float currentRotation = _item.transform.eulerAngles.z;
-            float newRotation = currentRotation + (0.5f * k);
-
-            if ((_item != _character.gameObject) && (_itemShadow != null))
+            _itemsManager.UI_Parametr = k;
+            GameEventMessage.SendEvent(EventsLibrary.ScaleSelectedItem);
+            if (_itemsManager.SelectedGarments.Count == 1)
             {
-                _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
-                _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
+                ResetControl();
             }
-            else
-            {
-                _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
-            }
-            ResetControl();
         }
 
         public void SlowScale(int k)
         {
-            GetCurrentGarment();
-
-            float currentScale = _item.transform.localScale.z;
-            float newScale = currentScale + (0.1f * k);
-
-            if ((_item != _character.gameObject) && (_itemShadow != null))
+            _itemsManager.UI_Parametr = k;
+            GameEventMessage.SendEvent(EventsLibrary.RotateSelectedItem);
+            if (_itemsManager.SelectedGarments.Count == 1)
             {
-                _item.transform.localScale = new Vector3(newScale, newScale, newScale);
-                _itemShadow.transform.localScale = new Vector3(newScale, newScale, newScale);
+                ResetControl();
             }
-            else
-            {
-                _item.transform.localScale = new Vector3(newScale, newScale, newScale);
-            }
-            ResetControl();
         }
 
 
@@ -576,26 +488,15 @@ namespace Logopedia.UserInterface
 
         public void DeleteItem()
         {
-            GetCurrentGarment();
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
-                var _currentItem = _itemsManager.CurrentGarment;
-                foreach (GameObject obj in _currentItem)
-                {
-                    Destroy(obj);
-                    _itemsManager.Garments.RemoveAll(x => x == null);
-                    //_itemsManager.Garments.Remove(obj);
-                    //_itemsManager.Garments.RemoveAll(x => x == null);
-                }
-            }
+            GameEventMessage.SendEvent(EventsLibrary.DeleteItem);
 
         }
 
         public void ChangeCharacter()
         {
-            var _currentCharacter = _itemsManager.Character.GetComponent<UnityEngine.UI.Image>().sprite;
-            ChangeSprite(_currentCharacter, _character);
-            _character.gameObject.name = _currentCharacter.name;
+            //var _currentCharacter = _itemsManager.Character.GetComponent<UnityEngine.UI.Image>().sprite;
+            //ChangeSprite(_currentCharacter, _character);
+            //_character.gameObject.name = _currentCharacter.name;
         }
 
         public void ChangeBG()
@@ -607,9 +508,14 @@ namespace Logopedia.UserInterface
 
         public void ResetControl()
         {
-            GetCurrentGarment();
-            if (_item != null)
+            if (currentGarments.Count > 1)
             {
+                _scaleSlider.value = 0;
+                _rotationSlider.value = 0;
+            }
+            else
+            {
+                GameObject _item = _itemsManager.SelectedGarments[0].transform.GetChild(0).gameObject;
                 _scaleSlider.value = _item.transform.localScale.x;
                 var a = _item.transform.eulerAngles.z;
                 a = Mathf.Repeat(a + 180, 360) - 180;
@@ -624,11 +530,8 @@ namespace Logopedia.UserInterface
 
         public void SearchShadow()
         {
-            GetCurrentGarment();
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
-            {
-                _itemShadow.GetComponent<ItemSlot>().ShowAnimation();
-            }
+            GameEventMessage.SendEvent(EventsLibrary.SearchShadow);
+
         }
 
         public void CleanScene()
@@ -665,7 +568,7 @@ namespace Logopedia.UserInterface
         {
             if (_storyManager.IsStoryEdit == false)
             {
-                _character = _itemsManager.Character.GetComponent<UnityEngine.UI.Image>();
+                //_character = _itemsManager.Character.GetComponent<UnityEngine.UI.Image>();
                 _bg = _itemsManager.Background.GetComponent<UnityEngine.UI.Image>();
                 _splashScreenPanel = _itemsManager.SplashScreenPanel;
             }
@@ -833,18 +736,17 @@ namespace Logopedia.UserInterface
 
         public void CopyItem()
         {
-            if ((_itemsManager.CurrentItem != _character) && (_itemsManager.CurrentItemShadow != null))
+            if (_itemsManager.SelectedGarments.Count > 0)
             {
-                foreach (GameObject obj in _itemsManager.CurrentGarment)
+                foreach (GameObject obj in _itemsManager.SelectedGarments)
                 {
-                    GetCurrentGarment();
                     string _name = obj.name;
-                    Sprite _itemSprite = _item.GetComponent<UnityEngine.UI.Image>().sprite;
+                    Sprite _itemSprite = obj.GetComponent<UnityEngine.UI.Image>().sprite;
                     Vector3 _garmentPosition = obj.transform.localPosition;
-                    Vector3 _itemPosition = _item.transform.localPosition;
+                    Vector3 _itemPosition = obj.transform.localPosition;
                     Vector3 _itemShadowPosition = _itemShadow.transform.localPosition;
-                    Vector3 _itemScale = _item.transform.localScale;
-                    Vector3 _itemRotation = _item.transform.localEulerAngles;
+                    Vector3 _itemScale = obj.transform.localScale;
+                    Vector3 _itemRotation = obj.transform.localEulerAngles;
                     bool _isShadowEnable = _itemShadow.activeSelf;
                     UnityEngine.Color _itemShadowColor = _itemShadow.GetComponent<UnityEngine.UI.Image>().color;
 
@@ -875,7 +777,7 @@ namespace Logopedia.UserInterface
                     _copyItemShadow.GetComponent<UnityEngine.UI.Image>().color = _itemShadowColor;
                     _copyItemShadow.SetActive(_isShadowEnable);
 
-                    _itemsManager.Garments.Add(_item);
+                    _itemsManager.Garments.Add(obj);
                 }
             }
         }

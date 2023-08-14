@@ -31,7 +31,7 @@ namespace Logopedia.UserInterface
 
         [SerializeField]
         private List<GameObject> _scenePanels;
-        private Color _transparent = new Color(255, 255, 255, 0), _opaque = new Color(0, 0, 0, 0.5f);
+        private Color _transparent = new Color(0, 0, 0, 0), _opaque = new Color(0, 0, 0, 0.5f);
         private int _currentScene;
 
 

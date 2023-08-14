@@ -49,6 +49,8 @@ GameObject:
   - component: {fileID: 4282577005086867571}
   - component: {fileID: 8694475365099320622}
   - component: {fileID: 3470720152480715257}
+  - component: {fileID: 177755528057288385}
+  - component: {fileID: 2542506076893700478}
   - component: {fileID: 3758993934468410111}
   - component: {fileID: 2545454849773302009}
   m_Layer: 0
@@ -149,6 +151,69 @@ MonoBehaviour:
   _outline: {fileID: 8694475365099320622}
   _animation: {fileID: 4718797159820028850}
   _animationParent: {fileID: 0}
+  _listeners:
+  - {fileID: 177755528057288385}
+  - {fileID: 2542506076893700478}
+--- !u!114 &177755528057288385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782659360468291645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3470720152480715257}
+        m_TargetAssemblyTypeName: Logopedia.GamePlay.Character, Assembly-CSharp
+        m_MethodName: ResetCharacterRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: ResetRotation
+  ListenForAllGameEvents: 0
+--- !u!114 &2542506076893700478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782659360468291645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3470720152480715257}
+        m_TargetAssemblyTypeName: Logopedia.GamePlay.Character, Assembly-CSharp
+        m_MethodName: MirrorCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: MirrorItem
+  ListenForAllGameEvents: 0
 --- !u!114 &3758993934468410111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,8 +232,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3470720152480715257}
         m_TargetAssemblyTypeName: Logopedia.GamePlay.Character, Assembly-CSharp
-        m_MethodName: DeselectItem
-        m_Mode: 1
+        m_MethodName: SwichSelectCharacter
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -197,8 +262,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3470720152480715257}
         m_TargetAssemblyTypeName: Logopedia.GamePlay.Character, Assembly-CSharp
-        m_MethodName: DeselectItem
-        m_Mode: 1
+        m_MethodName: SwichSelectCharacter
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -394,6 +459,7 @@ GameObject:
   - component: {fileID: 690944411133008931}
   - component: {fileID: 571670528583640927}
   - component: {fileID: 2067545317712616690}
+  - component: {fileID: 910696147108736668}
   m_Layer: 5
   m_Name: PanelMiddle
   m_TagString: CreationPanel
@@ -1010,6 +1076,36 @@ MonoBehaviour:
         m_CallState: 2
   GameEvent: SaveStory
   ListenForAllGameEvents: 0
+--- !u!114 &910696147108736668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5730191024310205050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 571670528583640927}
+        m_TargetAssemblyTypeName: Logopedia.UserInterface.StoryCreationPanel, Assembly-CSharp
+        m_MethodName: SwichCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: CharacterSwiched
+  ListenForAllGameEvents: 0
 --- !u!1 &7498547387677406063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: []
   unitSelected: []
+  isMouse: 0
   skin: {fileID: 0}
 --- !u!1 &8862390429886481297
 GameObject:

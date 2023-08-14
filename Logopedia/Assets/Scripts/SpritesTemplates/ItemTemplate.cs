@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using Zenject;
+using Doozy.Engine;
 
 namespace Logopedia.UserInterface
 {
@@ -45,7 +46,12 @@ namespace Logopedia.UserInterface
             _item.transform.GetChild(0).GetComponent<Image>().sprite = _sprite;
             _item.transform.GetChild(1).GetComponent<Image>().sprite = _sprite;
 
+            _itemsManager.SelectedGarments.Clear();
+
+            _itemsManager.SelectedGarments.Add(_item);
             _itemsManager.Garments.Add(_item);
+            _item.GetComponent<Image>().raycastTarget = true;
+            GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
         }
 
         public class Factory : PlaceholderFactory<string, ItemTemplate>

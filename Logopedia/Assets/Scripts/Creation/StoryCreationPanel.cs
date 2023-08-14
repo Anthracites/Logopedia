@@ -23,6 +23,7 @@ namespace Logopedia.UserInterface
         StoryScene _scene;
         [SerializeField]
         int _sceneNumber;
+        private bool _isCharacterHidden;
 
         private void Awake()
         {
@@ -40,6 +41,13 @@ namespace Logopedia.UserInterface
             //        Debug.Log("Send scene" + gameObject.name);
             //    //}
             //}
+        }
+
+        public void SwichCharacter()//пописан на событие CharacterSwiched на кнопре HideCharacter в UIView_Creation
+
+        {
+            _isCharacterHidden = !_isCharacterHidden;
+            _character.gameObject.SetActive(_isCharacterHidden);
         }
 
         private void Start()
@@ -62,12 +70,11 @@ namespace Logopedia.UserInterface
 
         private void OnEnable()
         {
+            _isCharacterHidden = _character.activeSelf;
             _itemsManager.GarmenScenePanel = _garmentPanel;
-            _itemsManager.Character = _character;
             _itemsManager.Background = _bg;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;
             _itemsManager.PreviewButton = _previewSwichButton;
-//            Debug.Log("Panel!!!" + gameObject.name);
         }
 
         private void OnDisable()
@@ -118,6 +125,7 @@ namespace Logopedia.UserInterface
             }
         }
 
+        
         public class Factory : PlaceholderFactory<string, StoryCreationPanel>
         {
 

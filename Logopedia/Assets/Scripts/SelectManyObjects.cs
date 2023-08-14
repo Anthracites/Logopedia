@@ -9,7 +9,7 @@ using Doozy.Engine;
 
 namespace Logopedia.UserInterface
 {
-	public class SelectManyObjects : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+	public class SelectManyObjects : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 	{
 		[Inject]
 		ItemsManager _itemsManager;
@@ -31,6 +31,13 @@ namespace Logopedia.UserInterface
 		public void OnDrag(PointerEventData eventData)
 		{
 
+		}
+
+		public void OnPointerClick(PointerEventData pointerEventData)
+		{
+			_itemsManager.SelectedGarments.Clear();
+			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
+			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)
@@ -82,54 +89,53 @@ namespace Logopedia.UserInterface
 			}
 		}
 
-		void OnGUI()
-		{
-			GUI.skin = skin;
-			GUI.depth = -1;			
+        void OnGUI()
+        {
+            GUI.skin = skin;
+            GUI.depth = -1;
 
-			unit = _itemsManager.Garments;
+            unit = _itemsManager.SelectedGarments;
 
-			if (Input.GetMouseButtonDown(0) & (isMouse == true))
-			{
-				Deselect();
-				startPos = Input.mousePosition;
-				draw = true;
-			}
+            if (Input.GetMouseButtonDown(0) & (isMouse == true))
+            {
+                Deselect();
+                startPos = Input.mousePosition;
+                draw = true;
+            }
 
-			if (Input.GetMouseButtonUp(0))
-			{
-				draw = false;
-				Select();
-			}
+            if (Input.GetMouseButtonUp(0))
+            {
+                draw = false;
+                Select();
+            }
 
-			if (draw)
-			{
-				unitSelected.Clear();
-				endPos = Input.mousePosition;
-				if (startPos == endPos) return;
+            if (draw)
+            {
+                unitSelected.Clear();
+                endPos = Input.mousePosition;
+                if (startPos == endPos) return;
 
-				rect = new Rect(Mathf.Min(endPos.x, startPos.x),
-								Screen.height - Mathf.Max(endPos.y, startPos.y),
-								Mathf.Max(endPos.x, startPos.x) - Mathf.Min(endPos.x, startPos.x),
-								Mathf.Max(endPos.y, startPos.y) - Mathf.Min(endPos.y, startPos.y)
-								);
+                rect = new Rect(Mathf.Min(endPos.x, startPos.x),
+                                Screen.height - Mathf.Max(endPos.y, startPos.y),
+                                Mathf.Max(endPos.x, startPos.x) - Mathf.Min(endPos.x, startPos.x),
+                                Mathf.Max(endPos.y, startPos.y) - Mathf.Min(endPos.y, startPos.y)
+                                );
 
-				GUI.Box(rect, "");
-				foreach (GameObject u in unit)
-				{
-					// трансформируем позицию объекта из мирового пространства, в пространство экрана
-					//Vector2 tmp = new Vector2(Camera.main.WorldToScreenPoint(unit[j].transform.position).x, Screen.height - Camera.main.WorldToScreenPoint(unit[j].transform.position).y);
-					Vector2 tmp = new Vector2(Camera.main.WorldToScreenPoint(u.transform.position).x, Screen.height - Camera.main.WorldToScreenPoint(u.transform.position).y);
+                GUI.Box(rect, "");
+                foreach (GameObject u in unit)
+                {
+                    // трансформируем позицию объекта из мирового пространства, в пространство экрана
+                    Vector2 tmp = new Vector2(Camera.main.WorldToScreenPoint(u.transform.position).x, Screen.height - Camera.main.WorldToScreenPoint(u.transform.position).y);
 
-					if (rect.Contains(tmp)) // проверка, находится-ли текущий объект в рамке
-					{
-						unitSelected.Add(u);
-						_itemsManager.CurrentGarment.Add(u);
+                    if (rect.Contains(tmp) | (_itemsManager.SelectedGarments.Contains(u) != true)) // проверка, находится-ли текущий объект в рамке и добавлен ли он в пул менеджера
+                    {
+                        unitSelected.Add(u);
+                        _itemsManager.SelectedGarments.Add(u);
+						GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 					}
 				}
-				//GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
-			}
-		}
-	}
+            }
+        }
+    }
 }
 	

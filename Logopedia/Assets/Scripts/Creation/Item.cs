@@ -48,9 +48,7 @@ namespace Logopedia.GamePlay
             }
             SelectItem();
             _outline.enabled = true;
-            //StartMove();
-            //GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
-            //_canvasGroup.blocksRaycasts = true;
+            GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
         }
 
         void StartMove()
@@ -60,10 +58,8 @@ namespace Logopedia.GamePlay
             _startY = mousePos.y - transform.position.y;
             SoundyManager.Play(_takeItem);
             _outline.enabled = true;
-            _itemsManager.CurrentGarment.Clear();
-            _itemsManager.CurrentGarment.Add(_garment);
-            _itemsManager.CurrentItem = gameObject;
-            _itemsManager.CurrentItemShadow = _slot;
+            _itemsManager.SelectedGarments.Clear();
+            _itemsManager.SelectedGarments.Add(_garment);
             _canvasGroup.blocksRaycasts = false;
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
             SelectItem();
@@ -77,6 +73,8 @@ namespace Logopedia.GamePlay
 
             public void OnDrag(PointerEventData eventData)
         {
+            SelectItem();
+
                var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePos.x - _startX, mousePos.y - _startY, 0);
             //gameObject.transform.position = Input.mousePosition;
@@ -89,25 +87,21 @@ namespace Logopedia.GamePlay
 
         public void SelectItem()
         {
-            _itemsManager.CurrentItem = gameObject;
-            _itemsManager.CurrentItemShadow = _slot;
-            OutlineItem();
-            GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+            _itemsManager.SelectedGarments.Clear();
+            _itemsManager.SelectedGarments.RemoveAll(x => x == null);
+            _itemsManager.SelectedGarments.Add(_garment);
             _garment.transform.SetSiblingIndex(_itemsManager.Garments.Count + 1);
+            GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+            Debug.Log("Item selected");
         }
 
         public void OutlineItem()
         {
-            if (_itemsManager.CurrentGarment.Contains(gameObject) == false)
-            {
-                _canvasGroup.blocksRaycasts = true;
-                _outline.enabled = false;
-            }
-            else
-            {
-                _canvasGroup.blocksRaycasts = false;
-                _outline.enabled = true;
-            }
+            bool b = _itemsManager.SelectedGarments.Contains(_garment);
+
+            _outline.enabled = b;
+
+            Debug.Log("Item outlined" + b.ToString());
         }
 
         public void GetTakeSound()
