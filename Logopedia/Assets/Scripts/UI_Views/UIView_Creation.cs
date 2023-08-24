@@ -77,9 +77,9 @@ namespace Logopedia.UserInterface
         List<Sprite> _topicIcons = new List<Sprite>();
         private UnityEngine.Color _transparent = new UnityEngine.Color(0, 0, 0, 0), _opaque = new UnityEngine.Color(0, 0, 0, 0.5f);
 
-        public static ReactiveProperty<float> ItemScale = new ReactiveProperty<float>();
+        public static FloatReactiveProperty ItemScale = new FloatReactiveProperty();
         public static ReactiveProperty<float> ItemRotation = new ReactiveProperty<float>();
-
+        public FloatReactiveProperty be = new FloatReactiveProperty();
 
 
 
@@ -213,6 +213,9 @@ namespace Logopedia.UserInterface
 
         private void OnEnable()
         {
+            
+            ItemScale.Value = 0;
+            ItemRotation.Value = 0;
             if ((_storyManager.IsStoryCreartionStart == true) & (_storyManager.IsStoryEdit == false))
             {
                 CreateSceneBlank();
@@ -307,8 +310,9 @@ namespace Logopedia.UserInterface
 
         public void ScaleItem()
         {
-           _itemsManager.UI_Parametr = 0;
+            _itemsManager.UI_Parametr = 0;
             ItemScale.Value = _scaleSlider.value;
+            be.Value = ItemScale.Value;
         }
 
         public void RotateItem()
@@ -456,21 +460,15 @@ namespace Logopedia.UserInterface
         public void SlowRotaion(int k)
         {
             _itemsManager.UI_Parametr = k;
-            GameEventMessage.SendEvent(EventsLibrary.ScaleSelectedItem);
-            if (_itemsManager.SelectedGarments.Count == 1)
-            {
+            GameEventMessage.SendEvent(EventsLibrary.RotateSelectedItem);
                 ResetControl();
-            }
         }
 
         public void SlowScale(int k)
         {
             _itemsManager.UI_Parametr = k;
-            GameEventMessage.SendEvent(EventsLibrary.RotateSelectedItem);
-            if (_itemsManager.SelectedGarments.Count == 1)
-            {
+            GameEventMessage.SendEvent(EventsLibrary.ScaleSelectedItem);
                 ResetControl();
-            }
         }
 
 
@@ -508,19 +506,28 @@ namespace Logopedia.UserInterface
 
         public void ResetControl()
         {
-            if (currentGarments.Count > 1)
+            var _count = _itemsManager.SelectedGarments.Count;
+            if (_count >= 2)
             {
                 _scaleSlider.value = 0;
                 _rotationSlider.value = 0;
+                Debug.Log("Reset1");
             }
             else
             {
+                _itemsManager.UI_Parametr = 0;
+                _itemsManager.UI_Parametr = 0;
                 GameObject _item = _itemsManager.SelectedGarments[0].transform.GetChild(0).gameObject;
+                ItemScale.Value = _item.transform.localScale.x;
                 _scaleSlider.value = _item.transform.localScale.x;
                 var a = _item.transform.eulerAngles.z;
                 a = Mathf.Repeat(a + 180, 360) - 180;
+                ItemRotation.Value = a;
                 _rotationSlider.value = a;
+                be.Value = ItemScale.Value;
+                Debug.Log("Reset2. Scale index: " + ItemScale.Value.ToString());
             }
+   //         Debug.Log(_itemsManager.SelectedGarments.Count.ToString());
         }
 
         public void ChangeSprite(Sprite _currentSprite, UnityEngine.UI.Image _image)
@@ -637,6 +644,7 @@ namespace Logopedia.UserInterface
             SwichScene();
             ShowCurrentSceneNumber();
             AddScenesToDropDown();
+            GameEventMessage.SendEvent(EventsLibrary.SceneSwiched);
         }
 
         //public void GoToPreviousScene()

@@ -91,8 +91,11 @@ namespace Logopedia.GamePlay
             _itemsManager.SelectedGarments.RemoveAll(x => x == null);
             _itemsManager.SelectedGarments.Add(_garment);
             _garment.transform.SetSiblingIndex(_itemsManager.Garments.Count + 1);
-            GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
             Debug.Log("Item selected");
+            if (_itemsManager.SelectedGarments.Contains(_garment) == true)
+            {
+                //Debug.Log("Item " + _garment.name + " selected");
+            }
         }
 
         public void OutlineItem()
@@ -101,7 +104,7 @@ namespace Logopedia.GamePlay
 
             _outline.enabled = b;
 
-            Debug.Log("Item outlined" + b.ToString());
+//            Debug.Log("Item outlined" + b.ToString());
         }
 
         public void GetTakeSound()

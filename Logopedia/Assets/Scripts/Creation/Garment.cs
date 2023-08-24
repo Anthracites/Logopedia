@@ -11,6 +11,8 @@ using Spine;
 using Spine.Unity;
 using UniRx;
 using System.Security.Policy;
+using System;
+using System.Linq;
 
 namespace Logopedia.GamePlay
 {
@@ -103,18 +105,25 @@ namespace Logopedia.GamePlay
                 _listener.enabled = _isSelected;
             }
 
-            if (_isSelected == true)
+            if ((_isSelected == true) & (_disposable.Count == 0))
             {
-                UserInterface.UIView_Creation.ItemRotation.Subscribe(_ => RotateItem()).AddTo(_disposable);
-                UserInterface.UIView_Creation.ItemScale.Subscribe(_ => ScaleItem()).AddTo(_disposable);
-
+                 //var a = UserInterface.UIView_Creation.ItemScale.SkipLatestValueOnSubscribe().Subscribe(_ => ScaleItem()).AddTo(_disposable);
+                 //var b = UserInterface.UIView_Creation.ItemRotation.SkipLatestValueOnSubscribe().Subscribe(_ => RotateItem()).AddTo(_disposable);
+                Debug.Log("Item " + gameObject.name + " subscribed!!!" + "Disposable count: " + _disposable.Count.ToString());
             }
-            else
+            else if (_isSelected == false)
             {
                 _disposable.Clear();
+                Debug.Log("Item " + gameObject.name +  " unsubscribed!!!");
             }
+        }
 
-            Debug.Log(_isSelected.ToString());
+        public void DeselectObject()
+        {
+            _itemsManager.SelectedGarments.Clear();
+            _itemsManager.SelectedGarments.Remove(gameObject);
+            _itemsManager.SelectedGarments.RemoveAll(x => x == null);
+            SelectObject(false);
         }
 
         public void SetShadowOnItem()
@@ -163,7 +172,6 @@ namespace Logopedia.GamePlay
             _modifyParametr = _itemsManager.UI_Parametr;
             if (_modifyParametr != 0)
             {
-                Debug.Log("Rotate parametr " + _modifyParametr.ToString());
 
                 float _curretnRotation = _item.transform.eulerAngles.z;
                 float newRotation = _curretnRotation + (0.5f * _modifyParametr);
@@ -177,27 +185,32 @@ namespace Logopedia.GamePlay
                 _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
 
             }
+            Debug.Log("Item rotated!!!" + _itemsManager.UI_Parametr.ToString());
+
         }
 
         public void ScaleItem()
         {
             _modifyParametr = _itemsManager.UI_Parametr;
+            float a = Mathf.Sign(_item.transform.localScale.x);
             if (_modifyParametr != 0)
             {
-                Debug.Log("Scale parametr " + _modifyParametr.ToString());
-
-                float _currentScale = _item.transform.localScale.z;
+                float _currentScale = _item.transform.localScale.y;
                 float newScale = _currentScale + (0.1f * _modifyParametr);
 
-                _item.transform.localScale = new Vector3(newScale, newScale, newScale);
-                _itemShadow.transform.localScale = new Vector3(newScale, newScale, newScale);
+                _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                Debug.Log("Item " + gameObject.name + " scaled1!!! a = " + a.ToString());
+
             }
             else
             {
                 float newScale = UserInterface.UIView_Creation.ItemScale.Value;
 
-                _item.transform.localScale = new Vector3(newScale, newScale, newScale);
-                _itemShadow.transform.localScale = new Vector3(newScale, newScale, newScale);
+                _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                 Debug.Log("Item " + gameObject.name + "  scaled2!!!"+ "Scele index: " + newScale.ToString());
+
             }
         }
 

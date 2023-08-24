@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 9084696515784861692}
   - component: {fileID: 1518348717157863934}
   - component: {fileID: 9164895986170917450}
-  - component: {fileID: 2187458410321449299}
   - component: {fileID: 4751630077956887163}
   - component: {fileID: 627032407858528610}
   - component: {fileID: 3814512810220500978}
@@ -381,35 +380,6 @@ MonoBehaviour:
     OutputAudioMixerGroup: {fileID: 0}
   _startX: 0
   _startY: 0
---- !u!114 &2187458410321449299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6606990727942705167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9164895986170917450}
-          m_TargetAssemblyTypeName: Logopedia.GamePlay.Item, Assembly-CSharp
-          m_MethodName: SelectItem
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!225 &4751630077956887163
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -489,6 +459,7 @@ GameObject:
   - component: {fileID: 625804467089615997}
   - component: {fileID: 8828635604627299056}
   - component: {fileID: 7088900445369791578}
+  - component: {fileID: -252841677550572318}
   m_Layer: 0
   m_Name: Garment
   m_TagString: Object
@@ -882,4 +853,34 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   GameEvent: ItemSelected
+  ListenForAllGameEvents: 0
+--- !u!114 &-252841677550572318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8764531919979952961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4984602611744999953}
+        m_TargetAssemblyTypeName: Logopedia.GamePlay.Garment, Assembly-CSharp
+        m_MethodName: DeselectObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: SceneSwiched
   ListenForAllGameEvents: 0

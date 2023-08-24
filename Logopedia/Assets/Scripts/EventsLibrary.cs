@@ -16,7 +16,7 @@ namespace Logopedia
         public static string StoryConvertedForSave = "StoryConvertedForSave"; // Конвертация объектов в сцену
         public static string SaveStory = "SaveStory"; // Сохранить сюжет
 
-        public static string SceneSwiched = "SceneSwich"; // Переключение сцены
+        public static string SceneSwiched = "SceneSwiched"; // Переключение сцены
         public static string CharacterSwiched = "CharacterSwiched"; // Переключение героя
         public static string ItemInSlot = "ItemInSlot"; // Предмет положили в слот
         public static string LevelComplete = "LevelComplete"; //Уровень пройден
