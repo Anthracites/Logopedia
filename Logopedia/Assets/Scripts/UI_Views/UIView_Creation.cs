@@ -525,8 +525,6 @@ namespace Logopedia.UserInterface
                 a = Mathf.Repeat(a + 180, 360) - 180;
                 ItemRotation.Value = a;
                 _rotationSlider.value = a;
-                be.Value = ItemScale.Value;
-                Debug.Log("Reset2. Scale index: " + ItemScale.Value.ToString());
             }
         }
 
