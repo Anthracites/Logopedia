@@ -44,6 +44,8 @@ namespace Logopedia.GamePlay
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            _itemsManager.SelectedGarments.Clear();
+            _itemsManager.SelectedGarments.RemoveAll(x => x == null);
             StartMove();
         }
 
@@ -57,6 +59,8 @@ namespace Logopedia.GamePlay
 
         public void OnPointerClick(PointerEventData pointerEventData)
         {
+            _itemsManager.SelectedGarments.Clear();
+            _itemsManager.SelectedGarments.RemoveAll(x => x == null);
             StartMove();
             SwichSelectCharacter(true);
         }

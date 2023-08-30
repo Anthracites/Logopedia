@@ -107,15 +107,13 @@ namespace Logopedia.GamePlay
 
             if ((_isSelected == true) & (_disposable.Count == 0))
             {
-                 //var a = UserInterface.UIView_Creation.ItemScale.SkipLatestValueOnSubscribe().Subscribe(_ => ScaleItem()).AddTo(_disposable);
-                 //var b = UserInterface.UIView_Creation.ItemRotation.SkipLatestValueOnSubscribe().Subscribe(_ => RotateItem()).AddTo(_disposable);
-                Debug.Log("Item " + gameObject.name + " subscribed!!!" + "Disposable count: " + _disposable.Count.ToString());
+                UserInterface.UIView_Creation.ItemScale.SkipLatestValueOnSubscribe().Subscribe(_ => ScaleItem()).AddTo(_disposable);
+                UserInterface.UIView_Creation.ItemRotation.SkipLatestValueOnSubscribe().Subscribe(_ => RotateItem()).AddTo(_disposable);
             }
             else if (_isSelected == false)
             {
                 _disposable.Clear();
-                Debug.Log("Item " + gameObject.name +  " unsubscribed!!!");
-            }
+                }
         }
 
         public void DeselectObject()

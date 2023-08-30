@@ -504,8 +504,9 @@ namespace Logopedia.UserInterface
             _bg.gameObject.name = _currentBG.name;
         }
 
-        public void ResetControl()
+        private IEnumerator ResetControls()
         {
+            yield return new WaitForEndOfFrame();
             var _count = _itemsManager.SelectedGarments.Count;
             if (_count >= 2)
             {
@@ -527,7 +528,11 @@ namespace Logopedia.UserInterface
                 be.Value = ItemScale.Value;
                 Debug.Log("Reset2. Scale index: " + ItemScale.Value.ToString());
             }
-   //         Debug.Log(_itemsManager.SelectedGarments.Count.ToString());
+        }
+
+        public void ResetControl()
+        {
+            StartCoroutine(ResetControls());
         }
 
         public void ChangeSprite(Sprite _currentSprite, UnityEngine.UI.Image _image)
