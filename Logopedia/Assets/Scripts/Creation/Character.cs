@@ -34,6 +34,8 @@ namespace Logopedia.GamePlay
 
         void Start()
         {
+            _shadow.transform.localScale = gameObject.transform.localScale;
+            _shadow.transform.rotation = gameObject.transform.rotation;
             StartMove();
         }
 
@@ -47,10 +49,8 @@ namespace Logopedia.GamePlay
             _itemsManager.SelectedGarments.Clear();
             _itemsManager.SelectedGarments.RemoveAll(x => x == null);
             _itemsManager.SelectedGarments.Add(gameObject);
-            Debug.Log("Selected garment count: " + _itemsManager.SelectedGarments.Count.ToString());
+            Debug.Log("Character child name: " + gameObject.transform.GetChild(0).gameObject);
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
-
-            _itemsManager.SelectedGarments.Clear();
         }
 
         public void OnBeginDrag(PointerEventData eventData)

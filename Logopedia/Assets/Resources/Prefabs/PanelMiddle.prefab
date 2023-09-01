@@ -456,8 +456,7 @@ GameObject:
   - component: {fileID: 8789490308211126518}
   - component: {fileID: 487057490752117461}
   m_Layer: 0
-  m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Characters/GirlBlond.png
-    (1)
+  m_Name: _shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

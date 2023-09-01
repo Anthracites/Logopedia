@@ -518,6 +518,7 @@ namespace Logopedia.UserInterface
             {
                 _itemsManager.UI_Parametr = 0;
                 _itemsManager.UI_Parametr = 0;
+                Debug.Log(_itemsManager.SelectedGarments[0].name);
                 GameObject _item = _itemsManager.SelectedGarments[0].transform.GetChild(0).gameObject;
                 ItemScale.Value = _item.transform.localScale.x;
                 _scaleSlider.value = _item.transform.localScale.x;
