@@ -5,6 +5,7 @@ using Logopedia.GamePlay;
 using System.Collections.Generic;
 using Doozy.Engine;
 using System;
+using UnityEngine.UI;
 
 namespace Logopedia.UserInterface
 {
@@ -72,7 +73,7 @@ namespace Logopedia.UserInterface
         {
             _isCharacterHidden = _character.activeSelf;
             _itemsManager.GarmenScenePanel = _garmentPanel;
-            _itemsManager.Background = _bg;
+            _itemsManager.BackgroundSprite = _bg.GetComponent<Image>().sprite;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;
             _itemsManager.PreviewButton = _previewSwichButton;
         }
@@ -125,7 +126,12 @@ namespace Logopedia.UserInterface
             }
         }
 
-        
+        public void SwichBGSprite()
+        {
+            _bg.GetComponent<Image>().sprite = _itemsManager.BackgroundSprite;
+            _bg.name = _itemsManager.BackgroundSprite.name;
+        }
+
         public class Factory : PlaceholderFactory<string, StoryCreationPanel>
         {
 

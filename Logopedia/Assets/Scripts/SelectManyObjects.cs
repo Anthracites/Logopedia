@@ -9,7 +9,7 @@ using Doozy.Engine;
 
 namespace Logopedia.UserInterface
 {
-	public class SelectManyObjects : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+	public class SelectManyObjects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler
 	{
 		[Inject]
 		ItemsManager _itemsManager;
@@ -28,15 +28,45 @@ namespace Logopedia.UserInterface
 		private Vector2 startPos;
 		private Vector2 endPos;
 
-		public void OnDrag(PointerEventData eventData)
-		{
+		void Start()
+        {
+			unit.Clear();
+			unitSelected.Clear();
+			_itemsManager.SelectedGarments.Clear();
+			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
+			foreach (GameObject u in _itemsManager.Garments)
+			{
+				unit.Add(u.transform.GetChild(1).transform.gameObject);
+			}
+			Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
+			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+		}
 
+		public void OnPointerDown(PointerEventData eventData)
+		{
+			unit.Clear();
+			unitSelected.Clear();
+			_itemsManager.SelectedGarments.Clear();
+			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
+			foreach (GameObject u in _itemsManager.Garments)
+			{
+				unit.Add(u.transform.GetChild(1).transform.gameObject);
+			}
+			Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
+			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 		}
 
 		public void OnPointerClick(PointerEventData pointerEventData)
 		{
+			unit.Clear();
+			unitSelected.Clear();
 			_itemsManager.SelectedGarments.Clear();
 			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
+			foreach (GameObject u in _itemsManager.Garments)
+			{
+				unit.Add(u.transform.GetChild(1).transform.gameObject);
+			}
+			Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
 			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 		}
 
@@ -94,9 +124,7 @@ namespace Logopedia.UserInterface
             GUI.skin = skin;
             GUI.depth = -1;
 
-            unit = _itemsManager.SelectedGarments;
-
-            if (Input.GetMouseButtonDown(0) & (isMouse == true))
+			if (Input.GetMouseButtonDown(0) & (isMouse == true))
             {
                 Deselect();
                 startPos = Input.mousePosition;
@@ -127,10 +155,10 @@ namespace Logopedia.UserInterface
                     // трансформируем позицию объекта из мирового пространства, в пространство экрана
                     Vector2 tmp = new Vector2(Camera.main.WorldToScreenPoint(u.transform.position).x, Screen.height - Camera.main.WorldToScreenPoint(u.transform.position).y);
 
-                    if (rect.Contains(tmp) | (_itemsManager.SelectedGarments.Contains(u) != true)) // проверка, находится-ли текущий объект в рамке и добавлен ли он в пул менеджера
+                    if (rect.Contains(tmp) & (_itemsManager.SelectedGarments.Contains(u) != true)) // проверка, находится-ли текущий объект в рамке и добавлен ли он в пул менеджера
                     {
-                        unitSelected.Add(u);
-                        _itemsManager.SelectedGarments.Add(u);
+                        unitSelected.Add(u.transform.parent.gameObject);
+                        _itemsManager.SelectedGarments.Add(u.transform.parent.gameObject);
 						GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 					}
 				}

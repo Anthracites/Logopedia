@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 2542506076893700478}
   - component: {fileID: 3758993934468410111}
   - component: {fileID: 2545454849773302009}
+  - component: {fileID: 8425706454263262110}
   m_Layer: 0
   m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Characters/GirlBlond.png
   m_TagString: Untagged
@@ -110,7 +111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b69405207d6545ca9d8bed8118b47a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -275,6 +276,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   GameEvent: ItemCreated
+  ListenForAllGameEvents: 0
+--- !u!114 &8425706454263262110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782659360468291645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3470720152480715257}
+        m_TargetAssemblyTypeName: Logopedia.GamePlay.Character, Assembly-CSharp
+        m_MethodName: SwichCharacterSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: CharacterSpriteChanged
   ListenForAllGameEvents: 0
 --- !u!1 &3547191438556797979
 GameObject:
@@ -538,6 +569,7 @@ GameObject:
   - component: {fileID: 571670528583640927}
   - component: {fileID: 2067545317712616690}
   - component: {fileID: 910696147108736668}
+  - component: {fileID: 4026514924268596906}
   m_Layer: 5
   m_Name: PanelMiddle
   m_TagString: CreationPanel
@@ -1183,6 +1215,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   GameEvent: CharacterSwiched
+  ListenForAllGameEvents: 0
+--- !u!114 &4026514924268596906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5730191024310205050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 571670528583640927}
+        m_TargetAssemblyTypeName: Logopedia.UserInterface.StoryCreationPanel, Assembly-CSharp
+        m_MethodName: SwichBGSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: BGSpriteChanged
   ListenForAllGameEvents: 0
 --- !u!1 &7498547387677406063
 GameObject:

@@ -177,6 +177,7 @@ namespace Logopedia.UserInterface
                         _currentColor = _transparent;
                     }
                     _itemShadow.GetComponent<UnityEngine.UI.Image>().color = _currentColor;
+                    _itemsManager.Garments.Add(_garment);
                 }
             }
 
@@ -499,7 +500,7 @@ namespace Logopedia.UserInterface
 
         public void ChangeBG()
         {
-            var _currentBG = _itemsManager.Background.GetComponent<UnityEngine.UI.Image>().sprite;
+            var _currentBG = _itemsManager.BackgroundSprite;
             ChangeSprite(_currentBG, _bg);
             _bg.gameObject.name = _currentBG.name;
         }
@@ -508,24 +509,30 @@ namespace Logopedia.UserInterface
         {
             yield return new WaitForEndOfFrame();
             var _count = _itemsManager.SelectedGarments.Count;
-            if (_count >= 2)
+
+            switch (_count)
             {
-                _scaleSlider.value = 0;
-                _rotationSlider.value = 0;
-                Debug.Log("Reset1");
-            }
-            else
-            {
-                _itemsManager.UI_Parametr = 0;
-                _itemsManager.UI_Parametr = 0;
-                Debug.Log(_itemsManager.SelectedGarments[0].name);
-                GameObject _item = _itemsManager.SelectedGarments[0].transform.GetChild(0).gameObject;
-                ItemScale.Value = _item.transform.localScale.x;
-                _scaleSlider.value = _item.transform.localScale.x;
-                var a = _item.transform.eulerAngles.z;
-                a = Mathf.Repeat(a + 180, 360) - 180;
-                ItemRotation.Value = a;
-                _rotationSlider.value = a;
+                case 0:
+                    _scaleSlider.value = 0;
+                    _rotationSlider.value = 0;
+                    break;
+                case >= 2:
+                    _scaleSlider.value = 0;
+                    _rotationSlider.value = 0;
+                    break;
+
+                default:
+                    _itemsManager.UI_Parametr = 0;
+                    _itemsManager.UI_Parametr = 0;
+                    Debug.Log(_itemsManager.SelectedGarments[0].name);
+                    GameObject _item = _itemsManager.SelectedGarments[0].transform.GetChild(0).gameObject;
+                    ItemScale.Value = _item.transform.localScale.x;
+                    _scaleSlider.value = _item.transform.localScale.x;
+                    var a = _item.transform.eulerAngles.z;
+                    a = Mathf.Repeat(a + 180, 360) - 180;
+                    ItemRotation.Value = a;
+                    _rotationSlider.value = a;
+                    break;
             }
         }
 
@@ -580,7 +587,7 @@ namespace Logopedia.UserInterface
             if (_storyManager.IsStoryEdit == false)
             {
                 //_character = _itemsManager.Character.GetComponent<UnityEngine.UI.Image>();
-                _bg = _itemsManager.Background.GetComponent<UnityEngine.UI.Image>();
+                _bg.sprite = _itemsManager.BackgroundSprite;
                 _splashScreenPanel = _itemsManager.SplashScreenPanel;
             }
 

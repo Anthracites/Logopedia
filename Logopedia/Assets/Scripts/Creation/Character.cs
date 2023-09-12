@@ -25,6 +25,7 @@ namespace Logopedia.GamePlay
         private float _modifyParametr;
         [SerializeField]
         private GameObject _shadow;
+        private Image _image;
 
 
         [SerializeField]
@@ -37,6 +38,7 @@ namespace Logopedia.GamePlay
             _shadow.transform.localScale = gameObject.transform.localScale;
             _shadow.transform.rotation = gameObject.transform.rotation;
             StartMove();
+            _image = GetComponent<Image>();
         }
 
         void StartMove()
@@ -153,6 +155,11 @@ namespace Logopedia.GamePlay
             _shadow.transform.eulerAngles = Vector3.zero;
         }
 
+        public void SwichCharacterSprite()
+        {
+            _image.sprite = _itemsManager.CharacterSprite;
+            gameObject.name = _itemsManager.CharacterSprite.name;
+        }
     }
 }
 
