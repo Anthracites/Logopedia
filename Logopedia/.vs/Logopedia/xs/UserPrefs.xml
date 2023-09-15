@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SelectManyObjects.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creation/Garment.cs">
     <Files>
-      <File FileName="Assets/Scripts/SelectManyObjects.cs" Line="12" Column="88" />
+      <File FileName="Assets/Scripts/SelectManyObjects.cs" Line="27" Column="18" />
+      <File FileName="Assets/Scripts/Creation/Item.cs" Line="68" Column="1" />
+      <File FileName="Assets/Scripts/Creation/Garment.cs" Line="148" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="12b6a2ac-adf1-4afa-ab70-32cbd0ab4dac" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="faf44dde-a894-41a2-8b9e-1dc0e98bfdb6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,7 +9,7 @@ using Doozy.Engine;
 
 namespace Logopedia.UserInterface
 {
-	public class SelectManyObjects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler
+	public class SelectManyObjects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler ,IDragHandler
 	{
 		[Inject]
 		ItemsManager _itemsManager;
@@ -18,12 +18,13 @@ namespace Logopedia.UserInterface
 		public List<GameObject> unit; // массив всех юнитов, которых мы можем выделить
 		[SerializeField]
 		public List<GameObject> unitSelected; // массив выделенных юнитов
-		[SerializeField]
-		private bool isMouse;
+		//[SerializeField]
+		//private bool isMouse;
 
 
 		public GUISkin skin;
 		private Rect rect;
+		[SerializeField]
 		private bool draw;
 		private Vector2 startPos;
 		private Vector2 endPos;
@@ -42,6 +43,31 @@ namespace Logopedia.UserInterface
 			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 		}
 
+		public void OnPointerUp(PointerEventData eventData)
+        {
+			draw = false;
+			//isMouse = false;
+        }
+		public void OnBeginDrag(PointerEventData eventData)
+        {
+			draw = true;
+			_itemsManager.SelectedGarments.Clear();
+			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
+			startPos = Input.mousePosition;
+			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+
+		}
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            draw = true;
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+			draw = false;
+		}
+
 		public void OnPointerDown(PointerEventData eventData)
 		{
 			unit.Clear();
@@ -52,32 +78,18 @@ namespace Logopedia.UserInterface
 			{
 				unit.Add(u.transform.GetChild(1).transform.gameObject);
 			}
-			Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
-			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
-		}
-
-		public void OnPointerClick(PointerEventData pointerEventData)
-		{
-			unit.Clear();
-			unitSelected.Clear();
-			_itemsManager.SelectedGarments.Clear();
-			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
-			foreach (GameObject u in _itemsManager.Garments)
-			{
-				unit.Add(u.transform.GetChild(1).transform.gameObject);
-			}
-			Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
+			//Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
 			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			isMouse = true;
+			//isMouse = true;
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			isMouse = false;
+			//isMouse = false;
 		}
 
 		void Awake()
@@ -87,60 +99,17 @@ namespace Logopedia.UserInterface
 		}
 
 		// проверка, добавлен объект или нет
-		bool CheckUnit(GameObject unit)
-		{
-			bool result = false;
-			foreach (GameObject u in unitSelected)
-			{
-				result = true;
-			}
-			return result;
-		}
-
-		void Select()
-		{
-			if (unitSelected.Count > 0)
-			{
-				for (int j = 0; j < unitSelected.Count; j++)
-				{
-					
-				}
-			}
-		}
-
-		void Deselect()
-		{
-			if (unitSelected.Count > 0)
-			{
-				for (int j = 0; j < unitSelected.Count; j++)
-				{
-
-				}
-			}
-		}
 
         void OnGUI()
         {
             GUI.skin = skin;
             GUI.depth = -1;
 
-			if (Input.GetMouseButtonDown(0) & (isMouse == true))
-            {
-                Deselect();
-                startPos = Input.mousePosition;
-                draw = true;
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                draw = false;
-                Select();
-            }
-
-            if (draw)
+            if (draw == true)
             {
                 unitSelected.Clear();
-                endPos = Input.mousePosition;
+				_itemsManager.SelectedGarments.Clear();
+				endPos = Input.mousePosition;
                 if (startPos == endPos) return;
 
                 rect = new Rect(Mathf.Min(endPos.x, startPos.x),
@@ -159,11 +128,23 @@ namespace Logopedia.UserInterface
                     {
                         unitSelected.Add(u.transform.parent.gameObject);
                         _itemsManager.SelectedGarments.Add(u.transform.parent.gameObject);
-						GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
-					}
-				}
+                        GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+                    }
+					//else
+					//	if (rect.Contains(tmp) != true & (_itemsManager.SelectedGarments.Contains(u) == true))
+
+					//{
+					//	unitSelected.Remove(u.transform.parent.gameObject);
+					//	unitSelected.RemoveAll(x => x == null);
+					//	_itemsManager.SelectedGarments.Remove(u.transform.parent.gameObject);
+					//	_itemsManager.SelectedGarments.RemoveAll(x => x == null);
+
+					//	GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+					//}
+                }
             }
         }
+
     }
 }
 	

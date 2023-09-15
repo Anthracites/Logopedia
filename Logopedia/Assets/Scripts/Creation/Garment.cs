@@ -212,6 +212,13 @@ namespace Logopedia.GamePlay
             }
         }
 
+        void OnDestroy()
+        {
+            DeselectObject();
+            _itemsManager.Garments.Remove(gameObject);
+            _itemsManager.Garments.RemoveAll(x => x == null);
+        }
+
         public class Factory : PlaceholderFactory<string, Garment>
         {
 
