@@ -226,6 +226,7 @@ namespace Logopedia.UserInterface
                 _newScene.SceneNumberInStory = 0;
                 //_storyManager.CurrentStory.Scenes.Add(_newScene);
                 //AddScenesToDropDown();
+                PreviousSceneButton.gameObject.SetActive(false);
             }
 
             if (_storyManager.IsStoryEdit == true)
