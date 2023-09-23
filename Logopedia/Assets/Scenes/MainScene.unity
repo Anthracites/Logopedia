@@ -6420,8 +6420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee8fb0cf333644c29ca3c8c9f6d57bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bg: {fileID: 0}
-  _character: {fileID: 0}
   _scaleSlider: {fileID: 137428881940327282}
   _rotationSlider: {fileID: 1250628513}
   _middlePanel: {fileID: 0}

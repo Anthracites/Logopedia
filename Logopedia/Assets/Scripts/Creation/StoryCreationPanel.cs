@@ -1,4 +1,5 @@
 using Zenject;
+using System.Collections;
 using UnityEngine;
 using Logopedia.UIConnection;
 using Logopedia.GamePlay;
@@ -19,7 +20,7 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private GameObject _character, _bg, _garmentPanel, _previewSwichButton, _splashScreenPanel;
         [SerializeField]
-        private List<GameObject> _garments;
+        private List<GameObject> _garments = new List<GameObject>();
         [SerializeField]
         StoryScene _scene;
         [SerializeField]
@@ -28,20 +29,13 @@ namespace Logopedia.UserInterface
 
         private void Awake()
         {
-            //if (_storyManager.IsStoryEdit == false)
-            //{
-            //    _itemsManager.GarmenScenePanel = _garmentPanel;
-            //    //if (_storyManager.IsStoryEdit == false)
-            //    //{
-            //        _sceneNumber = Int32.Parse(gameObject.name);
-            //        _scene = new StoryScene();
-            //        _scene.SceneNumberInStory = _sceneNumber;
-            //        _scene.Items = new List<StoryScene.SceneItem>();
-            //        _garments = new List<GameObject>();
-            //        _storyManager.CurrentStory.Scenes.Add(_scene);
-            //        Debug.Log("Send scene" + gameObject.name);
-            //    //}
-            //}
+            //StartCoroutine(AddGarments());
+
+            _isCharacterHidden = _character.activeSelf;
+            _itemsManager.GarmenScenePanel = _garmentPanel;
+            _itemsManager.BackgroundSprite = _bg.GetComponent<Image>().sprite;
+            _itemsManager.SplashScreenPanel = _splashScreenPanel;
+            _itemsManager.PreviewButton = _previewSwichButton;
         }
 
         public void SwichCharacter()//пописан на событие CharacterSwiched на кнопре HideCharacter в UIView_Creation
@@ -62,15 +56,34 @@ namespace Logopedia.UserInterface
                 _scene = new StoryScene();
                 _scene.SceneNumberInStory = _sceneNumber;
                 _scene.Items = new List<StoryScene.SceneItem>();
-                _garments = new List<GameObject>();
                 _storyManager.CurrentStory.Scenes.Add(_scene);
-//                Debug.Log("Send scene" + gameObject.name);
-                //}
             }
+
+        }
+
+
+        IEnumerator AddGarments()
+        {
+            yield return new WaitForEndOfFrame();
+            _garments.Clear();
+            _garments.RemoveAll(x => x == null);
+            _itemsManager.Garments.Clear();
+            _itemsManager.Garments.RemoveAll(x => x == null);
+
+            int i = 0;
+            foreach (Transform child in _garmentPanel.transform)
+            {
+                _garments.Add(child.gameObject);
+                _itemsManager.Garments.Add(child.gameObject);
+                i++;
+            }
+            Debug.Log("Garments count: " + _itemsManager.Garments.Count.ToString() + ", i = " + i.ToString());
         }
 
         private void OnEnable()
         {
+            StartCoroutine(AddGarments());
+
             _isCharacterHidden = _character.activeSelf;
             _itemsManager.GarmenScenePanel = _garmentPanel;
             _itemsManager.BackgroundSprite = _bg.GetComponent<Image>().sprite;
@@ -130,6 +143,12 @@ namespace Logopedia.UserInterface
         {
             _bg.GetComponent<Image>().sprite = _itemsManager.BackgroundSprite;
             _bg.name = _itemsManager.BackgroundSprite.name;
+        }
+
+        public void AddNewGarment()
+        {
+            StartCoroutine(AddGarments());
+
         }
 
         public class Factory : PlaceholderFactory<string, StoryCreationPanel>

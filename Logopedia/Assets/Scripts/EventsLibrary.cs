@@ -43,6 +43,9 @@ namespace Logopedia
         public static string CharacterSelected = "CharacterSelected";
         public static string RotateSelectedItem = "RotateSelectedItem";
         public static string ScaleSelectedItem = "ScaleSelectedItem";
+        public static string CopySelectedItem = "CopySelectedItem";
+        public static string SendItemsToManager = "SendItemsToManager";
+
 
 
 

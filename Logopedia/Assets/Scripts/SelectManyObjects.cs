@@ -9,7 +9,7 @@ using Doozy.Engine;
 
 namespace Logopedia.UserInterface
 {
-	public class SelectManyObjects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler ,IDragHandler
+	public class SelectManyObjects : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler ,IDragHandler
 	{
 		[Inject]
 		ItemsManager _itemsManager;
@@ -29,7 +29,16 @@ namespace Logopedia.UserInterface
 		private Vector2 startPos;
 		private Vector2 endPos;
 
+		[SerializeField]
+		private GameEventListener _listener;
+
 		void Start()
+        {
+			GetItems();
+		}
+
+
+		void GetItems()
         {
 			unit.Clear();
 			unitSelected.Clear();
@@ -50,6 +59,9 @@ namespace Logopedia.UserInterface
         }
 		public void OnBeginDrag(PointerEventData eventData)
         {
+			GameEventMessage.SendEvent(EventsLibrary.SendItemsToManager);
+			
+			GetItems();
 			draw = true;
 			_itemsManager.SelectedGarments.Clear();
 			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
@@ -70,27 +82,10 @@ namespace Logopedia.UserInterface
 
 		public void OnPointerDown(PointerEventData eventData)
 		{
-			unit.Clear();
-			unitSelected.Clear();
-			_itemsManager.SelectedGarments.Clear();
-			_itemsManager.SelectedGarments.RemoveAll(x => x == null);
-			foreach (GameObject u in _itemsManager.Garments)
-			{
-				unit.Add(u.transform.GetChild(1).transform.gameObject);
-			}
-			//Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
-			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+			GameEventMessage.SendEvent(EventsLibrary.SendItemsToManager);
+			GetItems();
 		}
 
-		public void OnPointerEnter(PointerEventData eventData)
-		{
-			//isMouse = true;
-		}
-
-		public void OnPointerExit(PointerEventData eventData)
-		{
-			//isMouse = false;
-		}
 
 		void Awake()
 		{

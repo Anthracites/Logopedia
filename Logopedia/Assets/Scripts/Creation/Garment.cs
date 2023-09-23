@@ -14,6 +14,7 @@ using System.Security.Policy;
 using System;
 using System.Linq;
 
+
 namespace Logopedia.GamePlay
 {
     public class Garment : MonoBehaviour, IDropHandler, IPointerUpHandler, IEndDragHandler, IPointerClickHandler
@@ -22,6 +23,8 @@ namespace Logopedia.GamePlay
         ItemsManager _itemsManager;
         [Inject]
         StoryManager _storyManager;
+        [Inject]
+        Garment.Factory _garmentFactory;
 
         [SerializeField]
         private GameObject _item, _itemShadow;
@@ -209,6 +212,52 @@ namespace Logopedia.GamePlay
                 _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
                  Debug.Log("Item " + gameObject.name + "  scaled2!!!"+ "Scele index: " + newScale.ToString());
 
+            }
+        }
+
+        public void CopyItem()
+        {
+            if (_itemsManager.SelectedGarments.Count > 0)
+            {
+                    GameObject obj = gameObject;
+                    string _name = obj.name;
+                    Sprite _itemSprite = obj.GetComponent<UnityEngine.UI.Image>().sprite;
+                    Vector3 _garmentPosition = obj.transform.localPosition;
+                    Vector3 _itemPosition = obj.transform.localPosition;
+                    Vector3 _itemShadowPosition = _itemShadow.transform.localPosition;
+                    Vector3 _itemScale = obj.transform.localScale;
+                    Vector3 _itemRotation = obj.transform.localEulerAngles;
+                    bool _isShadowEnable = _itemShadow.activeSelf;
+                    UnityEngine.Color _itemShadowColor = _itemShadow.GetComponent<UnityEngine.UI.Image>().color;
+
+
+                    var _garment = _garmentFactory.Create(PrefabsPathLibrary.Item).gameObject;
+                    _garment.transform.SetParent(_itemsManager.GarmenScenePanel.transform);
+                    Debug.Log(_name);
+                    _garment.name = _name;
+                    var _copyItem = _garment.transform.GetChild(1).gameObject;
+                    var _copyItemShadow = _garment.transform.GetChild(0).gameObject;
+
+                    _garment.transform.localScale = Vector3.one;
+                    _garment.transform.localPosition = _garmentPosition;
+
+
+                    _copyItem.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
+                    _copyItemShadow.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
+
+                    _copyItem.transform.localPosition = _itemPosition;
+                    _copyItemShadow.transform.localPosition = _itemShadowPosition;
+
+                    _copyItem.transform.localScale = _itemScale;
+                    _copyItemShadow.transform.localScale = _itemScale;
+
+                    _copyItem.transform.localEulerAngles = _itemRotation;
+                    _copyItemShadow.transform.localEulerAngles = _itemRotation;
+
+                    _copyItemShadow.GetComponent<UnityEngine.UI.Image>().color = _itemShadowColor;
+                    _copyItemShadow.SetActive(_isShadowEnable);
+
+                    _itemsManager.Garments.Add(obj);
             }
         }
 
