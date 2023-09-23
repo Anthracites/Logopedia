@@ -38,10 +38,7 @@ namespace Logopedia.GamePlay
 
             if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.GarmentSprites);
-                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.BGSprites);
-                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.CharacterSprites);
-                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.CharacterAnimations);
+                Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.GamePlaySprites);
                 Directory.CreateDirectory(Application.dataPath + SpritesPathLibrary.Sounds);
                 Directory.CreateDirectory(Application.dataPath + "/Resources/Stories");
 

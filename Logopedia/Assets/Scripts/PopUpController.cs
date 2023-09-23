@@ -131,13 +131,16 @@ public class PopUpController : MonoBehaviour
 
         void CleanScene()
         {
-            var _garments = _itemsManager.Garments;
-            foreach (GameObject garment in _garments)
+            _itemsManager.SelectedGarments.Clear();
+            _itemsManager.SelectedGarments.RemoveAll(x => x == null);
+            foreach (GameObject garment in _itemsManager.Garments)
             {
-                Destroy(garment);
-                _itemsManager.Garments.Clear();
-                _itemsManager.Garments.RemoveAll(x => x == null);
+                _itemsManager.SelectedGarments.Add(garment);
             }
+
+            GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
+
+            GameEventMessage.SendEvent(EventsLibrary.DeleteItem);
             ClosePopUp();
         }
 

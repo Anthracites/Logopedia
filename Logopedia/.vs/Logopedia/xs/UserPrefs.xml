@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creation/StoryCreationPanel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI_Views/UIView_Creation.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="761" Column="72" />
-      <File FileName="Assets/Scripts/UI_Views/UIView_Settings.cs" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="398" Column="35" />
       <File FileName="Assets/Scripts/PopUpConfig.cs" />
       <File FileName="Assets/Scripts/PopUpController.cs" />
       <File FileName="Assets/Scripts/Managers/ItemsManager.cs" />
-      <File FileName="Assets/Scripts/Creation/StoryCreationPanel.cs" Line="97" Column="52" />
       <File FileName="Assets/Scripts/SoundManager.cs" />
       <File FileName="Assets/Scripts/Creation/Garment.cs" />
       <File FileName="Assets/Scripts/EventsLibrary.cs" />
+      <File FileName="Assets/Scripts/Creation/StoryCreationPanel.cs" />
       <File FileName="Assets/Scripts/SelectManyObjects.cs" />
+      <File FileName="Assets/Scripts/SpritesPathLibrary.cs" Line="6" Column="45" />
+      <File FileName="Assets/Scripts/Story/StorySaverUploader.cs" Line="41" Column="100" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

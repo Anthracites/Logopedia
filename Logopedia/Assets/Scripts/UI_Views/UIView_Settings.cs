@@ -184,11 +184,14 @@ namespace Logopedia.UserInterface
             {
                 _setting.options.Clear();
                 _setting.options.Add(new TMP_Dropdown.OptionData() { text = "No Sound" });
-                foreach (AudioClip _clip in _sounds)
+                if (_sounds != null)
                 {
-                    string _soundName = _clip.name.Replace(".mp3", "");
-                    _setting.options.Add(new TMP_Dropdown.OptionData() { text = _soundName });
+                    foreach (AudioClip _clip in _sounds)
+                    {
+                        string _soundName = _clip.name.Replace(".mp3", "");
+                        _setting.options.Add(new TMP_Dropdown.OptionData() { text = _soundName });
 
+                    }
                 }
             }
         }
@@ -283,27 +286,9 @@ namespace Logopedia.UserInterface
         }
 
         #region UploadingFiles
-        public void UploadGarments()
+       public void UploadNewTopicButtonHandler()
         {
-            OpenSpriteFolder(Application.dataPath + SpritesPathLibrary.GarmentSprites);
-        }
-
-        public void UploadBG()
-        {
-            OpenSpriteFolder(Application.dataPath + SpritesPathLibrary.BGSprites);
-
-        }
-
-        public void UploadCharacters()
-        {
-            OpenSpriteFolder(Application.dataPath + SpritesPathLibrary.CharacterSprites);
-
-        }
-
-        public void UploadAnimations()
-        {
-            OpenSpriteFolder(Application.dataPath + SpritesPathLibrary.CharacterAnimations);
-
+            OpenSpriteFolder(Application.dataPath + SpritesPathLibrary.GamePlaySprites);
         }
 
         public void UploadSounds()
