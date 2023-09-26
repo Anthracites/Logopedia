@@ -5844,12 +5844,12 @@ GameObject:
   - component: {fileID: 340060565}
   - component: {fileID: 340060564}
   - component: {fileID: 340060570}
-  - component: {fileID: 340060572}
   - component: {fileID: 340060571}
   - component: {fileID: 340060573}
   - component: {fileID: 340060574}
   - component: {fileID: 340060575}
   - component: {fileID: 340060576}
+  - component: {fileID: 340060577}
   m_Layer: 5
   m_Name: "UIView_\_Creation"
   m_TagString: Untagged
@@ -6486,36 +6486,6 @@ MonoBehaviour:
         m_CallState: 2
   GameEvent: CharacterSpriteChanged
   ListenForAllGameEvents: 0
---- !u!114 &340060572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340060562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DebugMode: 0
-  Event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 340060570}
-        m_TargetAssemblyTypeName: Logopedia.UserInterface.UIView_Creation, Assembly-CSharp
-        m_MethodName: ChangeBG
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  GameEvent: 'BGSpriteChanged '
-  ListenForAllGameEvents: 0
 --- !u!114 &340060573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6647,6 +6617,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   GameEvent: PreviewScene
+  ListenForAllGameEvents: 0
+--- !u!114 &340060577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340060562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 340060570}
+        m_TargetAssemblyTypeName: Logopedia.UserInterface.UIView_Creation, Assembly-CSharp
+        m_MethodName: SaveBeforeExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: SaveBeforeExit
   ListenForAllGameEvents: 0
 --- !u!1 &340767489
 GameObject:
@@ -36422,7 +36422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5588204511902584332, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.111496
+      value: -3.1114998
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_Pivot.x
@@ -36698,7 +36698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: -53}
+  m_AnchoredPosition: {x: -2, y: -52.999985}
   m_SizeDelta: {x: -1145.04, y: -653.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1638053908686428932
@@ -40769,7 +40769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5588204511902584332, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.111496
+      value: -3.1114998
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_Pivot.x

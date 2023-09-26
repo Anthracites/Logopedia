@@ -99,6 +99,7 @@ public class PopUpController : MonoBehaviour
                 case ("СonfirmSaveStory"):
                     ButtonOk.onClick.AddListener(SaveStory);
                     ButtonNo.onClick.AddListener(ExitWhithoutSave);
+                    _cancelButton.onClick.AddListener(ClosePopUp);
                     break;
                 case ("NoSpritesNotification"):
                     ButtonOk.onClick.AddListener(GoToUploadSprites);
@@ -108,6 +109,19 @@ public class PopUpController : MonoBehaviour
                 break;
         }
     }
+
+        void ExitAfterSave()
+        {
+            StartCoroutine(SaveStoryBeforeExit());
+        }
+
+        private IEnumerator SaveStoryBeforeExit()
+        {
+            SaveStory();
+            GameEventMessage.SendEvent(EventsLibrary.SaveBeforeExit);
+            yield return new WaitForEndOfFrame();
+            ExitWhithoutSave();
+        }
 
         void GoToUploadSprites()
         {

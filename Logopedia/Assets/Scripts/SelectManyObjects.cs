@@ -48,7 +48,7 @@ namespace Logopedia.UserInterface
 			{
 				unit.Add(u.transform.GetChild(1).transform.gameObject);
 			}
-			Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
+//			Debug.Log("Click on BG, garments count: " + _itemsManager.Garments.Count);
 			GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
 		}
 

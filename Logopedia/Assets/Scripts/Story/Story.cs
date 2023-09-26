@@ -9,6 +9,6 @@ namespace Logopedia.GamePlay
     public class Story
     {
         public string StoryName;
-        public List<StoryScene> Scenes;
+        public List<StoryScene> Scenes = new List<StoryScene>();
     }
 }

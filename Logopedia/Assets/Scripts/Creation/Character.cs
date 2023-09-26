@@ -51,7 +51,7 @@ namespace Logopedia.GamePlay
             _itemsManager.SelectedGarments.Clear();
             _itemsManager.SelectedGarments.RemoveAll(x => x == null);
             _itemsManager.SelectedGarments.Add(gameObject);
-            Debug.Log("Character child name: " + gameObject.transform.GetChild(0).gameObject);
+//            Debug.Log("Character child name: " + gameObject.transform.GetChild(0).gameObject);
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
         }
 

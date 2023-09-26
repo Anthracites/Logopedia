@@ -12,6 +12,9 @@ namespace Logopedia
         public static string GoToContinueGame = "GoToContinueGame"; // Переход к продолжению игры
         public static string GoToMenu = "GoToMenu"; // Переход/возвращение в меню
         public static string GoToSettings = "GoToSettings"; // Переход в настройки
+        public static string SaveBeforeExit = "SaveBeforeExit"; // Переход в настройки
+
+
 
         public static string StoryConvertedForSave = "StoryConvertedForSave"; // Конвертация объектов в сцену
         public static string SaveStory = "SaveStory"; // Сохранить сюжет

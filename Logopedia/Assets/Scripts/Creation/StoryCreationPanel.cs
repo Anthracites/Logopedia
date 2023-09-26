@@ -22,10 +22,10 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private List<GameObject> _garments = new List<GameObject>();
         [SerializeField]
-        StoryScene _scene;
-        [SerializeField]
-        int _sceneNumber;
+        public StoryScene _scene;
+        public int _sceneNumber;
         private bool _isCharacterHidden;
+        public bool SceneDeleted;
 
         private void Awake()
         {
@@ -47,18 +47,17 @@ namespace Logopedia.UserInterface
 
         private void Start()
         {
+            SceneDeleted = false;
+            _sceneNumber = Int32.Parse(gameObject.name);
+
             if ((_storyManager.IsStoryEdit == false)&(_storyManager.IsStoryCreartionStart == true))
             {
                 _itemsManager.GarmenScenePanel = _garmentPanel;
-                //if (_storyManager.IsStoryEdit == false)
-                //{
-                _sceneNumber = Int32.Parse(gameObject.name);
                 _scene = new StoryScene();
                 _scene.SceneNumberInStory = _sceneNumber;
                 _scene.Items = new List<StoryScene.SceneItem>();
                 _storyManager.CurrentStory.Scenes.Add(_scene);
             }
-
         }
 
 
@@ -77,7 +76,7 @@ namespace Logopedia.UserInterface
                 _itemsManager.Garments.Add(child.gameObject);
                 i++;
             }
-            Debug.Log("Garments count: " + _itemsManager.Garments.Count.ToString() + ", i = " + i.ToString());
+//            Debug.Log("Garments count: " + _itemsManager.Garments.Count.ToString() + ", i = " + i.ToString());
         }
 
         private void OnEnable()
@@ -89,11 +88,22 @@ namespace Logopedia.UserInterface
             _itemsManager.BackgroundSprite = _bg.GetComponent<Image>().sprite;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;
             _itemsManager.PreviewButton = _previewSwichButton;
+            ConvertToScene();
+           Debug.Log("Scene show " + _sceneNumber.ToString());
+
         }
 
         private void OnDisable()
         {
             ConvertToScene();
+        }
+
+        private void OnDestroy()
+        {
+            if (SceneDeleted == false)
+            {
+                ConvertToScene();
+            }
         }
 
         public void PreviewButtonActivate()
@@ -105,6 +115,13 @@ namespace Logopedia.UserInterface
 
         {
             _sceneNumber = Int32.Parse(gameObject.name);
+            _scene.SceneNumberInStory = _sceneNumber;
+
+            if (_storyManager.CurrentStory.Scenes.Count < _sceneNumber + 1)
+            {
+                _storyManager.CurrentStory.Scenes.Add(_scene);
+            }
+
             _scene.SceneNumberInStory = _sceneNumber;
             _scene.ActiveItemCount = 0;
             _scene.IsSceneSplashScreen = _splashScreenPanel.activeSelf;
@@ -127,8 +144,6 @@ namespace Logopedia.UserInterface
 
             _scene.SceneCharacter = new StoryScene.CharacterForSave(_character.gameObject);
 
-//            Debug.Log("BG: " + _scene.CurrentBGForSave + "Character: " + _scene.SceneCharacter);
-
                 _storyManager.CurrentStory.Scenes[_sceneNumber] = _scene;
 
             _garments.Clear();
@@ -137,6 +152,8 @@ namespace Logopedia.UserInterface
                 GameEventMessage.SendEvent(EventsLibrary.StoryConvertedForSave);
                 _storyManager.IsStorySave = false;
             }
+            Debug.Log("Panel converted to scene, scene number:" + _sceneNumber.ToString() + ". Story lenght:" + _storyManager.CurrentStory.Scenes.Count.ToString());
+
         }
 
         public void SwichBGSprite()

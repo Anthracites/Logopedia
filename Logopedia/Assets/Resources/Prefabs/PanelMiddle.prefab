@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 2545454849773302009}
   - component: {fileID: 8425706454263262110}
   m_Layer: 0
-  m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Characters/GirlBlond.png
+  m_Name: "/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/\u041E\u0434\u0435\u0436\u0434\u0430/Characters/Boy.png"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4aeea7e9e0d404d719b488ed3d77b4ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 245359630647523389}
   - component: {fileID: 1471667515082978669}
   m_Layer: 0
-  m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/BackGrounds/BG_winter.jpg
+  m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Flowers/BackGrounds/UIHere.jpg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1499,8 +1499,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3834c6d00860f49468a0a6d8f76be73d, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: acea991fc35a24be5ae879dc52cef801, type: 3}
+  m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4

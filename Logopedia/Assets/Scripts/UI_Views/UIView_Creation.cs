@@ -101,8 +101,9 @@ namespace Logopedia.UserInterface
 
                 var _bg = _scenePanel.transform.GetChild(0).gameObject;
 
-                WWW _BGwww = new WWW("file://" + _scene.CurrentBGForSave);
+                Debug.Log(_scene.CurrentBGForSave.ToString());
 
+                WWW _BGwww = new WWW("file://" + _scene.CurrentBGForSave);
                 Rect _BGrect = new Rect(0, 0, _BGwww.texture.width, _BGwww.texture.height);
                 Sprite _bgSprite = Sprite.Create(_BGwww.texture, _BGrect, new Vector2(0.5f, 0.5f));
 
@@ -270,18 +271,27 @@ namespace Logopedia.UserInterface
 
         private void OnDisable()
         {
+            SaveBeforeExit();
+        }
+
+        public void SaveBeforeExit()
+        {
             var _allItems = _itemsManager.Garments;
             foreach (GameObject _go in _allItems)
             {
                 Destroy(_go);
             }
             _allItems.Clear();
+            int i = 0;
             foreach (UIView _sceneBlank in _storyScenes)
             {
                 Destroy(_sceneBlank.gameObject);
+                Debug.Log("Scene blank " + i.ToString() + " destroed");
+                i++;
             }
             _storyScenes.Clear();
         }
+
 
         public void PreviewScene()
         {
@@ -321,20 +331,6 @@ namespace Logopedia.UserInterface
 
             _itemsManager.UI_Parametr = 0;
             ItemRotation.Value = _rotationSlider.value;
-
-            ////if (_itemsManager.SelectedGarments.Count > 0)
-            ////{
-            ////    foreach (GameObject _item in currentItems)
-            ////    {
-            ////        _item.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
-            ////        _itemShadow.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
-            ////    }
-            ////}
-            ////else
-            ////{
-            ////    _character.transform.eulerAngles = new Vector3(0, 0, _rotationSlider.value);
-
-            ////}
         }
 
         public void MirrowItem()
@@ -472,38 +468,11 @@ namespace Logopedia.UserInterface
                 ResetControl();
         }
 
-
-
-
-        //public void CreateItem()
-        //{
-        //    var _item = _garmentFactory.Create(PrefabsPathLibrary.Item).gameObject;
-        //    _item.transform.localPosition = _screenCenter;
-        //    _item.transform.SetParent(_middlePanel.transform);
-        //    _item.transform.localScale = (_character.transform.localScale / 4);
-        //    _item.name += _instCount.ToString();
-        //    _instCount++;
-        //}
-
         public void DeleteItem()
         {
             GameEventMessage.SendEvent(EventsLibrary.DeleteItem);
 
         }
-
-        public void ChangeCharacter()
-        {
-            //var _currentCharacter = _itemsManager.Character.GetComponent<UnityEngine.UI.Image>().sprite;
-            //ChangeSprite(_currentCharacter, _character);
-            //_character.gameObject.name = _currentCharacter.name;
-        }
-
-        //public void ChangeBG()
-        //{
-        //    var _currentBG = _itemsManager.BackgroundSprite;
-        //    ChangeSprite(_currentBG, _bg);
-        //    _bg.gameObject.name = _currentBG.name;
-        //}
 
         private IEnumerator ResetControls()
         {
@@ -632,7 +601,7 @@ namespace Logopedia.UserInterface
                     _currentSceneNumber = TargetSceneNumber;
                     _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
                     _storyScenes[_currentSceneNumber].Show();
-                    _storyManager.CurrentStory.Scenes.Add(new StoryScene());
+                    //_storyManager.CurrentStory.Scenes.Add(new StoryScene());
                 }
             }
             else
@@ -682,6 +651,7 @@ namespace Logopedia.UserInterface
             if (_storyScenes.Count > 1)
             {
                 var _sceneForDelete = _storyScenes[_currentSceneNumber];
+                _sceneForDelete.GetComponent<StoryCreationPanel>().SceneDeleted = true;
                 _storyScenes.Remove(_sceneForDelete);
                 Destroy(_sceneForDelete.gameObject);
                 _storyManager.CurrentStory.Scenes.Remove(_storyManager.CurrentStory.Scenes[_currentSceneNumber]);
@@ -703,12 +673,17 @@ namespace Logopedia.UserInterface
                     _storyManager.CurrentStorySceneIndex = _currentSceneNumber;
                     ShowCurrentSceneNumber();
                 }
+
+                _storyManager.CurrentStory.Scenes.RemoveAll(x => x == null);
             }
 
             int i = 0;
             foreach (UIView _scenePanel in _storyScenes)
             {
                 _scenePanel.gameObject.name = i.ToString();
+                _scenePanel.gameObject.GetComponent<StoryCreationPanel>()._sceneNumber = i;
+                _scenePanel.gameObject.GetComponent<StoryCreationPanel>()._scene.SceneNumberInStory = i;
+
                 i++;
             }
         }
