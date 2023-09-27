@@ -116,7 +116,7 @@ namespace Logopedia.UserInterface
         {
             PopUpName = "NoSpritesNotification",
             IconWay = "Sprites/UI/Delete",
-            Title = "Нужно загрузить изоюражения",
+            Title = "Нужно загрузить изображения",
             IsActiveNoButton = false,
             IsActiveCloseButton = true,
             IsActiveInputField = false,

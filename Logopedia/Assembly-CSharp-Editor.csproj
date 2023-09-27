@@ -59,6 +59,7 @@
     <Compile Include="Assets/Doozy/Editor/Enums/DividerType.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Windows/NodyWindowEditorSettings.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/AlphaGroup.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizationEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Animation/UIAnimatorUtils.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Utils/ReflectionUtils.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/Toggle.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/GUIs/ThemeNodeGUI.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Windows/NodyWindowOpen.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/GUIs/UIDrawerNodeGUI.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/EditorActions.cs" />
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowDrawViewHelp.cs" />
     <Compile Include="Assets/Doozy/Editor/Internal/DGUIElement.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Utils/GraphBackground.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/Editors/TimeScaleNodeEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/StyleName.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/StylesBuilder.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizationSettingsWindow.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/RadioButton.cs" />
     <Compile Include="Assets/Doozy/Editor/SceneManagement/SceneLoaderEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Windows/NodyWindowGraph.cs" />
@@ -188,6 +191,8 @@
     <Compile Include="Assets/Doozy/Editor/Nody/Windows/NodyWindowMethodsForGraph.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/Editors/SoundNodeEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/Progress/ProgressTargetAnimatorEditor.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/TextEditor.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizationSyncEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/UIButton/UIButtonEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/Editors/PortalNodeEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/Drawers/DColorDrawer.cs" />
@@ -196,6 +201,8 @@
     <Compile Include="Assets/Doozy/Editor/Utils/SpriteDrawUtils.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/WindowUtils.cs" />
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowDrawViewDebug.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizedTranslate.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizedTextEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowDatabases.cs" />
     <Compile Include="Assets/Doozy/Editor/Soundy/SoundGroupDataEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowDrawViewCanvases.cs" />
@@ -235,6 +242,7 @@
     <Compile Include="Assets/Doozy/Editor/Nody/Windows/NodyWindowStyles.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/Line.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Processors/NodyGraphAssetModProcessor.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/DropdownEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/GUIs/UnloadSceneNodeGUI.cs" />
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowDrawViewTemplates.cs" />
     <Compile Include="Assets/Doozy/Integrations/Editor/Playmaker/PlaymakerEventDispatcherEditor.cs" />
@@ -256,6 +264,7 @@
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/GUIs/RandomNodeGUI.cs" />
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowDrawViewThemes.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Windows/NodyWindowErrors.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizationSettingsEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/Colors.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/GUI/Scripts/Styles.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Editors/ExitNodeEditor.cs" />
@@ -269,6 +278,7 @@
     <Compile Include="Assets/Doozy/Editor/UI/UIView/UIViewEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/WindowHeader.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/NodeGUI/SubGraphNodeGUI.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizationUtils.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Input/KeyToGameEventEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/GUI/Scripts/DGUI/Button.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/Editors/BackButtonNodeEditor.cs" />
@@ -291,6 +301,7 @@
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowStyles.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Animation/RotateDrawer.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/Editors/WaitNodeEditor.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Editor/LocalizationEditorWindow.cs" />
     <Compile Include="Assets/Doozy/Editor/UI/Nodes/Editors/ApplicationQuitNodeEditor.cs" />
     <Compile Include="Assets/Doozy/Editor/Windows/DoozyWindowButtons.cs" />
     <Compile Include="Assets/Doozy/Editor/Nody/Editors/GraphEditor.cs" />
@@ -649,7 +660,7 @@
       <HintPath>Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="DDebug">
       <HintPath>Assets/Doozy/Engine/Debug/DDebug.dll</HintPath>
@@ -1115,6 +1126,10 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{518FDC3E-68A3-E622-EF2E-54A3D5E539B3}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{735E1FDA-3DF7-E814-3979-1DC510199AC2}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
       <Project>{243F8DCA-A6A9-D490-C340-6BCD1C143F68}</Project>

@@ -69,12 +69,14 @@
     <Compile Include="Assets/Doozy/Engine/UI/UIDrawer/UIDrawerArrowAnimator.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Base/ListOfNames.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIDrawer/Enums/UIDrawerBehaviorType.cs" />
+    <Compile Include="Assets/SimpleLocalization/Example.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Animation/Enums/Direction.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/UnmuteAllSounds.cs" />
     <Compile Include="Assets/Doozy/Engine/Scripts/MColor.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Nodes/SubGraphNode.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/UnityResources.cs" />
     <Compile Include="Assets/Scripts/FileUploader.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/LocalizedDropdown.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetAction.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Nodes/StartNode.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIToggle/UIToggleMessage.cs" />
@@ -119,6 +121,7 @@
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/EnableBackButton.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Base/Enums/NamesDatabaseType.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/UIButtonSettings.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Constants.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/CMYK.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
@@ -182,6 +185,7 @@
     <Compile Include="Assets/Doozy/Engine/Themes/Targets/ColorTargetSpriteRenderer.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Connections/UIConnection.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Nodes/PortalNode.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/LocalizationSync.cs" />
     <Compile Include="Assets/Doozy/Engine/Themes/Structs/ColorId.cs" />
     <Compile Include="Assets/Doozy/Engine/Nody/Nodes/EnterNode.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/GuidUtils.cs" />
@@ -238,6 +242,7 @@
     <Compile Include="Assets/Doozy/Engine/UI/UIView/Enums/UIViewStartBehavior.cs" />
     <Compile Include="Assets/Scripts/Managers/PopUpManager.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/PauseAllSounds.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/LocalizationSettings.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/TouchDetector.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIView/UIViewBehavior.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/TouchySettings.cs" />
@@ -266,9 +271,11 @@
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/HSL.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Enums/PopupDisplayOn.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIPopup/UIPopup.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/LocalizationManager.cs" />
     <Compile Include="Assets/Doozy/Engine/Soundy/AudioData.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressorGroup.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ChatController.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/LocalizedText.cs" />
     <Compile Include="Assets/Scripts/Play/ItemForPlay.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/DoozyUI/LoadScene.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/Enums/CompareType.cs" />
@@ -379,7 +386,9 @@
     <Compile Include="Assets/Doozy/Engine/Utils/DoozyUtils.cs" />
     <Compile Include="Assets/Doozy/Engine/Enums/SystemGameEvent.cs" />
     <Compile Include="Assets/Doozy/Engine/Utils/DataUtils.cs" />
+    <Compile Include="Assets/SimpleLocalization/Scripts/Sheet.cs" />
     <Compile Include="Assets/Doozy/Engine/Touchy/CardinalDirection.cs" />
+    <Compile Include="Assets/Scripts/MultiLanguage.cs" />
     <Compile Include="Assets/Doozy/Integrations/Playmaker/Actions/Soundy/MuteAllSounds.cs" />
     <Compile Include="Assets/Doozy/Examples/Scripts/UIButtonAutomatedTextValue.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/Input/InputData.cs" />
@@ -392,6 +401,7 @@
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/XYZ.cs" />
     <Compile Include="Assets/Scripts/Creation/ItemSlot.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetImage.cs" />
+    <Compile Include="Assets/Scripts/ButtonTextSwich.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -433,6 +443,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_2/skeleton.atlas.txt" />
     <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_3/skeleton.atlas.txt" />
+    <None Include="Assets/SimpleLocalization/Readme.txt" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/Doozy/readme.txt" />
     <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton.atlas.txt" />
@@ -736,7 +747,7 @@
       <HintPath>Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="DDebug">
       <HintPath>Assets/Doozy/Engine/Debug/DDebug.dll</HintPath>
@@ -1187,6 +1198,10 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{518FDC3E-68A3-E622-EF2E-54A3D5E539B3}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{735E1FDA-3DF7-E814-3979-1DC510199AC2}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
       <Project>{243F8DCA-A6A9-D490-C340-6BCD1C143F68}</Project>

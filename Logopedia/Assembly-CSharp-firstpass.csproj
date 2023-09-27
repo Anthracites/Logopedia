@@ -353,7 +353,7 @@
       <HintPath>Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="DDebug">
       <HintPath>Assets/Doozy/Engine/Debug/DDebug.dll</HintPath>
@@ -800,6 +800,10 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{518FDC3E-68A3-E622-EF2E-54A3D5E539B3}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{735E1FDA-3DF7-E814-3979-1DC510199AC2}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
       <Project>{243F8DCA-A6A9-D490-C340-6BCD1C143F68}</Project>

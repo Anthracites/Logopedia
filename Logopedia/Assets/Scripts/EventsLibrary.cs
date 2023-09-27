@@ -61,5 +61,8 @@ namespace Logopedia
 
         public static string ClipsAddedToFolder = "ClipsAddedToFolder"; // Звуки загружены в папку звуков
         public static string ClipsAddedToGame = "ClipsAddedToGame"; //Звуки загружены в игру
+
+        public static string LanguageSwich = "LanguageSwich"; //Звуки загружены в игру
+
     }
 }
