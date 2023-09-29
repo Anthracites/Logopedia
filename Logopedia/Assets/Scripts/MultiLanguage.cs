@@ -10,6 +10,6 @@ public class MultiLanguage : MonoBehaviour
     {
         LocalizationManager.Read();
 
-        LocalizationManager.Language = "Russian";
+        //LocalizationManager.Language = "Russian";
     }
 }

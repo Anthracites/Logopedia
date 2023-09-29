@@ -15,6 +15,8 @@ using UnityEngine.Audio;
 using UnityEngine.Networking;
 using System;
 using UniRx;
+using Assets.SimpleLocalization.Scripts;
+
 
 namespace Logopedia.UserInterface
 {
@@ -25,6 +27,8 @@ namespace Logopedia.UserInterface
 
         [SerializeField]
         private TMP_Text MuteButtonLabel;
+        [SerializeField]
+        private Text _text;
         [SerializeField]
         private bool _isMute;
         [SerializeField]
@@ -103,14 +107,15 @@ namespace Logopedia.UserInterface
             if (_isMute == true)
             {
                 _generalVolume = -80f;
-                _buttonLabel = "Включить звук";
+                _text.text = LocalizationManager.Localize("Settings.TurnOnSounds");
             }
 
             else
             {
                 _generalVolume = _lastGeneralVolume;
-                _buttonLabel = "Отключить звук";
+                _text.text = LocalizationManager.Localize("Settings.TurnOffSounds");
             }
+            _buttonLabel = _text.text;
 
             MuteButtonLabel.text = _buttonLabel;
             _general.audioMixer.SetFloat("GeneralVolume", _generalVolume);

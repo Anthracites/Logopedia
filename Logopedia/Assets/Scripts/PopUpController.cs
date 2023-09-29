@@ -50,6 +50,8 @@ public class PopUpController : MonoBehaviour
     private string _popUpName;
         [SerializeField]
         private List<Story> _stories;
+        [SerializeField]
+        private Text _text;
 
     public void ShowThisPopUp()
     {

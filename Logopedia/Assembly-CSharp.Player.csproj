@@ -311,6 +311,7 @@
     <Compile Include="Assets/Doozy/Engine/Touchy/Enums/SimpleSwipe.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
     <Compile Include="Assets/Scripts/Creation/Character.cs" />
+    <Compile Include="Assets/Scripts/TextLanguageSwicher.cs" />
     <Compile Include="Assets/Scripts/SliderWithButton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
     <Compile Include="Assets/Doozy/Engine/UI/UIButton/UIButtonBehavior.cs" />
@@ -401,7 +402,6 @@
     <Compile Include="Assets/Doozy/Engine/Utils/ColorModels/XYZ.cs" />
     <Compile Include="Assets/Scripts/Creation/ItemSlot.cs" />
     <Compile Include="Assets/Doozy/Engine/Progress/ProgressTargets/ProgressTargetImage.cs" />
-    <Compile Include="Assets/Scripts/ButtonTextSwich.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

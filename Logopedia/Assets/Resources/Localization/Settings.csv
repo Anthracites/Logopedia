@@ -7,3 +7,5 @@ Settings.UploadNewTopic,Загрузить новую тему,Upload new topic
 Settings.UploadSounds,Загрузить звуки,Upload sounds
 Settings.RefreshFileList,Обновить список файлов,Refresh file list
 Settings.BackToMenu,Вернуться в меню,Back to menu
+Settings.TurnOffSounds,Отключить звук,Turn off sounds
+Settings.TurnOnSounds,Включить звук,Turn on sounds

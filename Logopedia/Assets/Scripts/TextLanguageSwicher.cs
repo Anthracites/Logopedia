@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonTextSwich : MonoBehaviour
+public class TextLanguageSwicher : MonoBehaviour
 {
     [SerializeField]
     private Text _buttonText;
@@ -16,6 +16,10 @@ public class ButtonTextSwich : MonoBehaviour
         SwichLanguage();
     }
 
+    private void OnEnable()
+    {
+        SwichLanguage();
+    }
     public void SwichLanguage()
     {
         StartCoroutine(SwichText());

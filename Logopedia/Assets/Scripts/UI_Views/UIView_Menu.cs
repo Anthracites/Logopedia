@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using Doozy.Engine;
 using Zenject;
 using Logopedia.UIConnection;
+using TMPro;
+using Assets.SimpleLocalization.Scripts;
 
 namespace Logopedia.UserInterface
 {
@@ -17,6 +19,61 @@ namespace Logopedia.UserInterface
 
         [SerializeField]
         private Button _create;
+        [SerializeField]
+        private TMP_Dropdown _dropdown;
+        [SerializeField]
+        private string _currentLanguage;
+
+        private void Awake()
+        {
+            LocalizationManager.Read();
+            _currentLanguage = null;
+        }
+
+        private void Start()
+        {
+            #region PlayerPrefs.Get***
+            _currentLanguage = PlayerPrefs.GetString("_currentLanguage");
+            #endregion
+
+            LocalizationManager.Read();
+            LocalizationManager.Language = _currentLanguage;
+            Showlanguages();
+        }
+
+        public void SelectLanguage()
+        {
+            string l = _dropdown.options[_dropdown.value].text;
+            LocalizationManager.Language = l;
+            _currentLanguage = l;
+            GameEventMessage.SendEvent(EventsLibrary.LanguageSwich);
+            SaveLanguageSetting();
+        }
+
+        void Showlanguages()
+        {
+            _dropdown.options.Clear();
+            List<string> _allLanguages = new List<string>();
+            int i = 0;
+            foreach (string _language in LocalizationManager.languages)
+            {
+                if (i == 0)
+                {
+                    i++;
+                }
+                else
+                {
+                    _allLanguages.Add(_language);
+                    _dropdown.options.Add(new TMP_Dropdown.OptionData() { text = _language });
+
+                    if (_language == _currentLanguage)
+                    {
+                        _dropdown.value = i;
+                    }
+                    i++;
+                }
+            }
+        }
 
         public void ExitFromApplication()
         {
@@ -45,6 +102,13 @@ namespace Logopedia.UserInterface
         {
             _popUpManager.CurrentPopUpConfig = PopUpConfigLibrary.EditStory;
             GameEventMessage.SendEvent(EventsLibrary.ShowPopUp);
+        }
+
+        void SaveLanguageSetting()
+        {
+            #region PlayerPrefs.Set***
+            PlayerPrefs.SetString("_currentLanguage", _currentLanguage);
+            #endregion
         }
 
     }

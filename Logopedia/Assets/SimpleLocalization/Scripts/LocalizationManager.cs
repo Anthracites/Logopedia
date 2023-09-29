@@ -14,7 +14,8 @@ namespace Assets.SimpleLocalization.Scripts
 		/// <summary>
 		/// Fired when localization changed.
 		/// </summary>
-        public static event Action LocalizationChanged = () => { }; 
+        public static event Action LocalizationChanged = () => { };
+        public static List<String> languages = new List<string>();
 
         public static Dictionary<string, Dictionary<string, string>> Dictionary = new Dictionary<string, Dictionary<string, string>>();
         private static string _language = "English";
@@ -49,7 +50,7 @@ namespace Assets.SimpleLocalization.Scripts
             {
                 var textAsset = sheet.TextAsset;
                 var lines = GetLines(textAsset.text);
-				var languages = lines[0].Split(',').Select(i => i.Trim()).ToList();
+				 languages = lines[0].Split(',').Select(i => i.Trim()).ToList();
 
                 if (languages.Count != languages.Distinct().Count())
                 {
