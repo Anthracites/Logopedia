@@ -18,6 +18,8 @@ using System.Linq;
 using System.Drawing;
 using Spine.Unity;
 using UniRx;
+using Assets.SimpleLocalization.Scripts;
+
 
 namespace Logopedia.UserInterface
 {
@@ -695,7 +697,8 @@ namespace Logopedia.UserInterface
             int i = 0;
             foreach (UIView _scene in _storyScenes)
             {
-                _sceneNavigationDropdown.options.Add(new TMP_Dropdown.OptionData() { text = "Лист №" + (i + 1).ToString() });
+                string _levelel = LocalizationManager.Localize("Creation.Level");
+                _sceneNavigationDropdown.options.Add(new TMP_Dropdown.OptionData() { text = _levelel + " " + (i + 1).ToString() });
                 i++;
             }
 

@@ -1,13 +1,16 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PopUpController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI_Views/UIView_Creation.cs">
     <Files>
-      <File FileName="Assets/Scripts/PopUpController.cs" Line="55" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/TextLanguageSwicher.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PopUpController.cs" Line="61" Column="44" IsPinned="True" />
+      <File FileName="Assets/Scripts/TextLanguageSwicher.cs" />
+      <File FileName="Assets/Scripts/PopUpConfig.cs" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Settings.cs" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b89949bf-91e3-4632-8e4f-cef19aace844" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="42326e0d-0367-4502-ad31-11372ec56a04" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

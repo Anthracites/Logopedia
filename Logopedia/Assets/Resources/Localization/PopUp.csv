@@ -1,7 +1,6 @@
 Key,Russian,English
-PopUp.Create, Создать новую игру. Введите имя новой игры...,Create new game.Enter new game name...
-PopUp.Play,Выберите игру,Choose the game
-PopUp.EditStory,Выберите игру,Choose the game
+PopUp.Create, Создать новую игру? Введите имя новой игры...,Create new game.Enter new game name...
+PopUp.SelectGame,Выберите игру,Select the game
 PopUp.ClearCurrentLevel,Очистить текущий уровень?,Clear current level?
 PopUp.DeleteCurrentLevel,Удалить текущий уровень?,Remove current level?
 PopUp.GameSaved,Игра сохранена,Game saved
@@ -10,3 +9,5 @@ PopUp.PleaseUploadPictures,"Пожалуйста, загрузите карти�
 PopUp.ExitToMenu,Выйти в меню?,Exit to menu?
 PopUp.Cancel,Отмена,Cancel
 PopUp.InputField,Новая игра,New game
+PopUp.Ok,ОК,OK
+PopUp.No,Нет,No

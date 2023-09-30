@@ -11,6 +11,11 @@ public class TextLanguageSwicher : MonoBehaviour
     [SerializeField]
     private TMP_Text _text;
 
+    private void Awake()
+    {
+        SwichLanguage();
+    }
+
     private void Start()
     {
         SwichLanguage();

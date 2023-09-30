@@ -14,6 +14,8 @@ using Spine;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.Linq;
+using Assets.SimpleLocalization.Scripts;
+
 
 namespace Logopedia.UserInterface
 { 
@@ -51,15 +53,14 @@ public class PopUpController : MonoBehaviour
         [SerializeField]
         private List<Story> _stories;
         [SerializeField]
-        private Text _text;
+        private Text _text, _text2;
 
     public void ShowThisPopUp()
     {
         GetKind();
-        _inpupField.text = "Новый сюжет";
-        _thisPopUp.Show();
-          
-    }
+            _inpupField.text = _text2.text;
+            _thisPopUp.Show();
+        }
 
 
     void GetKind()
@@ -241,7 +242,8 @@ public class PopUpController : MonoBehaviour
     void ConfigPopUp(PopUpConfig _config)
     {
         _popUpName = _config.PopUpName;
-        _title.text = _config.Title;
+            _text.text = LocalizationManager.Localize(_config.Key);
+            _title.text = _text.text;
         _icon.sprite = Resources.Load<Sprite>(_config.IconWay);
             ButtonNo.gameObject.SetActive(_config.IsActiveNoButton);
         _closeButton.gameObject.SetActive(_config.IsActiveCloseButton);
