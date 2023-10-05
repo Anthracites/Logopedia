@@ -1,18 +1,12 @@
  using System.Collections;
-using System.Collections.Generic;
 using Logopedia.UIConnection;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Zenject;
 using Doozy.Engine;
-using Unity.VisualScripting;
-using Spine;
 using Spine.Unity;
 using UniRx;
-using System.Security.Policy;
-using System;
-using System.Linq;
 
 
 namespace Logopedia.GamePlay
@@ -67,6 +61,9 @@ namespace Logopedia.GamePlay
         public void OnPointerClick(PointerEventData pointerEventData)
         {
             StopCoroutine(_moveWithMouse);
+            _item.GetComponent<Image>().raycastTarget = true;
+            _itemShadow.GetComponent<Image>().raycastTarget = true;
+
         }
 
 
@@ -78,6 +75,8 @@ namespace Logopedia.GamePlay
         public void OnPointerUp(PointerEventData eventData)
         { 
             StopCoroutine(_moveWithMouse);
+            _item.GetComponent<Image>().raycastTarget = true;
+            _itemShadow.GetComponent<Image>().raycastTarget = true;
         }
 
         public void OnDrop(PointerEventData eventData)
@@ -221,12 +220,9 @@ namespace Logopedia.GamePlay
             {
                     GameObject obj = gameObject;
                     string _name = obj.name;
-                    Sprite _itemSprite = obj.GetComponent<UnityEngine.UI.Image>().sprite;
-                    Vector3 _garmentPosition = obj.transform.localPosition;
-                    Vector3 _itemPosition = obj.transform.localPosition;
-                    Vector3 _itemShadowPosition = _itemShadow.transform.localPosition;
-                    Vector3 _itemScale = obj.transform.localScale;
-                    Vector3 _itemRotation = obj.transform.localEulerAngles;
+                    Sprite _itemSprite = _item.GetComponent<UnityEngine.UI.Image>().sprite;
+                    Vector3 _itemScale = _item.transform.localScale;
+                    Vector3 _itemRotation = _item.transform.localEulerAngles;
                     bool _isShadowEnable = _itemShadow.activeSelf;
                     UnityEngine.Color _itemShadowColor = _itemShadow.GetComponent<UnityEngine.UI.Image>().color;
 
@@ -239,14 +235,19 @@ namespace Logopedia.GamePlay
                     var _copyItemShadow = _garment.transform.GetChild(0).gameObject;
 
                     _garment.transform.localScale = Vector3.one;
-                    _garment.transform.localPosition = _garmentPosition;
+                    _garment.transform.localPosition = Input.mousePosition;
+
+                _garment.GetComponent<Image>().raycastTarget = true;
+                _copyItem.GetComponent<Image>().raycastTarget = false;
+                _copyItemShadow.GetComponent<Image>().raycastTarget = false;
 
 
-                    _copyItem.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
+
+                _copyItem.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
                     _copyItemShadow.GetComponent<UnityEngine.UI.Image>().sprite = _itemSprite;
 
-                    _copyItem.transform.localPosition = _itemPosition;
-                    _copyItemShadow.transform.localPosition = _itemShadowPosition;
+                   // _copyItem.transform.localPosition = _garmentPosition;
+                   // _copyItemShadow.transform.localPosition = _garmentPosition;
 
                     _copyItem.transform.localScale = _itemScale;
                     _copyItemShadow.transform.localScale = _itemScale;

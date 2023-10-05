@@ -42,10 +42,6 @@ namespace Logopedia.GamePlay
 
         public void OnPointerClick(PointerEventData pointerEventData)
         {
-            if ((Input.GetKey(KeyCode.LeftShift)) || (Input.GetKey(KeyCode.RightShift)))
-            {
-                Debug.Log("Shift key is pressed.");
-            }
             SelectItem();
             _outline.enabled = true;
             GameEventMessage.SendEvent(EventsLibrary.ItemSelected);
@@ -77,7 +73,6 @@ namespace Logopedia.GamePlay
 
                var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePos.x - _startX, mousePos.y - _startY, 0);
-            //gameObject.transform.position = Input.mousePosition;
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -91,11 +86,6 @@ namespace Logopedia.GamePlay
             _itemsManager.SelectedGarments.RemoveAll(x => x == null);
             _itemsManager.SelectedGarments.Add(_garment);
             _garment.transform.SetSiblingIndex(_itemsManager.Garments.Count + 1);
-            Debug.Log("Item selected");
-            if (_itemsManager.SelectedGarments.Contains(_garment) == true)
-            {
-                //Debug.Log("Item " + _garment.name + " selected");
-            }
         }
 
         public void OutlineItem()
@@ -103,8 +93,6 @@ namespace Logopedia.GamePlay
             bool b = _itemsManager.SelectedGarments.Contains(_garment);
 
             _outline.enabled = b;
-
-//            Debug.Log("Item outlined" + b.ToString());
         }
 
         public void GetTakeSound()

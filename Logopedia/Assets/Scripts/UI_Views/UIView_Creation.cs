@@ -46,9 +46,6 @@ namespace Logopedia.UserInterface
         [Inject]
         StoryCreationPanel.Factory _storyCreationPanelFactory;
 
-
-        //[SerializeField]
-        //private UnityEngine.UI.Image _bg, _character;
         [SerializeField]
         private Slider _scaleSlider, _rotationSlider;
         [SerializeField]
@@ -56,13 +53,13 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private List<GameObject> currentItems, currentShadows, currentGarments = new List<GameObject>();
         [SerializeField]
-        private GameObject _garmentSamplesContent, _backgroundSamplesContent, _characterSamplesContent, _hiddenCharacterButtonSprite, _isSplashScreenButtonSprite, _topicIconsContent;
+        private GameObject _garmentSamplesContent, _backgroundSamplesContent, _characterSamplesContent, _hiddenCharacterButtonSprite, _isSplashScreenButtonSprite, _topicIconsContent, _hiddenAnimationButtonSprite;
         [SerializeField]
         private Vector2 _screenCenter;
         [SerializeField]
         private int _instCount;
         [SerializeField]
-        private bool _isPreview, _isShadowHiden, _isCharacterHidden, _isCurrentSceneSplashScreen;
+        private bool _isPreview, _isShadowHiden, _isCharacterHidden, _isCurrentSceneSplashScreen, _isAnimationHidden;
         [SerializeField]
         private TMP_Text _storyName, _sceneNumber;
         [SerializeField]
@@ -152,7 +149,6 @@ namespace Logopedia.UserInterface
                     var _itemPosition = new Vector3(_sceneItem.ItemPosition.x, _sceneItem.ItemPosition.y, _sceneItem.ItemPosition.z);
                     _item.transform.localPosition = _itemPosition;
                     _itemShadow.transform.localPosition = new Vector3(_sceneItem.ItemShadowPosition.x, _sceneItem.ItemShadowPosition.y, _sceneItem.ItemShadowPosition.z);
-                    //                    Debug.Log(_item.transform.position.ToString());
 
                     Vector3 _scale = new Vector3(_sceneItem.ItemScale.y, _sceneItem.ItemScale.y, _sceneItem.ItemScale.z);
                     _item.transform.localScale = _scale;
@@ -161,7 +157,6 @@ namespace Logopedia.UserInterface
                     Vector3 _rotation = new Vector3(_sceneItem.ItemRotation.x, _sceneItem.ItemRotation.y, _sceneItem.ItemRotation.z);
                     _item.transform.localEulerAngles = _rotation;
                     _itemShadow.transform.localEulerAngles = _rotation;
-                    //_garment.transform.SetParent(_scenePanel.transform);
 
                     bool _isActive = _sceneItem.ShadowEnabled;
                     _itemShadow.SetActive(_isActive);
@@ -227,15 +222,13 @@ namespace Logopedia.UserInterface
                 _storyManager.CurrentStory.Scenes = new List<StoryScene>(0);
                 var _newScene = new StoryScene();
                 _newScene.SceneNumberInStory = 0;
-                //_storyManager.CurrentStory.Scenes.Add(_newScene);
-                //AddScenesToDropDown();
+
                 PreviousSceneButton.gameObject.SetActive(false);
 
             }
 
             if (_storyManager.IsStoryEdit == true)
             {
-                //_storyManager.CurrentStory.Scenes = new List<StoryScene>();
                 OpenStory();
             }
             _instCount = 0;
@@ -505,6 +498,20 @@ namespace Logopedia.UserInterface
                     break;
             }
         }
+        public void SwichAnimationButtonHandler()
+        {
+            _isAnimationHidden = !_isAnimationHidden;
+            GameEventMessage.SendEvent(EventsLibrary.AnimationSwiched);
+            _hiddenAnimationButtonSprite.SetActive(_isCharacterHidden);
+
+            Debug.Log("AnimationSwiched");
+        }
+
+        public void PlayAnimationButtonHandler()
+        {
+            GameEventMessage.SendEvent(EventsLibrary.PlayAnymation);
+            Debug.Log("AnimationSwiched");
+        }
 
         public void ResetControl()
         {
@@ -556,7 +563,6 @@ namespace Logopedia.UserInterface
         {
             if (_storyManager.IsStoryEdit == false)
             {
-                //_character = _itemsManager.Character.GetComponent<UnityEngine.UI.Image>();
                 _splashScreenPanel = _itemsManager.SplashScreenPanel;
             }
 
@@ -603,7 +609,6 @@ namespace Logopedia.UserInterface
                     _currentSceneNumber = TargetSceneNumber;
                     _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
                     _storyScenes[_currentSceneNumber].Show();
-                    //_storyManager.CurrentStory.Scenes.Add(new StoryScene());
                 }
             }
             else
@@ -659,7 +664,6 @@ namespace Logopedia.UserInterface
                 _storyManager.CurrentStory.Scenes.Remove(_storyManager.CurrentStory.Scenes[_currentSceneNumber]);
                 if (_currentSceneNumber == 0)
                 { 
-                    //_currentSceneNumber++;
                     _storyScenes[_currentSceneNumber].ShowBehavior.Animation.Move.Direction = Doozy.Engine.UI.Animation.Direction.Right;
                     _storyScenes[_currentSceneNumber].Show();
                     _storyManager.CurrentStorySceneIndex = _currentSceneNumber;

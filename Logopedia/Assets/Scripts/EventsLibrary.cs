@@ -31,6 +31,8 @@ namespace Logopedia
         public static string BGSpriteChanged = "BGSpriteChanged"; // Изменен фон сцены
         public static string CharacterSpriteChanged = "CharacterSpriteChanged"; // Изменен персонаж
         public static string AnimationChanged = "AnimationChanged"; // Изменена анимация
+        public static string AnimationSwiched = "AnimationSwiched"; // Анимация отключена/включена
+        public static string PlayAnymation = "PlayAnymation"; // Анимация отключена/включена
         public static string PreviewScene = "PreviewScene"; // Скрывает footer и headr на cretion view
         public static string BackFromPreviewScene = "BackFromPreviewScene"; // Отображает footer и headr на cretion view
 

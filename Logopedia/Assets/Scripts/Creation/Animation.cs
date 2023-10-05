@@ -6,7 +6,7 @@ using Doozy.Engine;
 using Logopedia.UIConnection;
 using UnityEngine.EventSystems;
 using Spine.Unity;
-
+using DG.Tweening;
 
 namespace Logopedia.GamePlay
 {
@@ -19,10 +19,19 @@ namespace Logopedia.GamePlay
         private SkeletonGraphic _animation;
         [SerializeField]
         private float _startX, _startY;
+        [SerializeField]
+        private bool _isAnimationActive;
 
         public void GetAnimation()
         {
+            StartCoroutine(ApplyAnimation());
+        }
+
+        IEnumerator ApplyAnimation()
+        {
+            yield return new WaitForEndOfFrame();
             _animation.skeletonDataAsset = _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().skeletonDataAsset;
+            Debug.Log("Animation applaed!");
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -39,6 +48,7 @@ namespace Logopedia.GamePlay
 
         private void Start()
         {
+            _isAnimationActive = _animation.gameObject.activeSelf;
             SendToManager();
         }
 
@@ -49,9 +59,21 @@ namespace Logopedia.GamePlay
             _startY = mousePos.y - transform.position.y;
             SendToManager();
         }
+
+        public void PlayAnimation()
+        {
+            _animation.AnimationState.SetAnimation(0, "action", false);
+        }
+
         public void OnPointerClick(PointerEventData pointerEventData)
         {
             SendToManager();
+        }
+
+        public void SwichAnimation()
+        {
+            _isAnimationActive = !_isAnimationActive;
+            _animation.gameObject.SetActive(_isAnimationActive);
         }
     }
 }
