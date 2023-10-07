@@ -15,6 +15,8 @@ public class StoryPlayPanel : MonoBehaviour
     public int ItemCount;
     private int _putItemCount, _sceneNumber;
     public bool IsSplashScreen;
+    [SerializeField]
+    private GameObject _garmentPanel;
 
     private void Start()
     {
@@ -24,6 +26,11 @@ public class StoryPlayPanel : MonoBehaviour
             {
                 GameEventMessage.SendEvent(EventsLibrary.LevelComplete);
             }
+
+        foreach (Transform child in _garmentPanel.transform)
+        {
+            child.GetChild(1).GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
     }
 
     private void OnEnable()

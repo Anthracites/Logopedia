@@ -58,6 +58,10 @@ namespace Logopedia.UserInterface
                 _scene.Items = new List<StoryScene.SceneItem>();
                 _storyManager.CurrentStory.Scenes.Add(_scene);
             }
+            foreach (Transform child in _garmentPanel.transform)
+            {
+                child.GetChild(1).GetComponent<CanvasGroup>().blocksRaycasts = true;
+            }
         }
 
 

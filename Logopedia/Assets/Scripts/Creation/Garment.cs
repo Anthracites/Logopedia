@@ -30,6 +30,8 @@ namespace Logopedia.GamePlay
         private bool _isShadowHiden;
         [SerializeField]
         private SkeletonGraphic _stars;
+        private float _currentScale;
+        private float _curretnRotation;
         private float _modifyParametr;
 
         private UnityEngine.Color _transparent = new Color(0, 0, 0, 0), _opaque = new Color(0, 0, 0, 0.5f);
@@ -109,6 +111,8 @@ namespace Logopedia.GamePlay
 
             if ((_isSelected == true) & (_disposable.Count == 0))
             {
+                _curretnRotation = _item.transform.eulerAngles.z;
+                _currentScale = _item.transform.localScale.y;
                 UserInterface.UIView_Creation.ItemScale.SkipLatestValueOnSubscribe().Subscribe(_ => ScaleItem()).AddTo(_disposable);
                 UserInterface.UIView_Creation.ItemRotation.SkipLatestValueOnSubscribe().Subscribe(_ => RotateItem()).AddTo(_disposable);
             }
@@ -170,46 +174,63 @@ namespace Logopedia.GamePlay
         public void RotateItem()
         {
             _modifyParametr = _itemsManager.UI_Parametr;
-            if (_modifyParametr != 0)
-            {
 
-                float _curretnRotation = _item.transform.eulerAngles.z;
-                float newRotation = _curretnRotation + (0.5f * _modifyParametr);
-                _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
-                _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
+            if (_itemsManager.SelectedGarments.Count <= 1)
+            {
+                if (_modifyParametr != 0)
+                {
+                    float newRotation = _curretnRotation + (0.5f * _modifyParametr);
+                    _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
+                    _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
+                }
+                else
+                {
+                    float newRotation = UserInterface.UIView_Creation.ItemRotation.Value;
+                    _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
+                    _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
+
+                }
             }
             else
             {
-                float newRotation = UserInterface.UIView_Creation.ItemRotation.Value;
+                float f = UserInterface.UIView_Creation.ItemRotation.Value;
+                float newRotation = f + _curretnRotation;
                 _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
                 _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
 
             }
-            Debug.Log("Item rotated!!!" + _itemsManager.UI_Parametr.ToString());
-
         }
 
         public void ScaleItem()
         {
             _modifyParametr = _itemsManager.UI_Parametr;
             float a = Mathf.Sign(_item.transform.localScale.x);
-            if (_modifyParametr != 0)
+
+            if (_itemsManager.SelectedGarments.Count <= 1)
             {
-                float _currentScale = _item.transform.localScale.y;
-                float newScale = _currentScale + (0.1f * _modifyParametr);
+                if (_modifyParametr != 0)
+                {
+                    float newScale = _currentScale + (0.1f * _modifyParametr);
+                    _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                    _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                    Debug.Log("Item " + gameObject.name + " scaled1!!! a = " + a.ToString());
 
-                _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                Debug.Log("Item " + gameObject.name + " scaled1!!! a = " + a.ToString());
+                }
+                else
+                {
+                    float newScale = UserInterface.UIView_Creation.ItemScale.Value;
+                    _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                    _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                    Debug.Log("Item " + gameObject.name + "  scaled2!!!" + "Scele index: " + newScale.ToString());
 
+                }
             }
             else
             {
-                float newScale = UserInterface.UIView_Creation.ItemScale.Value;
-
+                float f = UserInterface.UIView_Creation.ItemScale.Value - 1;
+                float newScale = f + _currentScale;
                 _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
                 _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                 Debug.Log("Item " + gameObject.name + "  scaled2!!!"+ "Scele index: " + newScale.ToString());
 
             }
         }

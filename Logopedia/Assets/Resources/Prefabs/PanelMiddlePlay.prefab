@@ -704,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCount: 0
   IsSplashScreen: 0
+  _garmentPanel: {fileID: 1379379248711976954}
 --- !u!114 &5996981566257634802
 MonoBehaviour:
   m_ObjectHideFlags: 0

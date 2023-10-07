@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creation/Animation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Story/StoryScene.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Creation/Animation.cs" Line="50" Column="10" />
-      <File FileName="Assets/Scripts/Creation/Character.cs" />
-      <File FileName="Assets/Scripts/Creation/Garment.cs" />
-      <File FileName="Assets/Scripts/SpritesTemplates/AnimationTemplate.cs" />
-      <File FileName="Assets/Scripts/EventsLibrary.cs" />
-      <File FileName="Assets/Scripts/Creation/StoryCreationPanel.cs" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="481" Column="47" />
+      <File FileName="Assets/Scripts/Creation/Garment.cs" Line="19" Column="18" />
+      <File FileName="Assets/Scripts/Creation/StoryCreationPanel.cs" Line="61" Column="1" />
+      <File FileName="Assets/Scripts/Creation/Item.cs" Line="40" Column="18" />
+      <File FileName="Assets/Scripts/Play/StoryPlayPanel.cs" Line="10" Column="23" />
+      <File FileName="Assets/Scripts/Managers/StoryManager.cs" Line="17" Column="20" />
+      <File FileName="Assets/Scripts/Story/Story.cs" Line="12" Column="26" />
+      <File FileName="Assets/Scripts/Story/StoryScene.cs" Line="28" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="23d0f434-84b1-422e-aeff-bde62216e4be" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3ac7586b-155f-42bb-a210-aa1bfe789630" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
