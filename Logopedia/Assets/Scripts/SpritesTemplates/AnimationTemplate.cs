@@ -8,6 +8,10 @@ using Spine;
 using Spine.Unity;
 using Doozy.Engine;
 using DG.Tweening;
+using System.IO;
+using System.Linq;
+
+
 
 namespace Logopedia.UserInterface
 {
@@ -24,11 +28,11 @@ namespace Logopedia.UserInterface
             _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().skeletonDataAsset = _animation.skeletonDataAsset;
             _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().initialSkinName = _animation.initialSkinName;
             _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().startingAnimation = _animation.startingAnimation;
+            _itemsManager.CharacterAnimation.name = gameObject.name;
             _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().Initialize(true);
 
-
             GameEventMessage.SendEvent(EventsLibrary.AnimationChanged);
-            Debug.Log("Animation send to manager");
+            Debug.Log(gameObject.name);
         }
     }
 }

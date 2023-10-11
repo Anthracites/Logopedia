@@ -489,8 +489,8 @@ namespace Logopedia.UserInterface
                     _itemsManager.UI_Parametr = 0;
                     _itemsManager.UI_Parametr = 0;
                     GameObject _item = _itemsManager.SelectedGarments[0].transform.GetChild(0).gameObject;
-                    ItemScale.Value = _item.transform.localScale.x;
-                    _scaleSlider.value = _item.transform.localScale.x;
+                    ItemScale.Value = _item.transform.localScale.y;
+                    _scaleSlider.value = _item.transform.localScale.y;
                     var a = _item.transform.eulerAngles.z;
                     a = Mathf.Repeat(a + 180, 360) - 180;
                     ItemRotation.Value = a;

@@ -26,6 +26,9 @@ namespace Logopedia.GamePlay
         {
             public bool IsChacterActive;
             public string CharacterSprite;
+            //public bool IsAnimated;
+
+            //public string AnimationSkin;
             public PositionForSave CharacterPosition;
             public PositionForSave CharacterRotation;
             public PositionForSave CharacterScale;
