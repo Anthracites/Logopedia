@@ -174,6 +174,7 @@ namespace Logopedia.GamePlay
         public void RotateItem()
         {
             _modifyParametr = _itemsManager.UI_Parametr;
+            _curretnRotation = _item.transform.eulerAngles.z;
 
             if (_itemsManager.SelectedGarments.Count <= 1)
             {
@@ -205,6 +206,7 @@ namespace Logopedia.GamePlay
         {
             _modifyParametr = _itemsManager.UI_Parametr;
             float a = Mathf.Sign(_item.transform.localScale.x);
+            _currentScale = _item.transform.localScale.y;
 
             if (_itemsManager.SelectedGarments.Count <= 1)
             {
@@ -213,7 +215,7 @@ namespace Logopedia.GamePlay
                     float newScale = _currentScale + (0.1f * _modifyParametr);
                     _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
                     _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                    Debug.Log("Item " + gameObject.name + " scaled1!!! a = " + a.ToString());
+                    Debug.Log("Item scaled1!!! a = " + a.ToString()+ ", modify parametr: " + _modifyParametr.ToString());
 
                 }
                 else
