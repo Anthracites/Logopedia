@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creation/Garment.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creation/Character.cs">
     <Files>
-      <File FileName="Assets/Scripts/Creation/Item.cs" Line="45" Column="17" />
-      <File FileName="Assets/Scripts/Creation/Garment.cs" Line="209" Column="34" />
-      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="455" Column="60" />
+      <File FileName="Assets/Scripts/Creation/Character.cs" Line="89" Column="103" />
+      <File FileName="Assets/Scripts/Creation/Garment.cs" />
+      <File FileName="Assets/Scripts/Creation/Item.cs" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1ba34e04-73a7-4ba4-b4ae-b5e065dcddcd" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6d299b97-e978-4fd1-b880-4acb24f307d5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
