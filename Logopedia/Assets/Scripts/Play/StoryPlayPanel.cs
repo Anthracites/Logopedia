@@ -5,6 +5,8 @@ using Doozy.Engine;
 using Logopedia;
 using System.Collections.Generic;
 using System;
+using Spine.Unity;
+
 
 
 public class StoryPlayPanel : MonoBehaviour
@@ -17,6 +19,9 @@ public class StoryPlayPanel : MonoBehaviour
     public bool IsSplashScreen;
     [SerializeField]
     private GameObject _garmentPanel;
+    [SerializeField]
+    private SkeletonGraphic _animation;
+
 
     private void Start()
     {
@@ -56,6 +61,13 @@ public class StoryPlayPanel : MonoBehaviour
         }
 
     }
+
+    public void PlayAnimation()
+    {
+        _animation.gameObject.SetActive(true);
+        _animation.AnimationState.SetAnimation(0, "action", false);
+    }
+
 
     public class Factory : PlaceholderFactory<string, StoryPlayPanel>
     {

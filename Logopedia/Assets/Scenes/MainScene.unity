@@ -1500,7 +1500,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: dce3bdef7c3d745d6abc105c524d9dff, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_4/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_4/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -2748,7 +2748,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: d9145a6e715d34f78a1b1e9335e55d96, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_3/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_3/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -3028,7 +3028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 468.42004, y: -27.935}
+  m_AnchoredPosition: {x: 468.42, y: -27.935}
   m_SizeDelta: {x: 936.84, y: 55.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &182248233
@@ -7601,7 +7601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchorMin.x
@@ -7609,15 +7609,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 911.9141
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 74.28569
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7649,11 +7649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 455.95706
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -211.42853
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7681,7 +7681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9176766058402735944, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4793960767853152734, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
@@ -11561,7 +11561,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0bc0897daad9c4094943c40b208ee1d5, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_4/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_4/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -11840,7 +11840,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2d06714e69b9b40cd90625f8de5428d1, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -18205,7 +18205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.12156863, g: 0.53333336, b: 0.7882353, a: 1}
+  m_Color: {r: 0.2509804, g: 0.34901962, b: 0.31764707, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20319,7 +20319,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3728cd1eaeed44309a55a5a530630ed3, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -21992,7 +21992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchorMin.x
@@ -22000,15 +22000,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 911.9141
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 74.28569
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22040,11 +22040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 455.95706
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -385.71423
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894150210992664771, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22072,7 +22072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9176766058402735944, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4793960767853152734, guid: 5683076f5906247fea3f326a596d4a26, type: 3}
@@ -23076,7 +23076,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 8cacf54112422453ba9fcea8c2d1a707, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 6009963334582968939, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: _animation
@@ -24714,7 +24714,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f6fb39f32a7224a199799b4f0811fcc1, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_3/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_3/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -31398,7 +31398,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 242a25c8bc00248d9a83d3fc3a5c9a11, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_4/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_4/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -32501,7 +32501,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3fb8bdd48071a4ea584f34a851e25f55, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -33425,7 +33425,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7e9120cdbfceb44149726d920b2c7afa, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -37019,7 +37019,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 5dc9a951a25c14f71a8e0d2dd576541d, type: 3}
     - target: {fileID: 5870545450011042592, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: m_Name
-      value: Assets/Resources/Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData.asset
+      value: Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData
       objectReference: {fileID: 0}
     - target: {fileID: 9109979959837682204, guid: 824f610ff7f1840aa993b84a7f233ff1, type: 3}
       propertyPath: initialSkinName
@@ -41697,7 +41697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.5382376, b: 1, a: 0.90588236}
+  m_Color: {r: 0.2509804, g: 0.34901962, b: 0.31764707, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

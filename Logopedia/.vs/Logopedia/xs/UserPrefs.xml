@@ -1,15 +1,20 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creation/Character.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI_Views/UIView_Creation.cs">
     <Files>
-      <File FileName="Assets/Scripts/Creation/Character.cs" Line="89" Column="103" />
-      <File FileName="Assets/Scripts/Creation/Garment.cs" />
-      <File FileName="Assets/Scripts/Creation/Item.cs" />
-      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="130" Column="85" />
+      <File FileName="Assets/Scripts/Creation/Character.cs" />
+      <File FileName="Assets/Scripts/Story/StoryScene.cs" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Play.cs" />
+      <File FileName="Assets/Scripts/Creation/Animation.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/Story/Story.cs" />
+      <File FileName="Assets/Scripts/Story/StorySaverUploader.cs" Line="62" Column="90" />
+      <File FileName="Assets/Scripts/Creation/StoryCreationPanel.cs" Line="121" Column="1" />
+      <File FileName="Assets/Scripts/SpritesTemplates/AnimationTemplate.cs" Line="33" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6d299b97-e978-4fd1-b880-4acb24f307d5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3f2e2112-69b2-4e70-bb27-e236264172d5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

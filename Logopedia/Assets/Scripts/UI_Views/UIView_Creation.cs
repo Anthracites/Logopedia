@@ -119,6 +119,26 @@ namespace Logopedia.UserInterface
 
                 _character.GetComponent<UnityEngine.UI.Image>().sprite = _characterSprite;
                 _character.name = _characterPath;
+                //Resources.Load<TextAsset>("Text/textFile01");
+                SkeletonDataAsset _characterAnim = Resources.Load<SkeletonDataAsset>(_scene.SceneCharacter.AnimationAsset);
+
+                var _animationCharacter = _character.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SkeletonGraphic>();
+
+                _animationCharacter.skeletonDataAsset = _characterAnim;
+                _animationCharacter.initialSkinName = _scene.SceneCharacter.AnimationSkin;
+                _animationCharacter.gameObject.name = _scene.SceneCharacter.AnimationAsset;
+                _animationCharacter.AnimationState.SetAnimation(0, "action", false);
+                _animationCharacter.Initialize(true);
+
+
+
+                //_character.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SkeletonGraphic>().skeletonDataAsset.GetSkeletonData(true);
+
+                Debug.Log("Animation downloaded on path: " + (_scene.SceneCharacter.AnimationAsset));
+                Debug.Log("Animation is: " + _characterAnim.name);
+
+
+                _character.transform.GetChild(1).GetChild(0).gameObject.SetActive(_scene.SceneCharacter.IsAnimated);
                 _character.transform.localPosition = new Vector3(_scene.SceneCharacter.CharacterPosition.x, _scene.SceneCharacter.CharacterPosition.y, _scene.SceneCharacter.CharacterPosition.z);
                 _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
                 _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);

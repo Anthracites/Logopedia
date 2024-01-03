@@ -31,6 +31,7 @@ namespace Logopedia.GamePlay
         {
             yield return new WaitForEndOfFrame();
             _animation.skeletonDataAsset = _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().skeletonDataAsset;
+            _animation.gameObject.name = _itemsManager.CharacterAnimation.name;
             Debug.Log("Animation applaed!");
         }
 

@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 690944411133008931}
   - component: {fileID: 8272109599063556226}
   - component: {fileID: 5996981566257634802}
+  - component: {fileID: 3179716491867870116}
   m_Layer: 5
   m_Name: PanelMiddlePlay
   m_TagString: Untagged
@@ -705,6 +706,7 @@ MonoBehaviour:
   ItemCount: 0
   IsSplashScreen: 0
   _garmentPanel: {fileID: 1379379248711976954}
+  _animation: {fileID: 5104754065396614000}
 --- !u!114 &5996981566257634802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,6 +736,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   GameEvent: ItemInSlot
+  ListenForAllGameEvents: 0
+--- !u!114 &3179716491867870116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5730191024310205050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8272109599063556226}
+        m_TargetAssemblyTypeName: StoryPlayPanel, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: PlayAnymation
   ListenForAllGameEvents: 0
 --- !u!1 &7713567444737112536
 GameObject:
@@ -828,7 +860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4287101103799166867
 RectTransform:
   m_ObjectHideFlags: 0
@@ -878,11 +910,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   skeletonDataAsset: {fileID: 11400000, guid: 9680d5804bc172a4285e213c1569097f, type: 2}
-  initialSkinName: black
+  initialSkinName: purple
   initialFlipX: 0
   initialFlipY: 0
   startingAnimation: action
-  startingLoop: 1
+  startingLoop: 0
   timeScale: 1
   freeze: 0
   updateWhenInvisible: 3

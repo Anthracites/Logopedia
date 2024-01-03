@@ -5,6 +5,8 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.TextCore.Text;
 using UnityEditor;
+using Spine.Unity;
+
 
 namespace Logopedia.GamePlay
 {
@@ -26,9 +28,10 @@ namespace Logopedia.GamePlay
         {
             public bool IsChacterActive;
             public string CharacterSprite;
-            //public bool IsAnimated;
+            public bool IsAnimated;
 
-            //public string AnimationSkin;
+            public string AnimationAsset;
+            public string AnimationSkin;
             public PositionForSave CharacterPosition;
             public PositionForSave CharacterRotation;
             public PositionForSave CharacterScale;
@@ -37,6 +40,9 @@ namespace Logopedia.GamePlay
             {
                 IsChacterActive = _character.gameObject.activeSelf;
                 CharacterSprite = _character.name;
+                IsAnimated = _character.transform.GetChild(1).GetChild(0).gameObject.activeSelf;
+                AnimationAsset = _character. transform.GetChild(1).GetChild(0).gameObject.name;
+                AnimationSkin = _character.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SkeletonGraphic>().initialSkinName;
                 CharacterPosition = new PositionForSave(_character.gameObject.transform.localPosition);
                 CharacterRotation = new PositionForSave(_character.gameObject.transform.eulerAngles);
                 CharacterScale = new PositionForSave(_character.transform.localScale);
