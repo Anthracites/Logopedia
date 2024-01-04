@@ -63,7 +63,7 @@ RectTransform:
   m_GameObject: {fileID: 1782659360468291645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.4626, y: 6.4626, z: 6.4626}
+  m_LocalScale: {x: 11.774212, y: 11.774212, z: 11.774212}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4287101103799166867}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b69405207d6545ca9d8bed8118b47a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0556387f8f04c4a118177e086182d3dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -765,7 +765,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  GameEvent: PlayAnymation
+  GameEvent: LevelComplete
   ListenForAllGameEvents: 0
 --- !u!1 &7713567444737112536
 GameObject:
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fcee4ac8a673b48b5a9efe4944dfbfd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 682a475668bcb874899bcf86a3b5a87f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -870,7 +870,7 @@ RectTransform:
   m_GameObject: {fileID: 8199781483011466372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.07526212, y: 0.07526212, z: 0.07526212}
+  m_LocalScale: {x: 6.6075544, y: 6.6075544, z: 6.6075544}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7993826131425390067}
@@ -878,8 +878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0063466, y: -37.581}
-  m_SizeDelta: {x: 864.2786, y: 1006.711}
+  m_AnchoredPosition: {x: -0.0056543, y: -32.39308}
+  m_SizeDelta: {x: 54.849, y: 97.34033}
   m_Pivot: {x: 0.49989948, y: 0.00039717587}
 --- !u!222 &4759626124187223871
 CanvasRenderer:
@@ -909,8 +909,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: 9680d5804bc172a4285e213c1569097f, type: 2}
-  initialSkinName: purple
+  skeletonDataAsset: {fileID: 11400000, guid: 6a1f1dfeb31d44980a549e2989d717be, type: 2}
+  initialSkinName: pink
   initialFlipX: 0
   initialFlipY: 0
   startingAnimation: action

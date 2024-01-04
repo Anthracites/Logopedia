@@ -16,7 +16,7 @@ public class StoryPlayPanel : MonoBehaviour
 
     public int ItemCount;
     private int _putItemCount, _sceneNumber;
-    public bool IsSplashScreen;
+    public bool IsSplashScreen, IsAnimated;
     [SerializeField]
     private GameObject _garmentPanel;
     [SerializeField]
@@ -64,8 +64,11 @@ public class StoryPlayPanel : MonoBehaviour
 
     public void PlayAnimation()
     {
-        _animation.gameObject.SetActive(true);
-        _animation.AnimationState.SetAnimation(0, "action", false);
+        if (IsAnimated == true)
+        {
+            _animation.gameObject.SetActive(true);
+            _animation.AnimationState.SetAnimation(0, "action", false);
+        }
     }
 
 

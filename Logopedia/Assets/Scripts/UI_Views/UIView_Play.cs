@@ -12,6 +12,8 @@ using Doozy.Engine.UI;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Linq;
+using Spine.Unity;
+
 
 
 namespace Logopedia.UserInterface
@@ -68,6 +70,8 @@ namespace Logopedia.UserInterface
                 _scenePanel.GetComponent<StoryPlayPanel>().ItemCount = _scene.ActiveItemCount;
                 _scenePanel.GetComponent<StoryPlayPanel>().ItemCount = _scene.ActiveItemCount;
                 _scenePanel.GetComponent<StoryPlayPanel>().IsSplashScreen = _scene.IsSceneSplashScreen;
+                _scenePanel.GetComponent<StoryPlayPanel>().IsAnimated = _scene.SceneCharacter.IsAnimated;
+
 
 
                 _scenePanel.name = _scene.SceneNumberInStory.ToString();
@@ -97,6 +101,17 @@ namespace Logopedia.UserInterface
                     _character.transform.localPosition = new Vector3(_scene.SceneCharacter.CharacterPosition.x, _scene.SceneCharacter.CharacterPosition.y, _scene.SceneCharacter.CharacterPosition.z);
                     _character.transform.localEulerAngles = new Vector3(_scene.SceneCharacter.CharacterRotation.x, _scene.SceneCharacter.CharacterRotation.y, _scene.SceneCharacter.CharacterRotation.z);
                     _character.transform.localScale = new Vector3(_scene.SceneCharacter.CharacterScale.x, _scene.SceneCharacter.CharacterScale.y, _scene.SceneCharacter.CharacterScale.z);
+
+                    SkeletonDataAsset _characterAnim = Resources.Load<SkeletonDataAsset>(_scene.SceneCharacter.AnimationAsset);
+                    var _animationCharacter = _character.transform.GetChild(0).gameObject.GetComponent<SkeletonGraphic>();
+
+                    _animationCharacter.skeletonDataAsset = _characterAnim;
+                    _animationCharacter.initialSkinName = _scene.SceneCharacter.AnimationSkin;
+                    _animationCharacter.gameObject.name = _scene.SceneCharacter.AnimationAsset;
+                    //_animationCharacter.AnimationState.SetAnimation(0, "action", false);
+                    _animationCharacter.Initialize(true);
+                    _animationCharacter.gameObject.SetActive(false);
+
                 }
                 else
                 {
