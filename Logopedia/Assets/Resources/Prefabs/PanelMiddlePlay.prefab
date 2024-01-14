@@ -705,6 +705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCount: 0
   IsSplashScreen: 0
+  IsAnimated: 0
+  _characterSprite: {fileID: 4282577005086867571}
   _garmentPanel: {fileID: 1379379248711976954}
   _animation: {fileID: 5104754065396614000}
 --- !u!114 &5996981566257634802

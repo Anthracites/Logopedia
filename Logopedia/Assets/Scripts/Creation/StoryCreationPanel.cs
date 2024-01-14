@@ -156,7 +156,7 @@ namespace Logopedia.UserInterface
                 GameEventMessage.SendEvent(EventsLibrary.StoryConvertedForSave);
                 _storyManager.IsStorySave = false;
             }
-            Debug.Log("Panel converted to scene, scene number:" + _sceneNumber.ToString() + ". Story lenght:" + _storyManager.CurrentStory.Scenes.Count.ToString());
+//            Debug.Log("Panel converted to scene, scene number:" + _sceneNumber.ToString() + ". Story lenght:" + _storyManager.CurrentStory.Scenes.Count.ToString());
 
         }
 

@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{37650AE1-B37A-1045-5B76-76DA38C04661}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI_Views/UIView_Play.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI_Views/UIView_Creation.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI_Views/UIView_Play.cs" Line="55" Column="14" />
-      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="97" Column="40" />
-      <File FileName="Assets/Scripts/Play/StoryPlayPanel.cs" Line="71" Column="10" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Play.cs" Line="112" Column="1" />
+      <File FileName="Assets/Scripts/UI_Views/UIView_Creation.cs" Line="389" Column="120" />
+      <File FileName="Assets/Scripts/Managers/SpritesManager.cs" />
+      <File FileName="Assets/Scripts/SpritesTemplates/Topic.cs" />
+      <File FileName="Assets/Scripts/FileUploader.cs" Line="61" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="354356da-7e99-40f8-8e51-8db47816b202" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="886f35fd-a49c-44eb-a97b-43bd93f290f0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

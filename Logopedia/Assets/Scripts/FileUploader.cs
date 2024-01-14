@@ -6,6 +6,9 @@ using Logopedia.UIConnection;
 using System.Linq;
 using System.IO;
 using System.Drawing;
+using Spine.Unity;
+using TMPro;
+using Unity.VisualScripting;
 
 namespace Logopedia.GamePlay
 {
@@ -37,6 +40,31 @@ namespace Logopedia.GamePlay
             }
         }
 
+        public void UploadAnimations(string _topicPartName, List<SkeletonGraphic> CharacterAnimations, string _resourcesPath)
+        {
+            DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath +"/" +_topicPartName);
+            string[] files = Directory.GetFiles(_contentDirectory.ToString());
+
+            if (files.Length != 0)
+            {
+
+                DirectoryInfo[] _directoryes = new string[] { "*.*" }.SelectMany(ext => _contentDirectory.GetDirectories(ext, SearchOption.TopDirectoryOnly)).ToArray();
+
+                int f = 0;
+                foreach (DirectoryInfo _animationDirectory in _directoryes)
+                {
+                    Debug.Log(_resourcesPath + "/" + _animationDirectory.Name + "/SkeletonGraphic(skeleton)"); //SkeletonGraphic (skeleton)
+                    var animationPrefab = Resources.Load(_resourcesPath + "/" + _animationDirectory.Name + "/SkeletonGraphic (skeleton)", typeof(GameObject));
+
+                    SkeletonGraphic _anim = animationPrefab.GetComponent<SkeletonGraphic>();
+                    _anim.name = animationPrefab.name;
+                    CharacterAnimations.Add(_anim);
+                    f++;
+                }
+
+
+            }
+        }
 
         public void UploadTopics()
         {
@@ -53,6 +81,7 @@ namespace Logopedia.GamePlay
                 UploadSprites(_contentPath + _topicDirectory.Name + "/BackGrounds", _topic.BackGrounds);
                 UploadSprites(_contentPath + _topicDirectory.Name + "/Characters", _topic.Characters);
                 UploadSprites(_contentPath + _topicDirectory.Name + "/Objects", _topic.Objects);
+                UploadAnimations(_contentPath + _topicDirectory.Name + "/Animation", _topic.CharacterAnimations, "Sprites/GamePlaySprites/" + _topicDirectory.Name + "/Animation");
 
                 spritesManager.Topics.Add(_topic);
             }

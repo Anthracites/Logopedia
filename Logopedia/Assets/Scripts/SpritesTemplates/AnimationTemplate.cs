@@ -34,5 +34,11 @@ namespace Logopedia.UserInterface
             GameEventMessage.SendEvent(EventsLibrary.AnimationChanged);
             Debug.Log(gameObject.name);
         }
+
+        public class Factory : PlaceholderFactory<string, AnimationTemplate>
+        {
+
+        }
+
     }
 }

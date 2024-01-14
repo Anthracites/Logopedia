@@ -6,8 +6,7 @@ using Logopedia;
 using System.Collections.Generic;
 using System;
 using Spine.Unity;
-
-
+using System.Drawing;
 
 public class StoryPlayPanel : MonoBehaviour
 {
@@ -17,6 +16,8 @@ public class StoryPlayPanel : MonoBehaviour
     public int ItemCount;
     private int _putItemCount, _sceneNumber;
     public bool IsSplashScreen, IsAnimated;
+    [SerializeField]
+    private UnityEngine.UI.Image _characterSprite;
     [SerializeField]
     private GameObject _garmentPanel;
     [SerializeField]
@@ -66,6 +67,8 @@ public class StoryPlayPanel : MonoBehaviour
     {
         if (IsAnimated == true)
         {
+            _characterSprite.color = new UnityEngine.Color(0, 0, 0, 0);
+            _garmentPanel.SetActive(false);
             _animation.gameObject.SetActive(true);
             _animation.AnimationState.SetAnimation(0, "action", false);
         }

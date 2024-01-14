@@ -19,7 +19,7 @@ using System.Drawing;
 using Spine.Unity;
 using UniRx;
 using Assets.SimpleLocalization.Scripts;
-
+using Spine;
 
 namespace Logopedia.UserInterface
 {
@@ -45,6 +45,9 @@ namespace Logopedia.UserInterface
         CharacterTemplate.Factory _characterTemplateFactory;
         [Inject]
         StoryCreationPanel.Factory _storyCreationPanelFactory;
+        [Inject]
+        AnimationTemplate.Factory _animationTemplateFactory;
+
 
         [SerializeField]
         private Slider _scaleSlider, _rotationSlider;
@@ -53,7 +56,7 @@ namespace Logopedia.UserInterface
         [SerializeField]
         private List<GameObject> currentItems, currentShadows, currentGarments = new List<GameObject>();
         [SerializeField]
-        private GameObject _garmentSamplesContent, _backgroundSamplesContent, _characterSamplesContent, _hiddenCharacterButtonSprite, _isSplashScreenButtonSprite, _topicIconsContent, _hiddenAnimationButtonSprite;
+        private GameObject _garmentSamplesContent, _backgroundSamplesContent, _characterSamplesContent, _animationSmplesContent, _hiddenCharacterButtonSprite, _isSplashScreenButtonSprite, _topicIconsContent, _hiddenAnimationButtonSprite;
         [SerializeField]
         private Vector2 _screenCenter;
         [SerializeField]
@@ -100,7 +103,7 @@ namespace Logopedia.UserInterface
 
                 var _bg = _scenePanel.transform.GetChild(0).gameObject;
 
-                Debug.Log(_scene.CurrentBGForSave.ToString());
+//                Debug.Log(_scene.CurrentBGForSave.ToString());
 
                 WWW _BGwww = new WWW("file://" + _scene.CurrentBGForSave);
                 Rect _BGrect = new Rect(0, 0, _BGwww.texture.width, _BGwww.texture.height);
@@ -132,10 +135,10 @@ namespace Logopedia.UserInterface
 
 
 
-                //_character.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SkeletonGraphic>().skeletonDataAsset.GetSkeletonData(true);
+            //    _character.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SkeletonGraphic>().skeletonDataAsset.GetSkeletonData(true);
 
-                Debug.Log("Animation downloaded on path: " + (_scene.SceneCharacter.AnimationAsset));
-                Debug.Log("Animation is: " + _characterAnim.name);
+//                Debug.Log("Animation downloaded on path: " + (_scene.SceneCharacter.AnimationAsset));
+ //               Debug.Log("Animation is: " + _characterAnim.name);
 
 
                 _character.transform.GetChild(1).GetChild(0).gameObject.SetActive(_scene.SceneCharacter.IsAnimated);
@@ -353,41 +356,54 @@ namespace Logopedia.UserInterface
             GameEventMessage.SendEvent(EventsLibrary.MirrorItem);
         }
 
-        void CreateAnimationsSamples(GameObject _samplesContent, string _animSample, dynamic _factory, string _animFolder)
+        void CreateAnimationsSamples(GameObject _samplesContent, Topic _topic, dynamic _factory, string _animSample)
         {
-            for (int i = _samplesContent.transform.childCount; i > 0; --i)
+
+            List<SkeletonGraphic> CharacterAnimations = _topic.CharacterAnimations;
+            if (_topic.CharacterAnimations.Count > 0)
             {
-                DestroyImmediate(_samplesContent.transform.GetChild(0).gameObject);
+
+                int f = 0;
+
+                foreach (SkeletonGraphic _anim in CharacterAnimations)
+                {
+
+                    var _skeletonDataAsset = _anim.GetComponent<SkeletonGraphic>().Skeleton;
+
+                    List<Skin> _listOfSkins = new List<Skin>();
+                    foreach (Skin _skin in _skeletonDataAsset.Data.Skins)
+                    {
+                        _listOfSkins.Add(_skin);
+                    }
+
+                    int skinNumber = 0;
+                    foreach (Skin _skin in _listOfSkins)
+                    {
+                        _anim.GetComponent<SkeletonGraphic>().initialSkinName = _listOfSkins[skinNumber].Name;
+
+                        var _itemSample = _factory.Create(_animSample).gameObject;
+                        _itemSample.name = _anim.name;
+                        _itemSample.transform.SetParent(_samplesContent.transform);
+                        _itemSample.transform.localScale = new Vector3(1, 1, 1);
+                        _itemSample.transform.GetChild(0).GetComponent<SkeletonGraphic>().skeletonDataAsset = _anim.SkeletonDataAsset;
+                        _itemSample.transform.GetChild(0).GetComponent<SkeletonGraphic>().initialSkinName = _skin.Name;
+                        _itemSample.transform.GetChild(0).GetComponent<SkeletonGraphic>().Initialize(true);
+
+
+                        float x = _samplesContent.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.x;
+                        float k = _samplesContent.transform.GetChild(0).gameObject.GetComponent<RectTransform>().localScale.x;
+                        float s = _samplesContent.GetComponent<HorizontalLayoutGroup>().spacing;
+                        float p = _samplesContent.GetComponent<HorizontalLayoutGroup>().padding.left;
+                        float y = _samplesContent.GetComponent<RectTransform>().sizeDelta.y;
+
+                        _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
+                        f++;
+                        skinNumber++;
+                        Debug.Log("Animation samples created!!!!");
+                    }
+                }
             }
-
-            DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + _animFolder);
-            FileInfo[] _files = new string[] { "*.asset" }.SelectMany(ext => _contentDirectory.GetFiles(ext, SearchOption.TopDirectoryOnly)).ToArray();
-
-            int f = 0;
-            foreach (FileInfo _file in _files)
-            {
-                var _itemSample = _factory.Create(_animSample).gameObject;
-                _itemSample.name = _file.FullName;
-                _itemSample.transform.SetParent(_samplesContent.transform);
-                _itemSample.transform.localScale = new Vector3(1, 1, 1);
-
-
-                WWW _www = new WWW("file://" + _file.FullName);
-
-
-                var _skeletonData = _www.assetBundle.name;
-                _samplesContent.transform.GetChild(0).gameObject.GetComponent<SkeletonGraphic>().SkeletonDataAsset.name = _skeletonData;
-
-                f++;
-            }
-
-            float x = _samplesContent.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.x;
-            float k = _samplesContent.transform.GetChild(0).gameObject.GetComponent<RectTransform>().localScale.x;
-            float s = _samplesContent.GetComponent<HorizontalLayoutGroup>().spacing;
-            float p = _samplesContent.GetComponent<HorizontalLayoutGroup>().padding.left;
-            float y = _samplesContent.GetComponent<RectTransform>().sizeDelta.y;
-
-            _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
+          //  Debug.LogWarning("Animation semple created"+ _topic.CharacterAnimations.Count);
         }
 
         public void SetTargetPosition()
@@ -402,6 +418,7 @@ namespace Logopedia.UserInterface
             ClearContent(_backgroundSamplesContent);
             ClearContent(_characterSamplesContent);
             ClearContent(_topicIconsContent);
+            ClearContent(_animationSmplesContent);
 
 
             List<Topic> _topics = _spritesManager.Topics;
@@ -415,6 +432,7 @@ namespace Logopedia.UserInterface
                 CreateSmples(_garmentSamplesContent, _itemTemplateFactory, _t.Objects, PrefabsPathLibrary.GarmentSample, _topicPartIcons);
                 CreateSmples(_backgroundSamplesContent, _bgTemplateFactory, _t.BackGrounds, PrefabsPathLibrary.BackGroundSample, _topicPartIcons);
                 CreateSmples(_characterSamplesContent, _characterTemplateFactory, _t.Characters, PrefabsPathLibrary.CharacterSample, _topicPartIcons);
+                CreateAnimationsSamples(_animationSmplesContent, _t, _animationTemplateFactory, PrefabsPathLibrary.AnimationSample);
 
                 GameObject _topicIcon = _topicIconFactory.Create(PrefabsPathLibrary.TopicIcon).gameObject;
                 _topicIcon.GetComponent<TopicIcon>().topic = _t;

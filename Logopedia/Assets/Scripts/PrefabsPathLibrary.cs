@@ -7,6 +7,7 @@ namespace Logopedia
         public static string ItemForPlay = "Prefabs/GarmentForPlay";
         public static string TopicIcon = "Prefabs/SpriteTemplates/TopicIconSample";
         public static string GarmentSample = "Prefabs/SpriteTemplates/GarmentSpriteSample";
+        public static string AnimationSample = "Prefabs/SpriteTemplates/AnimationSample";
         public static string BackGroundSample = "Prefabs/SpriteTemplates/BackGroundSpriteSample";
         public static string CharacterSample = "Prefabs/SpriteTemplates/CharacterSpriteSample";
         public static string StoryCreationPanel = "Prefabs/PanelMiddle";
