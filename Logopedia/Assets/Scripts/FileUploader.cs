@@ -57,7 +57,7 @@ namespace Logopedia.GamePlay
                     var animationPrefab = Resources.Load(_resourcesPath + "/" + _animationDirectory.Name + "/SkeletonGraphic (skeleton)", typeof(GameObject));
 
                     SkeletonGraphic _anim = animationPrefab.GetComponent<SkeletonGraphic>();
-                    _anim.name = animationPrefab.name;
+                    _anim.name = _resourcesPath + "/" + _animationDirectory.Name + "/skeleton_SkeletonData";
                     CharacterAnimations.Add(_anim);
                     f++;
                 }

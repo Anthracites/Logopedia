@@ -18,7 +18,7 @@ namespace Logopedia.UserInterface
         StoryManager _storyManager;
 
         [SerializeField]
-        private GameObject _character, _bg, _garmentPanel, _previewSwichButton, _splashScreenPanel;
+        private GameObject _character, _bg, _garmentPanel, _previewSwichButton, _splashScreenPanel, characterAnimation;
         [SerializeField]
         private List<GameObject> _garments = new List<GameObject>();
         [SerializeField]
@@ -32,6 +32,7 @@ namespace Logopedia.UserInterface
             //StartCoroutine(AddGarments());
 
             _isCharacterHidden = _character.activeSelf;
+            _itemsManager.CharacterAnimation = characterAnimation;
             _itemsManager.GarmenScenePanel = _garmentPanel;
             _itemsManager.BackgroundSprite = _bg.GetComponent<Image>().sprite;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;

@@ -7,6 +7,7 @@ using Logopedia.UIConnection;
 using UnityEngine.EventSystems;
 using Spine.Unity;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 namespace Logopedia.GamePlay
 {
@@ -14,6 +15,8 @@ namespace Logopedia.GamePlay
     {
         [Inject]
         ItemsManager _itemsManager;
+        [Inject]
+        StoryManager sceneManager;
 
         [SerializeField]
         private SkeletonGraphic _animation;
@@ -21,6 +24,8 @@ namespace Logopedia.GamePlay
         private float _startX, _startY;
         [SerializeField]
         private bool _isAnimationActive;
+        [SerializeField]
+        GameEventListener[] _listeners;
 
         public void GetAnimation()
         {
@@ -30,8 +35,10 @@ namespace Logopedia.GamePlay
         IEnumerator ApplyAnimation()
         {
             yield return new WaitForEndOfFrame();
+            _animation.initialSkinName = _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().initialSkinName;
             _animation.skeletonDataAsset = _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().skeletonDataAsset;
             _animation.gameObject.name = _itemsManager.CharacterAnimation.name;
+            _animation.Initialize(true);
             Debug.Log("Animation applaed!");
         }
 

@@ -356,7 +356,7 @@ namespace Logopedia.UserInterface
             GameEventMessage.SendEvent(EventsLibrary.MirrorItem);
         }
 
-        void CreateAnimationsSamples(GameObject _samplesContent, Topic _topic, dynamic _factory, string _animSample)
+        void CreateAnimationsSamples(GameObject _samplesContent, Topic _topic, dynamic _factory, string _animSample, List<GameObject> _topicPartIconsList)
         {
 
             List<SkeletonGraphic> CharacterAnimations = _topic.CharacterAnimations;
@@ -388,6 +388,7 @@ namespace Logopedia.UserInterface
                         _itemSample.transform.GetChild(0).GetComponent<SkeletonGraphic>().skeletonDataAsset = _anim.SkeletonDataAsset;
                         _itemSample.transform.GetChild(0).GetComponent<SkeletonGraphic>().initialSkinName = _skin.Name;
                         _itemSample.transform.GetChild(0).GetComponent<SkeletonGraphic>().Initialize(true);
+                        _topicPartIconsList.Add(_itemSample);
 
 
                         float x = _samplesContent.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.x;
@@ -432,7 +433,7 @@ namespace Logopedia.UserInterface
                 CreateSmples(_garmentSamplesContent, _itemTemplateFactory, _t.Objects, PrefabsPathLibrary.GarmentSample, _topicPartIcons);
                 CreateSmples(_backgroundSamplesContent, _bgTemplateFactory, _t.BackGrounds, PrefabsPathLibrary.BackGroundSample, _topicPartIcons);
                 CreateSmples(_characterSamplesContent, _characterTemplateFactory, _t.Characters, PrefabsPathLibrary.CharacterSample, _topicPartIcons);
-                CreateAnimationsSamples(_animationSmplesContent, _t, _animationTemplateFactory, PrefabsPathLibrary.AnimationSample);
+                CreateAnimationsSamples(_animationSmplesContent, _t, _animationTemplateFactory, PrefabsPathLibrary.AnimationSample, _topicPartIcons);
 
                 GameObject _topicIcon = _topicIconFactory.Create(PrefabsPathLibrary.TopicIcon).gameObject;
                 _topicIcon.GetComponent<TopicIcon>().topic = _t;
