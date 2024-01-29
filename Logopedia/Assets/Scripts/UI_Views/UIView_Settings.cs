@@ -24,6 +24,8 @@ namespace Logopedia.UserInterface
     {
         [Inject]
         SettingsManager _settingsManager;
+        [Inject]
+        StoryManager _storyManager;
 
         [SerializeField]
         private TMP_Text MuteButtonLabel;
@@ -102,6 +104,13 @@ namespace Logopedia.UserInterface
 
         public void SwichMute()
         {
+
+            StartCoroutine(ApplySwichMute());
+        }
+
+        IEnumerator ApplySwichMute()
+        {
+            yield return new WaitForEndOfFrame();
             _isMute = !_isMute;
             string _buttonLabel;
             if (_isMute == true)
@@ -120,7 +129,6 @@ namespace Logopedia.UserInterface
             MuteButtonLabel.text = _buttonLabel;
             _general.audioMixer.SetFloat("GeneralVolume", _generalVolume);
             _generalVolumeSlider.value = _generalVolume;
-
         }
 
         public void ChangeGeneralVolume()

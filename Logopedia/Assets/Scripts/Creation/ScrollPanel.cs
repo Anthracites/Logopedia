@@ -24,18 +24,21 @@ namespace Logopedia.UserInterface
 
         public void ResizeContent()//Подписать на событие SwichTopic
         {
-            foreach (GameObject _content in _contents)
+            if (_contents[0].transform.childCount != 0)
             {
-                float f = _content.GetComponentsInChildren<Transform>(false).GetLength(0);
-                float x = _content.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.x;
-                float k = _content.transform.GetChild(0).gameObject.GetComponent<RectTransform>().localScale.x;
-                float s = _content.GetComponent<HorizontalLayoutGroup>().spacing;
-                float p = _content.GetComponent<HorizontalLayoutGroup>().padding.left;
-                float y = _content.GetComponent<RectTransform>().sizeDelta.y;
+                foreach (GameObject _content in _contents)
+                {
+                    float f = _content.GetComponentsInChildren<Transform>(false).GetLength(0);
+                    float x = _content.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.x;
+                    float k = _content.transform.GetChild(0).gameObject.GetComponent<RectTransform>().localScale.x;
+                    float s = _content.GetComponent<HorizontalLayoutGroup>().spacing;
+                    float p = _content.GetComponent<HorizontalLayoutGroup>().padding.left;
+                    float y = _content.GetComponent<RectTransform>().sizeDelta.y;
 
-                Vector2 _sampleContentSize = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
-                _content.GetComponent<RectTransform>().sizeDelta = _sampleContentSize;
-//                Debug.Log("Child count  = " + f);
+                    Vector2 _sampleContentSize = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
+                    _content.GetComponent<RectTransform>().sizeDelta = _sampleContentSize;
+                    //                Debug.Log("Child count  = " + f);
+                }
             }
         }
 

@@ -63,6 +63,7 @@
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Components/SkeletonAnimation.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Components/SkeletonRenderSeparator/SkeletonPartsRenderer.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Asset Types/SpineAtlasAsset.cs" />
+    <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Asset Types/SpineSpriteAtlasAsset.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Components/Following/BoneFollowerGraphic.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-csharp/Attachments/RegionAttachment.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Components/SkeletonRenderer.cs" />
@@ -136,7 +137,6 @@
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Components/RootMotion/SkeletonRootMotionBase.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/SpineAttributes.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-csharp/AnimationState.cs" />
-    <Compile Include="Assets/Plugins/Spine/Runtime/spine-unity/Asset Types/SpineSpriteAtlasAsset.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-csharp/ExposedList.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-csharp/IUpdatable.cs" />
     <Compile Include="Assets/Plugins/Spine/Runtime/spine-csharp/Json.cs" />

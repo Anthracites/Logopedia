@@ -53,8 +53,8 @@ namespace Logopedia.GamePlay
                 int f = 0;
                 foreach (DirectoryInfo _animationDirectory in _directoryes)
                 {
-                    Debug.Log(_resourcesPath + "/" + _animationDirectory.Name + "/SkeletonGraphic(skeleton)"); //SkeletonGraphic (skeleton)
-                    var animationPrefab = Resources.Load(_resourcesPath + "/" + _animationDirectory.Name + "/SkeletonGraphic (skeleton)", typeof(GameObject));
+//                    Debug.Log(_resourcesPath + "/" + _animationDirectory.Name + "/SkeletonGraphic(skeleton)"); //SkeletonGraphic (skeleton)
+                    GameObject animationPrefab = Resources.Load(_resourcesPath + "/" + _animationDirectory.Name + "/SkeletonGraphic (skeleton)", typeof(GameObject)) as GameObject;
 
                     SkeletonGraphic _anim = animationPrefab.GetComponent<SkeletonGraphic>();
                     _anim.name = _resourcesPath + "/" + _animationDirectory.Name + "/skeleton_SkeletonData";
@@ -73,6 +73,7 @@ namespace Logopedia.GamePlay
 
             DirectoryInfo[] _topicDirectories = new string[] {"*.*"}.SelectMany(ext => _contentDirectory.GetDirectories(ext, SearchOption.TopDirectoryOnly)).ToArray(); //Получение списка папок по темам
 
+            int i = 0;
             foreach (DirectoryInfo _topicDirectory in _topicDirectories)
             {
                 Topic _topic = new Topic();
@@ -84,6 +85,8 @@ namespace Logopedia.GamePlay
                 UploadAnimations(_contentPath + _topicDirectory.Name + "/Animation", _topic.CharacterAnimations, "Sprites/GamePlaySprites/" + _topicDirectory.Name + "/Animation");
 
                 spritesManager.Topics.Add(_topic);
+                i++;
+                Debug.Log("Animation topics name: " + _topic.TopicName);
             }
         }
         }

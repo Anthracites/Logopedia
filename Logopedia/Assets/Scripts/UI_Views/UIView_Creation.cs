@@ -94,10 +94,10 @@ namespace Logopedia.UserInterface
             foreach (StoryScene _scene in currentStory.Scenes)
             {
                 var _scenePanel = _storyCreationPanelFactory.Create(PrefabsPathLibrary.StoryCreationPanel).gameObject;
+                _scenePanel.name = _scene.SceneNumberInStory.ToString();
                 _scenePanel.gameObject.transform.SetParent(_headerMiddlePanel.transform);
                 _scenePanel.transform.position = Vector3.zero;
 
-                _scenePanel.name = _scene.SceneNumberInStory.ToString();
                 _storyScenes.Add(_scenePanel.GetComponent<UIView>());
 
 
@@ -261,12 +261,12 @@ namespace Logopedia.UserInterface
             _currentSceneNumber = 0;
             _storyManager.CurrentStorySceneIndex = 0;
 
-            if (_storyManager.CurrentStory.StoryName != null)
+            if (_storyManager.CurrentStory != null)
             {
                 _storyName.text = _storyManager.CurrentStory.StoryName;
+                ShowCurrentSceneNumber();
+                _storyScenes[0].Show();
             }
-            ShowCurrentSceneNumber();
-            _storyScenes[0].Show();
 
             if (_storyManager.IsStoryEdit == true)
             {
@@ -400,7 +400,7 @@ namespace Logopedia.UserInterface
                         _samplesContent.GetComponent<RectTransform>().sizeDelta = new Vector2(((f * ((x * k) + s)) + (p * 2)) - s, y);
                         f++;
                         skinNumber++;
-                        Debug.Log("Animation samples created!!!!");
+//                        Debug.Log("Animation samples created!!!!");
                     }
                 }
             }
@@ -424,7 +424,10 @@ namespace Logopedia.UserInterface
 
             List<Topic> _topics = _spritesManager.Topics;
             List<GameObject> _topicIcons = new List<GameObject>();
-            _spritesManager.CurrentTopic = _topics[0];
+            if (_topics.Count != 0)
+            {
+                _spritesManager.CurrentTopic = _topics[0];
+            }
 
 
             foreach (Topic _t in _topics)
@@ -607,9 +610,11 @@ namespace Logopedia.UserInterface
 
             _hiddenCharacterButtonSprite.SetActive(_isCharacterHidden);
 
-
-            _isCurrentSceneSplashScreen = _itemsManager.SplashScreenPanel.activeSelf;
-            _isSplashScreenButtonSprite.SetActive(_isCurrentSceneSplashScreen);
+            if (_storyManager.CurrentStory != null)
+            {
+                _isCurrentSceneSplashScreen = _itemsManager.SplashScreenPanel.activeSelf;
+                _isSplashScreenButtonSprite.SetActive(_isCurrentSceneSplashScreen);
+            }
             if (_storyManager.IsStoryEdit == false)
             {
                 _backFromPreviewButton = _itemsManager.PreviewButton;

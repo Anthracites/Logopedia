@@ -411,7 +411,6 @@
     <None Include="Assets/Doozy/Examples/Fonts/Baloo_Bhaina/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Bubblegum_Sans/OFL.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_1/skeleton.atlas.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Julius_Sans_One/OFL.txt" />
     <None Include="Assets/Doozy/Examples/Fonts/Quicksand/OFL.txt" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" />
@@ -439,10 +438,7 @@
     <None Include="Assets/Doozy/Examples/Fonts/Permanent_Marker/LICENSE.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
     <None Include="Assets/Doozy/Examples/Fonts/Megrim/OFL.txt" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_4/skeleton.atlas.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_2/skeleton.atlas.txt" />
-    <None Include="Assets/Resources/Sprites/GamePlaySprites/Robots_2/Animation/Robo_3/skeleton.atlas.txt" />
     <None Include="Assets/SimpleLocalization/Readme.txt" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/Doozy/readme.txt" />

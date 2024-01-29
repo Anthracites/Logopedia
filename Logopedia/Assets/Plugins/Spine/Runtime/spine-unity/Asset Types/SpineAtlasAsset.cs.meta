@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: a6b194f808b1af6499c93410e504af42
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - atlasFile: {fileID: 11500000, guid: ce59897dd7e6cbc4690a05ebaf975dff, type: 3}
   executionOrder: 0
   icon: {fileID: 2800000, guid: 3fc714a0dc1cf6b4b959e073fff2844e, type: 3}
   userData: 
