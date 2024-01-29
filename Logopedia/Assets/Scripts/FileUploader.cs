@@ -86,7 +86,6 @@ namespace Logopedia.GamePlay
 
                 spritesManager.Topics.Add(_topic);
                 i++;
-                Debug.Log("Animation topics name: " + _topic.TopicName);
             }
         }
         }

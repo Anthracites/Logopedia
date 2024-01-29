@@ -304,7 +304,7 @@ namespace Logopedia.UserInterface
             foreach (UIView _sceneBlank in _storyScenes)
             {
                 Destroy(_sceneBlank.gameObject);
-                Debug.Log("Scene blank " + i.ToString() + " destroed");
+//                Debug.Log("Scene blank " + i.ToString() + " destroed");
                 i++;
             }
             _storyScenes.Clear();

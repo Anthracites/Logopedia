@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Doozy.Engine;
 using System;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 namespace Logopedia.UserInterface
 {
@@ -30,7 +31,6 @@ namespace Logopedia.UserInterface
         private void Awake()
         {
             //StartCoroutine(AddGarments());
-
             _isCharacterHidden = _character.activeSelf;
             _itemsManager.CharacterAnimation = characterAnimation;
             _itemsManager.GarmenScenePanel = _garmentPanel;
