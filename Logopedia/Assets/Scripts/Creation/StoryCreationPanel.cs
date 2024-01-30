@@ -32,11 +32,12 @@ namespace Logopedia.UserInterface
         {
             //StartCoroutine(AddGarments());
             _isCharacterHidden = _character.activeSelf;
-            _itemsManager.CharacterAnimation = characterAnimation;
             _itemsManager.GarmenScenePanel = _garmentPanel;
             _itemsManager.BackgroundSprite = _bg.GetComponent<Image>().sprite;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;
             _itemsManager.PreviewButton = _previewSwichButton;
+            _itemsManager.CharacterAnimation = characterAnimation;
+
         }
 
         public void SwichCharacter()//пописан на событие CharacterSwiched на кнопре HideCharacter в UIView_Creation
@@ -49,7 +50,10 @@ namespace Logopedia.UserInterface
         private void Start()
         {
             SceneDeleted = false;
-            _sceneNumber = Int32.Parse(gameObject.name);
+            if (Int32.TryParse(gameObject.name, out int number) == true)
+                {
+                _sceneNumber = Int32.Parse(gameObject.name);
+            }
 
             if ((_storyManager.IsStoryEdit == false)&(_storyManager.IsStoryCreartionStart == true))
             {
@@ -58,6 +62,7 @@ namespace Logopedia.UserInterface
                 _scene.SceneNumberInStory = _sceneNumber;
                 _scene.Items = new List<StoryScene.SceneItem>();
                 _storyManager.CurrentStory.Scenes.Add(_scene);
+                _itemsManager.CharacterAnimation = characterAnimation;
             }
             foreach (Transform child in _garmentPanel.transform)
             {
@@ -93,6 +98,7 @@ namespace Logopedia.UserInterface
             _itemsManager.BackgroundSprite = _bg.GetComponent<Image>().sprite;
             _itemsManager.SplashScreenPanel = _splashScreenPanel;
             _itemsManager.PreviewButton = _previewSwichButton;
+            _itemsManager.CharacterAnimation = characterAnimation;
             ConvertToScene();
            Debug.Log("Scene show " + _sceneNumber.ToString());
 
@@ -119,7 +125,7 @@ namespace Logopedia.UserInterface
         public void ConvertToScene()
 
         {
-            _sceneNumber = Int32.Parse(gameObject.name);
+                _sceneNumber = Int32.Parse(gameObject.name);
             _scene.SceneNumberInStory = _sceneNumber;
 
             if (_storyManager.CurrentStory.Scenes.Count < _sceneNumber + 1)

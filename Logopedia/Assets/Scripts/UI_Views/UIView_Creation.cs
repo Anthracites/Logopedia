@@ -208,6 +208,7 @@ namespace Logopedia.UserInterface
             }
             _header.transform.SetSiblingIndex(_storyScenes.Count + 1);
             _storyScenes[0].GetComponent<UIView>().Show();
+            GameEventMessage.SendEvent(EventsLibrary.SceneSwiched);
         }
 
         public void SetSplashScreen()

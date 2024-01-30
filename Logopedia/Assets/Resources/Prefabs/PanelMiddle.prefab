@@ -1151,6 +1151,7 @@ MonoBehaviour:
   _garmentPanel: {fileID: 1379379248711976954}
   _previewSwichButton: {fileID: 8862390429886481297}
   _splashScreenPanel: {fileID: 3547191438556797979}
+  characterAnimation: {fileID: 4718797159820028850}
   _garments: []
   _scene:
     IsSceneSplashScreen: 0
@@ -1324,6 +1325,7 @@ GameObject:
   - component: {fileID: 5424347548769380014}
   - component: {fileID: 1135832425657590897}
   - component: {fileID: 4185149360993961922}
+  - component: {fileID: 1060969476014144473}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -1406,6 +1408,11 @@ MonoBehaviour:
   _startX: 0
   _startY: 0
   _isAnimationActive: 0
+  _listeners:
+  - {fileID: 5424347548769380014}
+  - {fileID: 1135832425657590897}
+  - {fileID: 4185149360993961922}
+  _panel: {fileID: 5730191024310205050}
 --- !u!114 &5424347548769380014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,6 +1502,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   GameEvent: AnimationSwiched
+  ListenForAllGameEvents: 0
+--- !u!114 &1060969476014144473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498547387677406063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9f92203d31e240bc110ff7b26d05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 394187887685650052}
+        m_TargetAssemblyTypeName: Logopedia.GamePlay.Animation, Assembly-CSharp
+        m_MethodName: SwichListenersOnSwich
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEvent: SceneSwiched
   ListenForAllGameEvents: 0
 --- !u!1 &7713567444737112536
 GameObject:

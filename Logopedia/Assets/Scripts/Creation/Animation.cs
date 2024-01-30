@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using Spine.Unity;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace Logopedia.GamePlay
 {
@@ -16,7 +17,8 @@ namespace Logopedia.GamePlay
         [Inject]
         ItemsManager _itemsManager;
         [Inject]
-        StoryManager sceneManager;
+        StoryManager _storyManager;
+
 
         [SerializeField]
         private SkeletonGraphic _animation;
@@ -26,6 +28,31 @@ namespace Logopedia.GamePlay
         private bool _isAnimationActive;
         [SerializeField]
         GameEventListener[] _listeners;
+        [SerializeField]
+        private GameObject _panel;
+
+        public void SwichListenersOnSwich()
+        {
+            StartCoroutine(SwichListeners());
+
+        }
+
+        IEnumerator SwichListeners()
+        {
+            yield return new WaitForEndOfFrame();
+
+            int i = Int32.Parse(_panel.name);
+            bool _isCurrent = _storyManager.CurrentStorySceneIndex == i;
+            foreach (GameEventListener _listener in _listeners)
+            {
+                _listener.enabled = _isCurrent;
+            }
+            if (_isCurrent == true)
+            {
+                SendToManager();
+            }
+            Debug.Log("Current scene: " + i.ToString());
+        }
 
         public void GetAnimation()
         {

@@ -32,7 +32,7 @@ namespace Logopedia.UserInterface
             _itemsManager.CharacterAnimation.GetComponent<SkeletonGraphic>().Initialize(true);
 
             GameEventMessage.SendEvent(EventsLibrary.AnimationChanged);
-            Debug.Log(gameObject.name);
+            //Debug.Log(gameObject.name);
         }
 
         public class Factory : PlaceholderFactory<string, AnimationTemplate>
