@@ -26,6 +26,7 @@ public class ItemForPlay : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     void Start()
     {
         GetTakeSound();
+        _canvasGroup.blocksRaycasts = true;
     }
 
     public void OnDrop(PointerEventData eventData)

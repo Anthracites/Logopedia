@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using Spine.Unity;
 using System.Drawing;
+using System.Collections;
 
 public class StoryPlayPanel : MonoBehaviour
 {
@@ -62,9 +63,9 @@ public class StoryPlayPanel : MonoBehaviour
         }
 
     }
-
-    public void PlayAnimation()
+    IEnumerator AnimationPlay()
     {
+        yield return new WaitForSeconds(0.1f);
         if (IsAnimated == true)
         {
             _characterSprite.color = new UnityEngine.Color(0, 0, 0, 0);
@@ -72,6 +73,11 @@ public class StoryPlayPanel : MonoBehaviour
             _animation.gameObject.SetActive(true);
             _animation.AnimationState.SetAnimation(0, "action", false);
         }
+    }
+
+    public void PlayAnimation()
+    {
+        StartCoroutine(AnimationPlay());
     }
 
 

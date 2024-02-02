@@ -81,7 +81,6 @@ namespace Logopedia.UserInterface
 
         public static FloatReactiveProperty ItemScale = new FloatReactiveProperty();
         public static ReactiveProperty<float> ItemRotation = new ReactiveProperty<float>();
-        public FloatReactiveProperty be = new FloatReactiveProperty();
 
 
 
@@ -342,7 +341,6 @@ namespace Logopedia.UserInterface
         {
             _itemsManager.UI_Parametr = 0;
             ItemScale.Value = _scaleSlider.value;
-            be.Value = ItemScale.Value;
         }
 
         public void RotateItem()
