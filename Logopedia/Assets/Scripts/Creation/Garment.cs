@@ -32,7 +32,6 @@ namespace Logopedia.GamePlay
         private SkeletonGraphic _stars;
         private float _currentScale;
         private float _curretnRotation;
-        private float _modifyParametr;
 
         private UnityEngine.Color _transparent = new Color(0, 0, 0, 0), _opaque = new Color(0, 0, 0, 0.5f);
         private CompositeDisposable _disposable = new CompositeDisposable();
@@ -173,29 +172,16 @@ namespace Logopedia.GamePlay
 
         public void RotateItem()
         {
-            _modifyParametr = _itemsManager.UI_Parametr;
-            _curretnRotation = _item.transform.eulerAngles.z;
-
+            float f = UserInterface.UIView_Creation.ItemRotation.Value;
             if (_itemsManager.SelectedGarments.Count <= 1)
             {
-                if (_modifyParametr != 0)
-                {
-                    float newRotation = _curretnRotation + (0.5f * _modifyParametr);
+                    float newRotation = f;
                     _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
                     _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
-                }
-                else
-                {
-                    float newRotation = UserInterface.UIView_Creation.ItemRotation.Value;
-                    _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
-                    _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
-
-                }
             }
             else
             {
-                float f = UserInterface.UIView_Creation.ItemRotation.Value;
-                float newRotation = f + _curretnRotation;
+                float newRotation = f + Mathf.Abs(_curretnRotation);
                 _item.transform.eulerAngles = new Vector3(0, 0, newRotation);
                 _itemShadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
 
@@ -204,36 +190,25 @@ namespace Logopedia.GamePlay
 
         public void ScaleItem()
         {
-            _modifyParametr = _itemsManager.UI_Parametr;
             float a = Mathf.Sign(_item.transform.localScale.x);
-            _currentScale = _item.transform.localScale.y;
+            float f = UserInterface.UIView_Creation.ItemScale.Value;
 
             if (_itemsManager.SelectedGarments.Count <= 1)
             {
-                if (_modifyParametr != 0)
-                {
-                    float newScale = _currentScale + (0.1f * _modifyParametr);
+                float newScale = f;
                     _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
                     _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                    Debug.Log("Item scaled1!!! a = " + a.ToString()+ ", modify parametr: " + _modifyParametr.ToString());
-
-                }
-                else
-                {
-                    float newScale = UserInterface.UIView_Creation.ItemScale.Value;
-                    _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                    _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                    Debug.Log("Item " + gameObject.name + "  scaled2!!!" + "Scele index: " + newScale.ToString());
-
-                }
+                    Debug.Log("Item scaled1!!! f = " + f.ToString());
             }
             else
             {
-                float f = UserInterface.UIView_Creation.ItemScale.Value - 1;
-                float newScale = f + _currentScale;
-                _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-                _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
-
+                float newScale = f + Mathf.Abs(_currentScale);
+                if (newScale > 1)
+                {
+                    _item.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                    _itemShadow.transform.localScale = new Vector3(newScale * a, newScale, newScale);
+                    Debug.Log("Item scaled2!!! f = " + f.ToString());
+                }
             }
         }
 

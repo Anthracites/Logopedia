@@ -11,7 +11,6 @@ namespace Logopedia.UIConnection
         public GameObject GarmenScenePanel, SplashScreenPanel, PreviewButton, CharacterAnimation;
         public List<GameObject> Garments = new List<GameObject>(); // все предметы на сцене
         public int ItemCount;
-        public float UI_Parametr;
 
         public void Initialize()
         {

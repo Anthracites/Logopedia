@@ -339,14 +339,11 @@ namespace Logopedia.UserInterface
 
         public void ScaleItem()
         {
-            _itemsManager.UI_Parametr = 0;
             ItemScale.Value = _scaleSlider.value;
         }
 
         public void RotateItem()
         {
-
-            _itemsManager.UI_Parametr = 0;
             ItemRotation.Value = _rotationSlider.value;
         }
 
@@ -492,16 +489,13 @@ namespace Logopedia.UserInterface
 
         public void SlowRotaion(int k)
         {
-            _itemsManager.UI_Parametr = k;
-            GameEventMessage.SendEvent(EventsLibrary.RotateSelectedItem);
-                ResetControl();
+            _rotationSlider.value += k;
         }
 
-        public void SlowScale(int k)
+        public void SlowScale(float k)
         {
-            _itemsManager.UI_Parametr = k;
-            GameEventMessage.SendEvent(EventsLibrary.ScaleSelectedItem);
-                ResetControl();
+            _scaleSlider.value += k;
+
         }
 
         public void DeleteItem()
@@ -518,17 +512,24 @@ namespace Logopedia.UserInterface
             switch (_count)
             {
                 case 0:
-                    _scaleSlider.value = 0;
+                    _itemsManager.SelectedGarments.Clear();
+                    _itemsManager.SelectedGarments.RemoveAll(x => x == null);
+                    _scaleSlider.value = 1;
+                    _scaleSlider.minValue = -10;
+                    _scaleSlider.maxValue = 10;
                     _rotationSlider.value = 0;
                     break;
+
                 case >= 2:
                     _scaleSlider.value = 0;
+                    _scaleSlider.minValue = -10;
+                    _scaleSlider.maxValue = 10;
                     _rotationSlider.value = 0;
                     break;
 
                 default:
-                    _itemsManager.UI_Parametr = 0;
-                    _itemsManager.UI_Parametr = 0;
+                    _scaleSlider.minValue = 1;
+                    _scaleSlider.maxValue = 10;
                     GameObject _item = _itemsManager.SelectedGarments[0].transform.GetChild(0).gameObject;
                     ItemScale.Value = _item.transform.localScale.y;
                     _scaleSlider.value = _item.transform.localScale.y;

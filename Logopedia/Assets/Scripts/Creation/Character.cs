@@ -97,7 +97,7 @@ namespace Logopedia.GamePlay
 
         public void RotateItem()
         {
-            _modifyParametr = _itemsManager.UI_Parametr;
+
             if (_modifyParametr != 0)
             {
 
@@ -113,13 +113,10 @@ namespace Logopedia.GamePlay
                 gameObject.transform.eulerAngles = new Vector3(0, 0, newRotation);
                 _shadow.transform.eulerAngles = new Vector3(0, 0, newRotation);
             }
-            Debug.Log("Item rotated!!!" + _itemsManager.UI_Parametr.ToString());
-
         }
 
         public void ScaleItem()
         {
-            _modifyParametr = _itemsManager.UI_Parametr;
             float a = Mathf.Sign(gameObject.transform.localScale.x);
             if (_modifyParametr != 0)
             {
