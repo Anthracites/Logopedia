@@ -8,11 +8,15 @@ using System;
 using Spine.Unity;
 using System.Drawing;
 using System.Collections;
+using Doozy.Engine.Soundy;
 
 public class StoryPlayPanel : MonoBehaviour
 {
     [Inject]
     ItemsManager _itemsManager;
+    [Inject]
+    SettingsManager _settingsManager;
+
 
     public int ItemCount;
     private int _putItemCount, _sceneNumber;
@@ -23,6 +27,8 @@ public class StoryPlayPanel : MonoBehaviour
     private GameObject _garmentPanel;
     [SerializeField]
     private SkeletonGraphic _animation;
+    [SerializeField]
+    private SoundyData _animationSound;
 
 
     private void Start()
@@ -38,6 +44,7 @@ public class StoryPlayPanel : MonoBehaviour
         {
             child.GetChild(1).GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
+        GetTakeSound();
     }
 
     private void OnEnable()
@@ -66,6 +73,7 @@ public class StoryPlayPanel : MonoBehaviour
     IEnumerator AnimationPlay()
     {
         yield return new WaitForSeconds(0.1f);
+        SoundyManager.Play(_animationSound);
         if (IsAnimated == true)
         {
             _characterSprite.color = new UnityEngine.Color(0, 0, 0, 0);
@@ -77,9 +85,17 @@ public class StoryPlayPanel : MonoBehaviour
 
     public void PlayAnimation()
     {
-        StartCoroutine(AnimationPlay());
+        if (IsAnimated == true)
+        {
+            StartCoroutine(AnimationPlay());
+        }
     }
 
+    public void GetTakeSound()
+    {
+        _animationSound.DatabaseName = _settingsManager.DataBaseName;
+        _animationSound.SoundName = _settingsManager.TakeItem;
+    }
 
     public class Factory : PlaceholderFactory<string, StoryPlayPanel>
     {

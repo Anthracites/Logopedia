@@ -1,1 +1,251 @@
-{"StoryName":"Robots(1)","Scenes":[{"IsSceneSplashScreen":false,"SceneNumberInStory":0,"ActiveItemCount":1,"SceneCharacter":{"IsChacterActive":true,"CharacterSprite":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/Characters/robot1_shadow.png","IsAnimated":true,"AnimationAsset":"Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData","AnimationSkin":"purple","CharacterPosition":{"x":370.25,"y":-36.56244,"z":0.0},"CharacterRotation":{"x":0.0,"y":0.0,"z":0.0},"CharacterScale":{"x":6.5,"y":6.5,"z":6.5}},"CurrentBGForSave":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/BackGrounds/blue_background_right.png","Items":[{"ItemSprite":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/Objects/robot1_purple.png","GarmentPosition":{"x":632.4601,"y":-516.095,"z":-9720.0},"ItemPosition":{"x":-33.74701,"y":-34.88434,"z":0.0},"ItemShadowPosition":{"x":699.747437,"y":-62.4378052,"z":0.0},"ItemRotation":{"x":0.0,"y":0.0,"z":0.0},"ItemScale":{"x":4.55929756,"y":4.55929756,"z":4.55929756},"ShadowVisible":false,"ShadowEnabled":true}]},{"IsSceneSplashScreen":false,"SceneNumberInStory":1,"ActiveItemCount":4,"SceneCharacter":{"IsChacterActive":true,"CharacterSprite":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/Characters/robot2_shadow.png","IsAnimated":true,"AnimationAsset":"Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData","AnimationSkin":"white","CharacterPosition":{"x":-1.562439,"y":-9.562439,"z":0.0},"CharacterRotation":{"x":0.0,"y":0.0,"z":0.0},"CharacterScale":{"x":7.272875,"y":7.272875,"z":7.272875}},"CurrentBGForSave":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/BackGrounds/gray_background_right.png","Items":[{"ItemSprite":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/Objects/head-1.png","GarmentPosition":{"x":338.835144,"y":-783.2825,"z":-9720.0},"ItemPosition":{"x":19.69049,"y":473.615631,"z":0.0},"ItemShadowPosition":{"x":625.5029,"y":313.8657,"z":0.0},"ItemRotation":{"x":0.0,"y":0.0,"z":0.0},"ItemScale":{"x":2.77864075,"y":2.77864075,"z":2.77864075},"ShadowVisible":false,"ShadowEnabled":true},{"ItemSprite":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/Objects/hand_l-1.png","GarmentPosition":{"x":325.335144,"y":-526.7825,"z":-9720.0},"ItemPosition":{"x":71.44055,"y":-81.0094,"z":0.0},"ItemShadowPosition":{"x":498.9405,"y":-58.5094,"z":0.0},"ItemRotation":{"x":0.0,"y":0.0,"z":0.0},"ItemScale":{"x":1.88051939,"y":1.88051939,"z":1.88051939},"ShadowVisible":false,"ShadowEnabled":true},{"ItemSprite":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/Objects/body-1.png","GarmentPosition":{"x":332.085144,"y":-376.594971,"z":-9720.0},"ItemPosition":{"x":1091.25293,"y":-369.0094,"z":0.0},"ItemShadowPosition":{"x":636.190369,"y":-306.5719,"z":0.0},"ItemRotation":{"x":0.0,"y":0.0,"z":0.0},"ItemScale":{"x":2.01753974,"y":2.01753974,"z":2.01753974},"ShadowVisible":false,"ShadowEnabled":true},{"ItemSprite":"/Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots/Objects/hand_r-1.png","GarmentPosition":{"x":289.897583,"y":-699.47,"z":-9720.0},"ItemPosition":{"x":1101.37793,"y":248.615662,"z":0.0},"ItemShadowPosition":{"x":808.878052,"y":114.740662,"z":0.0},"ItemRotation":{"x":0.0,"y":0.0,"z":0.0},"ItemScale":{"x":1.196493,"y":1.196493,"z":1.196493},"ShadowVisible":false,"ShadowEnabled":true}]}]}
+{
+    "Scenes":
+    [
+        {
+            "ActiveItemCount": 1,
+            "CurrentBGForSave": "Sprites/GamePlaySprites/Robots/BackGrounds/blue_background_right.png",
+            "IsSceneSplashScreen": false,
+            "Items":
+            [
+                {
+                    "GarmentPosition":
+                    {
+                        "x": 632.4601,
+                        "y": -516.095,
+                        "z": -9720.0
+                    },
+                    "ItemPosition":
+                    {
+                        "x": -33.74701,
+                        "y": -34.88434,
+                        "z": 0.0
+                    },
+                    "ItemRotation":
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "ItemScale":
+                    {
+                        "x": 4.55929756,
+                        "y": 4.55929756,
+                        "z": 4.55929756
+                    },
+                    "ItemShadowPosition":
+                    {
+                        "x": 699.747437,
+                        "y": -62.4378052,
+                        "z": 0.0
+                    },
+                    "ItemSprite": "Sprites/GamePlaySprites/Robots/Objects/robot1_purple.png",
+                    "ShadowEnabled": true,
+                    "ShadowVisible": false
+                }
+            ],
+            "SceneCharacter":
+            {
+                "AnimationAsset": "Sprites/GamePlaySprites/Robots/Animation/Robo_1/skeleton_SkeletonData",
+                "AnimationSkin": "purple",
+                "CharacterPosition":
+                {
+                    "x": 370.25,
+                    "y": -36.56244,
+                    "z": 0.0
+                },
+                "CharacterRotation":
+                {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "CharacterScale":
+                {
+                    "x": 6.5,
+                    "y": 6.5,
+                    "z": 6.5
+                },
+                "CharacterSprite": "Sprites/GamePlaySprites/Robots/Characters/robot1_shadow.png",
+                "IsAnimated": true,
+                "IsChacterActive": true
+            },
+            "SceneNumberInStory": 0
+        },
+        {
+            "ActiveItemCount": 4,
+            "CurrentBGForSave": "Sprites/GamePlaySprites/Robots/BackGrounds/gray_background_right.png",
+            "IsSceneSplashScreen": false,
+            "Items":
+            [
+                {
+                    "GarmentPosition":
+                    {
+                        "x": 338.835144,
+                        "y": -783.2825,
+                        "z": -9720.0
+                    },
+                    "ItemPosition":
+                    {
+                        "x": 19.69049,
+                        "y": 473.615631,
+                        "z": 0.0
+                    },
+                    "ItemRotation":
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "ItemScale":
+                    {
+                        "x": 2.77864075,
+                        "y": 2.77864075,
+                        "z": 2.77864075
+                    },
+                    "ItemShadowPosition":
+                    {
+                        "x": 625.5029,
+                        "y": 313.8657,
+                        "z": 0.0
+                    },
+                    "ItemSprite": "Sprites/GamePlaySprites/Robots/Objects/head-1.png",
+                    "ShadowEnabled": true,
+                    "ShadowVisible": false
+                },
+                {
+                    "GarmentPosition":
+                    {
+                        "x": 325.335144,
+                        "y": -526.7825,
+                        "z": -9720.0
+                    },
+                    "ItemPosition":
+                    {
+                        "x": 71.44055,
+                        "y": -81.0094,
+                        "z": 0.0
+                    },
+                    "ItemRotation":
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "ItemScale":
+                    {
+                        "x": 1.88051939,
+                        "y": 1.88051939,
+                        "z": 1.88051939
+                    },
+                    "ItemShadowPosition":
+                    {
+                        "x": 498.9405,
+                        "y": -58.5094,
+                        "z": 0.0
+                    },
+                    "ItemSprite": "Sprites/GamePlaySprites/Robots/Objects/hand_l-1.png",
+                    "ShadowEnabled": true,
+                    "ShadowVisible": false
+                },
+                {
+                    "GarmentPosition":
+                    {
+                        "x": 332.085144,
+                        "y": -376.594971,
+                        "z": -9720.0
+                    },
+                    "ItemPosition":
+                    {
+                        "x": 1091.25293,
+                        "y": -369.0094,
+                        "z": 0.0
+                    },
+                    "ItemRotation":
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "ItemScale":
+                    {
+                        "x": 2.01753974,
+                        "y": 2.01753974,
+                        "z": 2.01753974
+                    },
+                    "ItemShadowPosition":
+                    {
+                        "x": 636.190369,
+                        "y": -306.5719,
+                        "z": 0.0
+                    },
+                    "ItemSprite": "Sprites/GamePlaySprites/Robots/Objects/body-1.png",
+                    "ShadowEnabled": true,
+                    "ShadowVisible": false
+                },
+                {
+                    "GarmentPosition":
+                    {
+                        "x": 289.897583,
+                        "y": -699.47,
+                        "z": -9720.0
+                    },
+                    "ItemPosition":
+                    {
+                        "x": 1101.37793,
+                        "y": 248.615662,
+                        "z": 0.0
+                    },
+                    "ItemRotation":
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "ItemScale":
+                    {
+                        "x": 1.196493,
+                        "y": 1.196493,
+                        "z": 1.196493
+                    },
+                    "ItemShadowPosition":
+                    {
+                        "x": 808.878052,
+                        "y": 114.740662,
+                        "z": 0.0
+                    },
+                    "ItemSprite": "Sprites/GamePlaySprites/Robots/Objects/hand_r-1.png",
+                    "ShadowEnabled": true,
+                    "ShadowVisible": false
+                }
+            ],
+            "SceneCharacter":
+            {
+                "AnimationAsset": "Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData",
+                "AnimationSkin": "white",
+                "CharacterPosition":
+                {
+                    "x": -1.562439,
+                    "y": -9.562439,
+                    "z": 0.0
+                },
+                "CharacterRotation":
+                {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "CharacterScale":
+                {
+                    "x": 7.272875,
+                    "y": 7.272875,
+                    "z": 7.272875
+                },
+                "CharacterSprite": "Sprites/GamePlaySprites/Robots/Characters/robot2_shadow.png",
+                "IsAnimated": true,
+                "IsChacterActive": true
+            },
+            "SceneNumberInStory": 1
+        }
+    ],
+    "StoryName": "Robots(1)"
+}

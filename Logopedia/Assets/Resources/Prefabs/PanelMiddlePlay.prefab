@@ -709,6 +709,12 @@ MonoBehaviour:
   _characterSprite: {fileID: 4282577005086867571}
   _garmentPanel: {fileID: 1379379248711976954}
   _animation: {fileID: 5104754065396614000}
+  _animationSound:
+    SoundSource: 1
+    DatabaseName: General
+    SoundName: 
+    AudioClip: {fileID: 8300000, guid: a1fafd7f40d224844befd60a9ac7b448, type: 3}
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 4189384aa58db42eba139f12dfc2c8c8, type: 2}
 --- !u!114 &5996981566257634802
 MonoBehaviour:
   m_ObjectHideFlags: 0

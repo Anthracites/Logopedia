@@ -1,0 +1,76 @@
+{
+    "Scenes":
+    [
+        {
+            "ActiveItemCount": 1,
+            "CurrentBGForSave": "Sprites/GamePlaySprites/Flowers/BackGrounds/UIHere.jpg",
+            "IsSceneSplashScreen": false,
+            "Items":
+            [
+                {
+                    "GarmentPosition":
+                    {
+                        "x": 328.147522,
+                        "y": -539.72,
+                        "z": -9720.0
+                    },
+                    "ItemPosition":
+                    {
+                        "x": 232.315353,
+                        "y": 34.30316,
+                        "z": 0.0
+                    },
+                    "ItemRotation":
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "ItemScale":
+                    {
+                        "x": 4.40301037,
+                        "y": 4.40301037,
+                        "z": 4.40301037
+                    },
+                    "ItemShadowPosition":
+                    {
+                        "x": 822.377869,
+                        "y": 21.9281616,
+                        "z": 0.0
+                    },
+                    "ItemSprite": "Robots/Objects/robot2_white.png",
+                    "ShadowEnabled": true,
+                    "ShadowVisible": false
+                }
+            ],
+            "SceneCharacter":
+            {
+                "AnimationAsset": "Sprites/GamePlaySprites/Robots/Animation/Robo_2/skeleton_SkeletonData",
+                "AnimationSkin": "white",
+                "CharacterPosition":
+                {
+                    "x": 176.749878,
+                    "y": 17.4376221,
+                    "z": 0.0
+                },
+                "CharacterRotation":
+                {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "CharacterScale":
+                {
+                    "x": 6.5,
+                    "y": 6.5,
+                    "z": 6.5
+                },
+                "CharacterSprite": "Robots/Characters/robot2_shadow.png",
+                "IsAnimated": true,
+                "IsChacterActive": true
+            },
+            "SceneNumberInStory": 0
+        }
+    ],
+    "StoryName": "TestNewPath"
+}

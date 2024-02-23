@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 2545454849773302009}
   - component: {fileID: 8425706454263262110}
   m_Layer: 0
-  m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Robots_2/Characters/robot1_shadow.png
+  m_Name: Sprites/GamePlaySprites/Robots_2/Characters/robot1_shadow.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1546,7 +1546,7 @@ GameObject:
   - component: {fileID: 245359630647523389}
   - component: {fileID: 1471667515082978669}
   m_Layer: 0
-  m_Name: /Users/natalagusarova/Documents/MyDocuments/MyProjects/InProduction/Logopedia/Logopedia/Assets/Resources/Sprites/GamePlaySprites/Flowers/BackGrounds/UIHere.jpg
+  m_Name: Sprites/GamePlaySprites/Flowers/BackGrounds/UIHere.jpg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

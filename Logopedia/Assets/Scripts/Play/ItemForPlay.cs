@@ -29,6 +29,13 @@ public class ItemForPlay : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         _canvasGroup.blocksRaycasts = true;
     }
 
+    void Awake()
+    {
+        _canvasGroup.blocksRaycasts = true;
+        Debug.Log("Block raycasts = " + _canvasGroup.blocksRaycasts.ToString());
+
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         _canvasGroup.blocksRaycasts = true;

@@ -80,7 +80,8 @@ namespace Logopedia.UserInterface
 
                 var _bg = _scenePanel.transform.GetChild(0).gameObject;
 
-                WWW _BGwww = new WWW("file://" + _scene.CurrentBGForSave);
+                WWW _BGwww = new WWW("file://" + Application.dataPath + "/Resources/" + _scene.CurrentBGForSave);
+                Debug.Log(_BGwww.url.ToString());
 
                 Rect _BGrect = new Rect(0, 0, _BGwww.texture.width, _BGwww.texture.height);
                 Sprite _bgSprite = Sprite.Create(_BGwww.texture, _BGrect, new Vector2(0.5f, 0.5f));
@@ -93,7 +94,8 @@ namespace Logopedia.UserInterface
                     _character.SetActive(true);
                     string _characterPath = _scene.SceneCharacter.CharacterSprite;
 
-                    WWW _Characterwww = new WWW("file://" + _characterPath);
+                    WWW _Characterwww = new WWW("file://" + Application.dataPath + "/Resources/" + _characterPath);
+                    Debug.Log(_Characterwww.url.ToString());
                     Rect _Characterrect = new Rect(0, 0, _Characterwww.texture.width, _Characterwww.texture.height);
                     Sprite _characterSprite = Sprite.Create(_Characterwww.texture, _Characterrect, new Vector2(0.5f, 0.5f));
 
@@ -129,7 +131,9 @@ namespace Logopedia.UserInterface
                     var _itemShadow = _garment.transform.GetChild(0).gameObject;
 
 
-                    WWW _Itemwww = new WWW("file://" + _sceneItem.ItemSprite);
+                    WWW _Itemwww = new WWW("file://" + Application.dataPath + "/Resources/" + _sceneItem.ItemSprite);
+                    Debug.Log(_Itemwww.url.ToString());
+
                     Rect _Itemrect = new Rect(0, 0, _Itemwww.texture.width, _Itemwww.texture.height);
                     Sprite _itemSprite = Sprite.Create(_Itemwww.texture, _Itemrect, new Vector2(0.5f, 0.5f));
 

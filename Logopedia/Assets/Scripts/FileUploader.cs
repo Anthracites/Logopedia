@@ -22,7 +22,7 @@ namespace Logopedia.GamePlay
             UploadTopics();
         }
 
-        public void UploadSprites(string _topicPartName, List<Sprite> _spriteList)
+        public void UploadSprites(string _topicPartName, List<Sprite> _spriteList, string _resourcesParth)
         {
             DirectoryInfo _contentDirectory = new DirectoryInfo(Application.dataPath + "/" +_topicPartName);
             FileInfo[] _files = new string[] { "*.jpg", "*jpeg", "*.png" }.SelectMany(ext => _contentDirectory.GetFiles(ext, SearchOption.TopDirectoryOnly)).ToArray();
@@ -34,7 +34,7 @@ namespace Logopedia.GamePlay
                 Rect _rect = new Rect(0, 0, _www.texture.width, _www.texture.height);
 
                 Sprite _sprite = Sprite.Create(_www.texture, _rect, new Vector2(0.5f, 0.5f));
-                _sprite.name = _file.FullName;
+                _sprite.name = "Sprites/GamePlaySprites/" + _resourcesParth + "/" + _file.Name;
                 _spriteList.Add(_sprite);
                 f++;
             }
@@ -79,9 +79,9 @@ namespace Logopedia.GamePlay
                 Topic _topic = new Topic();
 
                 _topic.TopicName = _topicDirectory.Name;
-                UploadSprites(_contentPath + _topicDirectory.Name + "/BackGrounds", _topic.BackGrounds);
-                UploadSprites(_contentPath + _topicDirectory.Name + "/Characters", _topic.Characters);
-                UploadSprites(_contentPath + _topicDirectory.Name + "/Objects", _topic.Objects);
+                UploadSprites(_contentPath + _topicDirectory.Name + "/BackGrounds", _topic.BackGrounds, _topicDirectory.Name + "/BackGrounds");
+                UploadSprites(_contentPath + _topicDirectory.Name + "/Characters", _topic.Characters, _topicDirectory.Name + "/Characters");
+                UploadSprites(_contentPath + _topicDirectory.Name + "/Objects", _topic.Objects, _topicDirectory.Name + "/Objects");
                 UploadAnimations(_contentPath + _topicDirectory.Name + "/Animation", _topic.CharacterAnimations, "Sprites/GamePlaySprites/" + _topicDirectory.Name + "/Animation");
 
                 spritesManager.Topics.Add(_topic);
